@@ -1,1 +1,1 @@
-<text>Profile</text>
+<Text>Profile</Text>
