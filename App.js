@@ -8,13 +8,14 @@ export default function App() {
       <Text style={styles.paragraph}>Test Screen</Text>
       <StatusBar style="auto" />
     </View>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'Blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
