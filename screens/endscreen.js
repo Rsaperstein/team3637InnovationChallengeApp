@@ -1,1 +1,1 @@
- <text>Bounus Round</text>
+ <Text>Bounus Round</Text>
