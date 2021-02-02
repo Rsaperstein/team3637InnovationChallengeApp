@@ -10,18 +10,11 @@ const windowHeight = Dimensions.get("window").height;
 
 export default class Community extends React.Component {
     state = {
-        searchText: '', 
-        count: '',
+        searchText: '',
     };
 
     _handleTextChange = searchText => {
         this.setState({ searchText });
-    };
-
-    onPress = () => {
-      this.setState({
-        count: this.state.count + 1
-      });
     };
   
     render() {
