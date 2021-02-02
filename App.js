@@ -8,8 +8,12 @@ import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
 import ProgressBar from './screens/ProgressBar'
 
+import { Text, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -18,7 +22,7 @@ export default function App() {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ title: 'Overview' }}
+        options={{ title: 'Home' }}
       />
         <Stack.Screen name="Community" component={CommunityScreen} />
         <Stack.Screen name="ProgressBar" component={ProgressBar} />

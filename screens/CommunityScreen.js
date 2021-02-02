@@ -4,6 +4,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, TextInput, TouchableHighlight} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -19,6 +20,7 @@ export default class Community extends React.Component {
   
     render() {
         return (
+            <ScrollView>
             <View style={styles.container}>
                 <View style={styles.textContainer}>
                   <Text style={styles.header}>Time</Text>
@@ -65,7 +67,8 @@ export default class Community extends React.Component {
                         <Text style={styles.communityHeader}>Community 3 Name <View style={styles.circle}></View></Text>
                         <Text style={styles.communityHeader}>Community 4 Name <View style={styles.circle}></View></Text>
                       </View>
-            </View>        
+            </View>
+            </ScrollView>        
         
         );
     }  
@@ -80,7 +83,6 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 30,
     color: 'black',
-    fontFamily: 'Times New Roman'
   }, 
   searchBar: {
     width: windowHeight / 41,
