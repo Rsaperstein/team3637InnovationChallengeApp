@@ -42,12 +42,9 @@ const width = animation.current.interpolate({
 }
 
 export default class Progress extends React.Componet {
-  state = {
-      searchText: '',
-};
 
-const App = () => {
- return (
+ render() { 
+   return (
   <View style={styles.container}>
   <Text>
     Loading.....
@@ -59,7 +56,7 @@ const App = () => {
 </View>
  );
 }
- 
+}
 export default ProgressBar;
 
 const styles = StyleSheet.create({
