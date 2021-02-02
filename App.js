@@ -10,12 +10,12 @@ export default function App() {
     </View>
     
   );
-}
+}           
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'Blue',
+    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
