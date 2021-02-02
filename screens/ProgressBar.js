@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
-
+//lol
 //Progress Bar 1 (To get more, Copy and Paste from here)
 function useInterval(callback, delay) {
   const savedCallback = useRef();
