@@ -2,7 +2,7 @@
 // Screen will show joinable communities 
 
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import * as React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, TextInput, TouchableHighlight} from 'react-native';
 
 const windowWidth = Dimensions.get("window").width;
@@ -41,16 +41,6 @@ export default class Community extends React.Component {
                         />
                     </TouchableHighlight>
                 </View>
-
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('aboutScreen')}>
-                    <View style={styles.bannerContainer}>
-                        <Text>Recommended</Text>
-                        <Image
-                            source={ require('../assets/images/banner.png') }
-                            style={styles.bannerImage}
-                        />
-                    </View>
-                </TouchableOpacity>
             </View>
         
         
@@ -67,7 +57,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     fontSize: 20,
-    alignItems: 'start'
+    alignItems: 'flex-start'
   }, 
   searchBar: {
     width: windowHeight / 41,
