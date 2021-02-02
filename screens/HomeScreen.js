@@ -13,12 +13,6 @@ export default class HomeScreen extends React.Component {
                 Button to Community
             </Text>
             </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-            <Text>
-                Button to Progress Bar Screen
-            </Text>
-            </TouchableOpacity>
         </View>
         );
     }

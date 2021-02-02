@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Linking } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
-import ProgressBar from './screens/ProgressBar'
+//import ProgressBar from './screens/ProgressBar'
 
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -25,7 +25,6 @@ export default function App() {
         options={{ title: 'Home' }}
       />
         <Stack.Screen name="Community" component={CommunityScreen} />
-        <Stack.Screen name="ProgressBar" component={ProgressBar} />
       </Stack.Navigator>
     </NavigationContainer>
   );
