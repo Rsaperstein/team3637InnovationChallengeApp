@@ -28,9 +28,9 @@ export default class HomeScreen extends React.Component {
                 <Text>
                     Button to Progress Bar
                 </Text>
-            </TouchableOpacity>
-            
+            </TouchableOpacity>            
 
+            <View style ={styles.horizontalRule} />
             <View style={styles.bottomTabContainer}>
                   <TouchableOpacity>
                       <View style={[styles.bottomTabButton]}>
@@ -84,7 +84,7 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   bottomTabContainer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 15,
     flexDirection: 'row',
     alignItems: 'flex-end',
     display: 'flex',
@@ -108,6 +108,10 @@ const styles = StyleSheet.create({
     fontSize: windowWidth / 50,
   },
 
-
-
+  horizontalRule: {
+      position: 'absolute',
+      bottom: 15,
+      borderBottomColor: 'black',
+      borderBottomWidth: 1,
+  }
 });
