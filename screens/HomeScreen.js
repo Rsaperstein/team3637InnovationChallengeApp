@@ -1,9 +1,5 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native';
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -30,7 +26,8 @@ export default class HomeScreen extends React.Component {
                 </Text>
             </TouchableOpacity>            
 
-            <View style ={styles.horizontalRule} />
+            <View style={styles.horizontalRule} />
+
             <View style={styles.bottomTabContainer}>
                   <TouchableOpacity>
                       <View style={[styles.bottomTabButton]}>
@@ -110,8 +107,9 @@ const styles = StyleSheet.create({
 
   horizontalRule: {
       position: 'absolute',
-      bottom: 15,
+      bottom: ((windowHeight / 16) + 15),
       borderBottomColor: 'black',
       borderBottomWidth: 1,
+      width: windowWidth,
   }
 });
