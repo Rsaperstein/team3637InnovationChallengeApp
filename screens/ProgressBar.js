@@ -41,7 +41,7 @@ const width = animation.current.interpolate({
 })
 }
 
-export default class Progress extends React.Componet {
+export default class ProgressBar extends React.Componet {
 
  render() { 
    return (
@@ -57,7 +57,6 @@ export default class Progress extends React.Componet {
  );
 }
 }
-export default ProgressBar;
 
 const styles = StyleSheet.create({
  container: {
