@@ -9,22 +9,13 @@ function useInterval(callback, delay) {
   useEffect(() => {
     savedCallback.current = callback;
   }, [callback]);
-  // Set up the interval.
-  useEffect(() => {
-    function tick() {
-      savedCallback.current();
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay);
-      return () => clearInterval(id);
-    }
-  }, [delay]);
+  //Using the Running Count to move the Progress Bar
+//This doesn't do anything
+  CountRun = 27;
+
   const [progress, setProgress] = useState(0);
- useInterval(() => {
-   if(progress < 100) {
-     setProgress(progress + 5);
-   }
- }, 1000);
+     setProgress(progress = CountRun);
+
  const App = () => {
   let animation = useRef(new Animated.Value(0));
 }
