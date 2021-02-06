@@ -10,14 +10,14 @@ function useInterval(callback, delay) {
     savedCallback.current = callback;
   }, [callback]);
   //Using the Running Count to move the Progress Bar
-//This doesn't do anything
+//This doesn't do anything lol
   CountRun = 27;
 
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
 
  const App = () => {
-  let animation = useRef(new Animated.Value(0));
+  let animation = useRef(Animated.Value(0));
 }
 useEffect(() => {
   Animated.timing(animation.current, {
