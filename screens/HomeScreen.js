@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native';
+import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -23,10 +24,17 @@ export default class HomeScreen extends React.Component {
                 </Text>
             </TouchableOpacity>
 
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                <Text>
+                    Button to Progress Bar
+                </Text>
+            </TouchableOpacity>
+            
+
             <View style={styles.bottomTabContainer}>
                   <TouchableOpacity>
                       <View style={[styles.bottomTabButton]}>
-                          <Text style={styles.buttonText}>
+                          <Text  style={[styles.bottomTabText]}>
                               Botttom Nav 1
                           </Text>
                       </View>
@@ -34,7 +42,7 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Text>
+                            <Text style={[styles.bottomTabText]}>
                                 Botttom Nav 2
                             </Text>
                         </View>
@@ -42,7 +50,7 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Text>
+                            <Text  style={[styles.bottomTabText]}>
                                 Botttom Nav 3
                             </Text>
                         </View>
@@ -50,7 +58,7 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Text>
+                            <Text  style={[styles.bottomTabText]}>
                                 Botttom Nav 4
                             </Text>
                         </View>
@@ -58,8 +66,8 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Text>
-                                Botttom Nav 1
+                            <Text style={[styles.bottomTabText]}>
+                                Botttom Nav 5
                             </Text>
                         </View>
                     </TouchableOpacity>
@@ -93,4 +101,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: '#d9d5d4',
   },
+
+  bottomTabText: {
+    position: 'absolute',
+    bottom: 0,
+    fontSize: windowWidth / 50,
+  },
+
+
+
 });
