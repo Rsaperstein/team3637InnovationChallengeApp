@@ -22,26 +22,75 @@ export default class HomeScreen extends React.Component {
                     Button to Profile
                 </Text>
             </TouchableOpacity>
+
+            <View style={styles.bottomTabContainer}>
+                  <TouchableOpacity>
+                      <View style={[styles.bottomTabButton]}>
+                          <Text style={styles.buttonText}>
+                              Botttom Nav 1
+                          </Text>
+                      </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Text>
+                                Botttom Nav 2
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Text>
+                                Botttom Nav 3
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Text>
+                                Botttom Nav 4
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Text>
+                                Botttom Nav 1
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+              </View>
+
         </View>
+
+        
         );
     }
 }
 
 // Set up a Cascading Style Sheet
 const styles = StyleSheet.create({
-  halfButtonContainer: {
+  bottomTabContainer: {
+    position: 'absolute',
+    bottom: 0,
     flexDirection: 'row',
+    alignItems: 'flex-end',
+    display: 'flex',
   },
 
-  halfButton: {
-    width: ((windowWidth / 2) - 16),
-    height: (windowHeight / 8),
+  bottomTabButton: {
+    width: (windowWidth / 6),
+    height: (windowHeight / 16),
     margin: 4,
     textAlign: "center",
     alignContent: 'center',
     justifyContent: "center",
     alignItems: 'center',
     borderRadius: 8,
-    backgroundColor: 'red'
+    backgroundColor: '#d9d5d4',
   },
 });

@@ -32,7 +32,7 @@ const width = animation.current.interpolate({
 })
 }
 
-export default class ProgressBar extends React.Componet {
+export default class ProgressBar extends React.Component {
 
  render() { 
    return (
