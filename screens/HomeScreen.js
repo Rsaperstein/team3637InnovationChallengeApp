@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -8,11 +8,6 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-                <Text>
-                    Button to Community
-                </Text>
-            </TouchableOpacity>
 
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
                 <Text>
@@ -31,14 +26,16 @@ export default class HomeScreen extends React.Component {
             <View style={styles.bottomTabContainer}>
                   <TouchableOpacity>
                       <View style={[styles.bottomTabButton]}>
+                        <Image source={require('../assets/house.png')} style={styles.image} />
                           <Text  style={[styles.bottomTabText]}>
-                              Botttom Nav 1
+                              Home
                           </Text>
                       </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/flag.png')} style={styles.image} />
                             <Text style={[styles.bottomTabText]}>
                                 Botttom Nav 2
                             </Text>
@@ -47,29 +44,31 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Text  style={[styles.bottomTabText]}>
-                                Botttom Nav 3
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <View style={[styles.bottomTabButton]}>
-                            <Text  style={[styles.bottomTabText]}>
-                                Botttom Nav 4
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/plus.png')} style={styles.image} />
                             <Text style={[styles.bottomTabText]}>
-                                Botttom Nav 5
+                                Input Exercise
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/notificationImportant.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Notifications
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/group.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Communities
                             </Text>
                         </View>
                     </TouchableOpacity>
               </View>
-
         </View>
 
         
@@ -96,13 +95,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     borderRadius: 8,
-    backgroundColor: '#d9d5d4',
   },
 
   bottomTabText: {
     position: 'absolute',
     bottom: 0,
     fontSize: windowWidth / 50,
+  },
+
+  image: {
+    resizeMode: 'contain',
+    borderRadius: 10,
+    paddingBottom: 10
   },
 
   horizontalRule: {
