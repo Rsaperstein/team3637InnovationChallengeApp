@@ -76,6 +76,8 @@ export default function App() {
 
 
     </View>
+
+    
   );
 }
 
@@ -104,6 +106,11 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: '#52796F',
     marginLeft: 5,
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
   },
   workoutContainer: {
     flexDirection: 'row',
@@ -122,10 +129,16 @@ const styles = StyleSheet.create({
     width: 250,
     marginTop: 15,
     backgroundColor: '#52796F',
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
   },
   buttonText: {
     fontSize: 20,
     color: 'white',
+    fontFamily: 'Quicksand'
   },
   exercistButtonText: {
     color: 'white',
@@ -133,6 +146,6 @@ const styles = StyleSheet.create({
   },
   stretchTitle: {
     position: 'absolute',
-    top: 0
+    top: 0,
   }
 });
