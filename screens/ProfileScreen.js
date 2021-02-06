@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'top',
+    justifyContent: 'flex-start',
   },
   circle: {
   width: 300,

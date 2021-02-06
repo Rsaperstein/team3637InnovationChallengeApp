@@ -7,13 +7,12 @@ import { TouchableOpacity, Linking } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
 //import ProgressBar from './screens/ProgressBar'
+import ProfileScreen from './screens/ProfileScreen';
 
 import { Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
 
-const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
@@ -25,6 +24,7 @@ export default function App() {
         options={{ title: 'Home' }}
       />
         <Stack.Screen name="Community" component={CommunityScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

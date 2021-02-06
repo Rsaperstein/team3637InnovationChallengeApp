@@ -9,9 +9,15 @@ export default class HomeScreen extends React.Component {
         return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-            <Text>
-                Button to Community
-            </Text>
+                <Text>
+                    Button to Community
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                <Text>
+                    Button to Profile
+                </Text>
             </TouchableOpacity>
         </View>
         );
