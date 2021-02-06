@@ -53,7 +53,7 @@ export default class HomeScreen extends React.Component {
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/notificationImportant.png')} style={styles.image} />
+                            <Image source={require('../assets/notificationBell.png')} style={styles.image} />
                             <Text style={[styles.bottomTabText]}>
                                 Notifications
                             </Text>
@@ -69,9 +69,7 @@ export default class HomeScreen extends React.Component {
                         </View>
                     </TouchableOpacity>
               </View>
-        </View>
-
-        
+        </View>        
         );
     }
 }

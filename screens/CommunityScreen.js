@@ -67,6 +67,56 @@ export default class Community extends React.Component {
                         <Text style={styles.communityHeader}>Community 3 Name <View style={styles.circle}></View></Text>
                         <Text style={styles.communityHeader}>Community 4 Name <View style={styles.circle}></View></Text>
                       </View>
+
+                      <View style={styles.horizontalRule} />
+
+            <View style={styles.bottomTabContainer}>
+                  <TouchableOpacity>
+                      <View style={[styles.bottomTabButton]}>
+                        <Image source={require('../assets/house.png')} style={styles.image} />
+                          <Text  style={[styles.bottomTabText]}>
+                              Home
+                          </Text>
+                      </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/flag.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Botttom Nav 2
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/plus.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Input Exercise
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/notificationBell.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Notifications
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/group.png')} style={styles.image} />
+                            <Text style={[styles.bottomTabText]}>
+                                Communities
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+              </View>
+
             </View>
             </ScrollView>        
         
@@ -155,6 +205,45 @@ iconText: {
 }, 
 textContainer: {
   marginRight: 10,
+},
+
+bottomTabContainer: {
+  position: 'relative',
+  bottom: 15,
+  flexDirection: 'row',
+  alignItems: 'flex-end',
+  display: 'flex',
+},
+
+bottomTabButton: {
+  width: (windowWidth / 6),
+  height: (windowHeight / 16),
+  margin: 4,
+  textAlign: "center",
+  alignContent: 'center',
+  justifyContent: "center",
+  alignItems: 'center',
+  borderRadius: 8,
+},
+
+bottomTabText: {
+  position: 'absolute',
+  bottom: 0,
+  fontSize: windowWidth / 50,
+},
+
+image: {
+  resizeMode: 'contain',
+  borderRadius: 10,
+  paddingBottom: 10
+},
+
+horizontalRule: {
+    position: 'absolute',
+    bottom: ((windowHeight / 16) + 15),
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+    width: windowWidth,
 }
 });
 
