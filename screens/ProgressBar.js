@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Animated } from 'react-native';
 import Constants from 'expo-constants';
 
 //Progress Bar 1 (To get more, Copy and Paste from here)
@@ -11,7 +11,7 @@ function useInterval(callback, delay) {
   }, [callback]);
   //Using the Running Count to move the Progress Bar
 
-  CountRun = 27;
+  var CountRun = 27;
 
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
