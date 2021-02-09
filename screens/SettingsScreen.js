@@ -7,12 +7,17 @@ export default class SettingsScreen extends React.Component {
   return (
     <View style={styles.container}>
 
+
     <View style={styles.dollarCircle}>
-      <Text style={styles.dollarText}>$</Text>
+      <TouchableOpacity>
+        <Text style={styles.dollarText}>$</Text>
+      </TouchableOpacity>
     </View>
 
     <View style={styles.personCircle}>
-      <Text style={styles.personText}>P</Text>
+      <TouchableOpacity>
+        <Text style={styles.personText}>P</Text>
+      </TouchableOpacity>
     </View>
 
       <View style={styles.settingsContainer}>
@@ -73,7 +78,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: 300,
     fontSize: 32,
-    marginBottom: 20,
+    marginBottom: 16,
     marginTop: 18,
   },
   settingsContainer: {
@@ -112,11 +117,11 @@ const styles = StyleSheet.create({
   dollarCircle: {
     position: 'absolute',
     top: 5,
-    right: 5,
+    right: 20,
     backgroundColor: 'navy',
-    width: 20,
-    height: 20,
-    borderRadius: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -126,11 +131,11 @@ const styles = StyleSheet.create({
   personCircle: {
     position: 'absolute',
     top: 5,
-    right: 40,
+    right: 60,
     backgroundColor: 'navy',
-    width: 20,
-    height: 20,
-    borderRadius: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
   },
