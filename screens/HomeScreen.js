@@ -85,10 +85,12 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   bottomTabContainer: {
     position: 'absolute',
-    bottom: 15,
+    bottom: (windowWidth / 1000),
     flexDirection: 'row',
     alignItems: 'flex-end',
     display: 'flex',
+    backgroundColor: Colors.white,
+    width: windowWidth,
   },
 
   bottomTabButton: {
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
 
   horizontalRule: {
       position: 'absolute',
-      bottom: ((windowHeight / 16) + 15),
+      bottom: (windowHeight / 13),
       borderBottomColor: 'black',
       borderBottomWidth: 1,
       width: windowWidth,
