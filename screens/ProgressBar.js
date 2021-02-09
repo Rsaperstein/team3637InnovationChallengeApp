@@ -12,7 +12,7 @@ function useInterval(callback, delay) {
   //Using the Running Count to move the Progress Bar
 
   var CountRun = 27;
-
+  
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
@@ -43,7 +43,7 @@ export default class ProgressBar extends React.Component {
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
-  <Text>{`${CountRun}%`}</Text>
+<text>{progress.toLocaleString("fr-FR")};</text>
 </View>
  );
 }
