@@ -17,7 +17,7 @@ function useInterval(callback, delay) {
      setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
  const App = () => {
-  let animation = useState(new Animated.Value(0));
+  let animation = useRef(new Animated.Value(0));
 }
 useEffect(() => {
   Animated.timing(animation.current, {
@@ -40,7 +40,7 @@ export default class ProgressBar extends React.Component {
   <Text>
     Loading.....
   </Text>
-  <View style={styles.progressBar}>
+  <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F", width }}/>
 </View>
   <Text>{`${progress}%`}</Text>
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
    backgroundColor: '#ecf0f1',
    padding: 8,
  },
- progressBar: {
+ ProgressBar: {
   height: 20,
-  width: '100%',
+  width: 30,
   backgroundColor: 'white',
   borderColor: '#000',
   borderWidth: 2,
-  borderRadius: 5
+  borderRadius: 5,
 }
 });
