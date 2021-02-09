@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Animated } from 'react-native';
 import Constants from 'expo-constants';
 
 //Progress Bar 1 (To get more, Copy and Paste from here)
@@ -11,13 +11,13 @@ function useInterval(callback, delay) {
   }, [callback]);
   //Using the Running Count to move the Progress Bar
 
-  CountRun = 27;
+  var CountRun = 27;
 
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
  const App = () => {
-  let animation = useState(new Animated.Value(0));
+  let animation = useRef(new Animated.Value(0));
 }
 useEffect(() => {
   Animated.timing(animation.current, {
@@ -40,7 +40,7 @@ export default class ProgressBar extends React.Component {
   <Text>
     Loading.....
   </Text>
-  <View style={styles.progressBar}>
+  <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F", width }}/>
 </View>
   <Text>{`${progress}%`}</Text>
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
    backgroundColor: '#ecf0f1',
    padding: 8,
  },
- progressBar: {
+ ProgressBar: {
   height: 20,
-  width: '100%',
+  width: 30,
   backgroundColor: 'white',
   borderColor: '#000',
   borderWidth: 2,
-  borderRadius: 5
+  borderRadius: 5,
 }
 });
