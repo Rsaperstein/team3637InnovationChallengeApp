@@ -137,5 +137,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     alignContent: 'center',
     justifyContent: 'center',
+    marginLeft: (windowWidth / 90),
   },
 });
