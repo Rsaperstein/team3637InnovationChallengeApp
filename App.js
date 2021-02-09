@@ -1,12 +1,10 @@
-// In App.js in a new project
-
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity, Linking } from 'react-native';
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
-//import ProgressBar from './screens/ProgressBar'
+import ProgressBar from './screens/ProgressBar'
 import ProfileScreen from './screens/ProfileScreen';
 
 import { Text, View } from 'react-native';
@@ -25,6 +23,7 @@ export default function App() {
       />
         <Stack.Screen name="Community" component={CommunityScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="ProgressBar" component={ProgressBar} />
       </Stack.Navigator>
     </NavigationContainer>
   );

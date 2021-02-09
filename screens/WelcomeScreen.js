@@ -9,15 +9,39 @@ export default function App() {
       <Text style={styles.heading}>
         (App Name)
       </Text>
+
+      <Text style={styles.welcomeHeading}>
+        Welcome!
+      </Text>
+
       <Text style={styles.subheading}>
-        Welcome to the fitness app! Here is the welcome screen with filler text. 
+        Please read the terms of service and privacy agreement 
       </Text>
 
       <TouchableOpacity>
         <Text style={styles.welcomeButton}>
-          Continue
+          Sign Up
         </Text>
       </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Text style={styles.welcomeButton}>
+          Sign In
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Text style={styles.welcomeButton}>
+          Terms of Service 
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Text style={styles.welcomeButton}>
+          Privacy Agreement 
+        </Text>
+      </TouchableOpacity>
+
     </View>
   );
 }
@@ -29,15 +53,21 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
     padding: 8,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   heading: {
     margin: 24,
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    position: 'relative',
-    top: 100
+    position: 'absolute',
+    top: 0
+  },
+  welcomeHeading: {
+    fontSize: 32, 
+    fontWeight: 'bold',
+    position: 'relative', 
+    top: 70,
   },
   image: {
     width: 100,
@@ -58,6 +88,9 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
+    margin: 5,
+    width: 200,
+    fontSize: 16,
   },
   subheading: {
     margin: 24,
@@ -83,9 +116,9 @@ const styles = StyleSheet.create({
 
 /*
 <View style={styles.bannerContainer}>
-       <Image
-          source={require('../assets/awesomeUndraw.svg')}
-          style={styles.bannerImage}
-       />
+              <Image
+                source={require('../assets/awesomeUndraw.svg')}
+                style={styles.bannerImage}
+              />
 </View>
 */
