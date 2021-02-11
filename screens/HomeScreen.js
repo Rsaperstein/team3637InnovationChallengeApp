@@ -52,6 +52,29 @@ export default class HomeScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
 
+                <View style={styles.catNQuoteContainer}>
+                    <View style={styles.catContainer} />
+                    <TouchableOpacity style={styles.quoteBox}>
+                        <Text style={styles.quoteBoxText}>
+                            How are you feeling today?
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.howYourFeelingContainer}>
+                    <TouchableOpacity style={styles.feelingButtons}>
+                        <Text>
+                            H
+                        </Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.feelingButtons}>
+                        <Text>
+                            S
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
                 <View style={{marginTop: 100}}>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
                     <Text>
@@ -59,6 +82,7 @@ export default class HomeScreen extends React.Component {
                     </Text>
                 </TouchableOpacity> 
                 </View>
+
             </ScrollView>
 
                 <View style={styles.horizontalRule} />
@@ -197,17 +221,18 @@ const styles = StyleSheet.create({
 
   exerciseButtonsContainer: {
     width: windowWidth,
-    height: (windowWidth / 4),
+    height: (windowHeight / 7),
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: (windowHeight / 20),
-    marginLeft: (windowWidth / 100),
     backgroundColor: Colors.white,
   },
 
   mentalExercisesButton: {
     backgroundColor: Colors.lightBlue,
     width: windowWidth / 1.2,
+    height: windowHeight / 20,
+    borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -215,6 +240,8 @@ const styles = StyleSheet.create({
   physicalExercisesButton: {
     backgroundColor: Colors.lightGreen,
     width: windowWidth / 1.2,
+    height: windowHeight / 20,
+    borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: windowHeight / 40,
@@ -224,4 +251,56 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
 
+  catNQuoteContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    display: 'flex',
+    backgroundColor: Colors.white,
+    width: windowWidth,
+  },
+
+  catContainer: {
+    width: (windowWidth / 8),
+    height: (windowWidth / 4),
+    borderRadius: (windowWidth / 16),
+    backgroundColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 40,
+    marginTop: 20,
+  },
+
+  quoteBox: {
+    backgroundColor: Colors.coolBlue,
+    width: windowWidth / 2,
+    height: windowHeight / 20,
+    borderRadius: windowWidth / 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+
+  quoteBoxText: {
+    color: Colors.white,
+  },
+
+  howYourFeelingContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    display: 'flex',
+    backgroundColor: Colors.white,
+    right: 0,
+  },
+
+  feelingButtons: {
+    backgroundColor: Colors.coolBlue,
+    width: windowWidth / 6,
+    height: windowHeight / 12,
+    borderRadius: windowWidth / 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
+  }
 });
