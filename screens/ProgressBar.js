@@ -43,7 +43,7 @@ export default class ProgressBar extends React.Component {
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
-<text>{CountRun.toLocaleString("fr-FR")};</text>
+<text>27</text>
 </View>
  );
 }
