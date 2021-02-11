@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
  },
  ProgressBar: {
   height: 20,
-  width: 500,
+  width: 350,
   backgroundColor: 'white',
   borderColor: '#000',
   borderWidth: 2,
