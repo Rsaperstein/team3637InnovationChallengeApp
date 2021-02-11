@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, View, Text} from 'react-native';
+import { Platform, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
 export default class Profile extends React.Component{
   render() {
@@ -12,7 +12,15 @@ export default class Profile extends React.Component{
       <Text style={styles.email}>Email                   _______</Text>
       <Text style={styles.dateJoined}>Joined on            _______</Text>
       <View style={styles.setting}></View>
-      </View>        
+      <TouchableOpacity 
+        style={styles.setting}
+        onPress={()=>
+        this.props.navigation.navigate('Settings')}
+      >
+        <Text></Text>
+      </TouchableOpacity>
+      </View>
+              
     );
   }
 }
@@ -43,7 +51,8 @@ const styles = StyleSheet.create({
   width: 100,
   height: 100,
   borderRadius: 20,
-  backgroundColor: 'gray'
+  backgroundColor: 'gray',
+  fontSize: 3
   },
   setting:{
     position:"absolute",
@@ -55,6 +64,7 @@ const styles = StyleSheet.create({
     width:30,
     height: 30,
     borderRadius: 60,
-    backgroundColor:'black'
+    backgroundColor:''
   }
 });
+
