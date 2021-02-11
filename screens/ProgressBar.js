@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Animated } from 'react-native';
 import Constants from 'expo-constants';
 
 //Progress Bar 1 (To get more, Copy and Paste from here)
-function useInterval(callback, delay) {
+function useIntervalOne(callback, delay) {
   const savedCallback = useRef();
   // Remember the latest callback.
   useEffect(() => {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
  container: {
    flex: 1,
    justifyContent: 'center',
-   alignItems: 'center',
+   alignItems: 200,
    paddingTop: Constants.statusBarHeight,
    backgroundColor: '#ecf0f1',
    padding: 8,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 });
 
 //Progress Bar 2 (To get more, Copy and Paste from here)
-function useInterval(callback, delay) {
+function useIntervalTwo(callback, delay) {
   const savedCallback = useRef();
   // Remember the latest callback.
   useEffect(() => {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
  container: {
    flex: 1,
    justifyContent: 'center',
-   alignItems: 'center',
+   alignItems: 400,
    paddingTop: Constants.statusBarHeight,
    backgroundColor: '#ecf0f1',
    padding: 8,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 });
 
 //Progress Bar 3 (To get more, Copy and Paste from here)
-function useInterval(callback, delay) {
+function useIntervalThree(callback, delay) {
   const savedCallback = useRef();
   // Remember the latest callback.
   useEffect(() => {
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
  container: {
    flex: 1,
    justifyContent: 'center',
-   alignItems: 'center',
+   alignItems: 600,
    paddingTop: Constants.statusBarHeight,
    backgroundColor: '#ecf0f1',
    padding: 8,
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
 });
 
 //Progress Bar 4 (To get more, Copy and Paste from here)
-function useInterval(callback, delay) {
+function useIntervalFour(callback, delay) {
   const savedCallback = useRef();
   // Remember the latest callback.
   useEffect(() => {
@@ -251,7 +251,7 @@ const styles = StyleSheet.create({
  container: {
    flex: 1,
    justifyContent: 'center',
-   alignItems: 'center',
+   alignItems: 800,
    paddingTop: Constants.statusBarHeight,
    backgroundColor: '#ecf0f1',
    padding: 8,
