@@ -12,21 +12,21 @@ export default function App() {
     </View>
 
       <View style={styles.stretchContainer}>
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.lowerBodyButtons}>
         <Text style={styles.exercistButtonText}>
           Lower Body
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.fullBodyButtons}>
         <Text style={styles.exercistButtonText}>
-          Upper Body
+          Full Body
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.upperBodyButtons}>
         <Text style={styles.exercistButtonText}>
-          Torso
+          Upper Body
         </Text> 
       </TouchableOpacity>
 
@@ -38,21 +38,21 @@ export default function App() {
   
 
     <View style={styles.workoutContainer}>
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.lowerBodyButtons}>
         <Text style={styles.exercistButtonText}>
           Lower Body
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.fullBodyButtons}>
         <Text style={styles.exercistButtonText}>
-          Upper Body 
+          Full Body 
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.exerciseButtons}>
+      <TouchableOpacity style={styles.upperBodyButtons}>
         <Text style={styles.exercistButtonText}>
-          Torso
+          Upper Body
         </Text> 
       </TouchableOpacity>
 
@@ -97,7 +97,37 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  exerciseButtons: {
+  lowerBodyButtons: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 15,
+    textAlign: 'center',
+    padding: 12,
+    width: 100,
+    backgroundColor: '#7CA6E5',
+    marginLeft: 5,
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+  },
+  fullBodyButtons: {
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 15,
+    textAlign: 'center',
+    padding: 12,
+    width: 100,
+    backgroundColor: '#BBE0B7',
+    marginLeft: 5,
+    shadowColor: 'rgba(0, 0, 0, 0.15)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+  },
+  upperBodyButtons: {
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 15,
@@ -128,7 +158,7 @@ const styles = StyleSheet.create({
     padding: 12,
     width: 250,
     marginTop: 15,
-    backgroundColor: '#52796F',
+    backgroundColor: '#172A3A',
     shadowColor: 'rgba(0, 0, 0, 0.15)',
     shadowOpacity: 0.8,
     elevation: 6,
@@ -141,7 +171,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand'
   },
   exercistButtonText: {
-    color: 'white',
+    color: 'black',
     fontFamily: 'Quicksand'
   },
   stretchTitle: {
