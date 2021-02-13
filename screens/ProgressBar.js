@@ -12,22 +12,16 @@ function useIntervalOne(callback, delay) {
   //Using the Running Count to move the Progress Bar
 
   var CountRun = 27;
-  
+
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
  const App = () => {
-  let animation = useRef(new Animated.Value(0));
+  let animation = useState(new Animated.Value(0));
 }
-useEffect(() => {
-  Animated.timing(animation.current, {
-    toValue: progress,
-    duration: 100
-  }).start();
-},[progress])
 const width = animation.current.interpolate({
-  inputRange: [0, 100],
-  outputRange: ["0%", "100%"],
+  inputRange: CountRun,
+  outputRange: CountRun,
   extrapolate: "clamp"
 })
 }
@@ -43,7 +37,11 @@ export default class ProgressBar extends React.Component {
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
-<Text>27</Text>
+<Text>27%</Text>
+<View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+</View>
+<Text>27%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
@@ -51,11 +49,7 @@ export default class ProgressBar extends React.Component {
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
-<Text>27</Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<Text>27</Text>
+<Text>27%</Text>
 </View>
  );
 }
@@ -72,7 +66,7 @@ const styles = StyleSheet.create({
  },
  ProgressBar: {
   height: 20,
-  width: 378,
+  width: 380,
   backgroundColor: 'white',
   borderColor: '#000',
   borderWidth: 2,
