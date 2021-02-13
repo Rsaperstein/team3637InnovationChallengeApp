@@ -10,7 +10,7 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
         <View style={{ flex: 1,}}>
-            <ScrollView style={{backgroundColor: Colors.darkGreen}}>
+            <ScrollView style={{backgroundColor: Colors.white}}>
                 <View style={styles.circleContainer}>
                     <View style={styles.circle}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
@@ -41,38 +41,48 @@ export default class HomeScreen extends React.Component {
                 <View style={styles.exerciseButtonsContainer}>
                     <TouchableOpacity style={styles.mentalExercisesButton}>
                         <Text style={styles.exercisesText}>
-                            Mental Exercises
+                            Mind-Link
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.physicalExercisesButton}>
                         <Text style={styles.exercisesText}>
-                            Physical Exercises
+                            Fit-Link
                         </Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={styles.catNQuoteContainer}>
-                    <View style={styles.catContainer} />
-                    <TouchableOpacity style={styles.quoteBox}>
-                        <Text style={styles.quoteBoxText}>
-                            How are you feeling today?
-                        </Text>
-                    </TouchableOpacity>
-                </View>
+                <View style={styles.catQuotesFeelingsParentContainer}>
+                    <View style={styles.catNQuoteContainer}>
+                        <View style={styles.catContainer} />
+                    </View>
 
-                <View style={styles.howYourFeelingContainer}>
-                    <TouchableOpacity style={styles.feelingButtons}>
-                        <Text>
-                            H
-                        </Text>
-                    </TouchableOpacity>
+                    <View style={styles.quoteBoxFeelingsContainer}>
+                        <TouchableOpacity style={styles.quoteBox}>
+                            <Text style={styles.quoteBoxText}>
+                                How are you feeling today?
+                            </Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.feelingButtons}>
-                        <Text>
-                            S
-                        </Text>
-                    </TouchableOpacity>
+                        <View style={styles.howYourFeelingContainer}>
+                            <TouchableOpacity style={styles.feelingButtons}>
+                                <Text>
+                                    H
+                                </Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={styles.feelingButtons}>
+                                <Text>
+                                    N
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                        <TouchableOpacity style={styles.feelingBottomButton}>
+                            <Text>
+                                S
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 <View style={{marginTop: 100}}>
@@ -88,7 +98,7 @@ export default class HomeScreen extends React.Component {
                 <View style={styles.horizontalRule} />
 
                 <View style={styles.bottomTabContainer}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/house.png')} style={styles.image} />
                             <Text  style={[styles.bottomTabText]}>
@@ -106,7 +116,7 @@ export default class HomeScreen extends React.Component {
                             </View>
                         </TouchableOpacity>
 
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
                             <View style={[styles.bottomTabButton]}>
                                 <Image source={require('../assets/plus.png')} style={styles.image} />
                                 <Text style={[styles.bottomTabText]}>
@@ -185,8 +195,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-end',
     display: 'flex',
-    position: 'absolute',
-    right: 0,
+    justifyContent: 'flex-end',
+    backgroundColor: Colors.darkGreen,
+    width: windowWidth,
   },
 
   circle: {
@@ -202,21 +213,22 @@ const styles = StyleSheet.create({
 
   bannerContainer: {
     width: windowWidth,
-    height: (windowWidth / 8),
+    height: (windowHeight / 6),
     alignContent: 'center',
     justifyContent: 'center',
-    marginTop: (windowHeight / 20),
-    marginLeft: (windowWidth / 100),
+    backgroundColor: Colors.darkGreen,
   },
 
   bannerTitleText: {
     color: Colors.white,
     fontSize: 24,
+    marginLeft: 13,
   },
 
   bannerSubText: {
     color: Colors.white,
     fontSize: 12,
+    marginLeft: 13,
   },
 
   exerciseButtonsContainer: {
@@ -224,7 +236,7 @@ const styles = StyleSheet.create({
     height: (windowHeight / 7),
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: (windowHeight / 20),
+    marginTop: (windowHeight / 40),
     backgroundColor: Colors.white,
   },
 
@@ -251,24 +263,36 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
 
-  catNQuoteContainer: {
+  catQuotesFeelingsParentContainer: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
     display: 'flex',
     backgroundColor: Colors.white,
-    width: windowWidth,
+  },
+  
+  catNQuoteContainer: {
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    backgroundColor: Colors.white,
+    width: windowWidth / 4,
   },
 
   catContainer: {
-    width: (windowWidth / 8),
-    height: (windowWidth / 4),
+    width: (windowWidth / 6),
+    height: (windowWidth / 3),
     borderRadius: (windowWidth / 16),
     backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: 40,
     marginTop: 20,
+    marginLeft: 20,
+  },
+
+  quoteBoxFeelingsContainer: {
+    backgroundColor: Colors.white,
+    justifyContent: 'center',
+    width: 3 * windowWidth / 4,
+    alignItems: 'flex-start',
+    marginLeft: 20,
   },
 
   quoteBox: {
@@ -278,7 +302,8 @@ const styles = StyleSheet.create({
     borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginBottom: 10,
+    marginTop: 40,
   },
 
   quoteBoxText: {
@@ -291,16 +316,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     display: 'flex',
     backgroundColor: Colors.white,
-    right: 0,
+    marginLeft: windowWidth / 14,
   },
 
   feelingButtons: {
-    backgroundColor: Colors.coolBlue,
+    backgroundColor: Colors.lightBlue,
     width: windowWidth / 6,
     height: windowHeight / 12,
     borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
+  },
+
+  feelingBottomButton: {
+    backgroundColor: Colors.lightBlue,
+    width: windowWidth / 6,
+    height: windowHeight / 12,
+    borderRadius: windowWidth / 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: windowWidth / 6,
+    marginTop: 10,
   }
 });
