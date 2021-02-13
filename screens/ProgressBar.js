@@ -16,15 +16,10 @@ function useIntervalOne(callback, delay) {
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
- const App; () => {
+ const App = () => {
   let animation = useRef(new Animated.Value(0));
-}
-useEffect(() => {
-  Animated.timing(animation.current, {
-    toValue: progress,
-    duration: 100
-  }).start();
-},[progress])
+
+  {
 const width = animation.current.interpolate({
   inputRange: [0, 100],
   outputRange: ["0%", "100%"],
@@ -79,4 +74,4 @@ const styles = StyleSheet.create({
   borderRadius: 5,
 }
 });
-
+ }}
