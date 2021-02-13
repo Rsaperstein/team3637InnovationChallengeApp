@@ -14,14 +14,14 @@ function useIntervalOne(callback, delay) {
   var CountRun = 27;
 
   const [progress, setProgress] = useState(0);
-     setProgress(CountRun = progress);
+     setProgress(progress = CountRun);
 //I changed this to useState. Hoepfully it does something
  const App = () => {
   let animation = useRef(new Animated.Value(0));
 }
 useEffect(() => {
   Animated.timing(animation.current, {
-    toValue: progress,
+    toValue = progress,
     duration: 100
   }).start();
 },[progress])
