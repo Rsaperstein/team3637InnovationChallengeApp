@@ -21,7 +21,7 @@ function useIntervalOne(callback, delay) {
 }
 useEffect(() => {
   Animated.timing(animation.current, {
-    toValue = progress,
+    toValue: progress,
     duration: 100
   }).start();
 },[progress])
