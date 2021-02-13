@@ -21,7 +21,7 @@ function useIntervalOne(callback, delay) {
 }
 const width = animation.current.interpolate({
   inputRange: CountRun,
-  outputRange: ["0%", "100%"],
+  outputRange: CountRun,
   extrapolate: "clamp"
 })
 }
@@ -41,15 +41,15 @@ export default class ProgressBar extends React.Component {
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
-<Text>27</Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
 <Text>27%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
 <Text>27</Text>
+<View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+</View>
+<Text>27%</Text>
 </View>
  );
 }
