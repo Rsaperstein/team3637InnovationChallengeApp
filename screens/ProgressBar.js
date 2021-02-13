@@ -12,9 +12,9 @@ function useIntervalOne(callback, delay) {
   //Using the Running Count to move the Progress Bar
 
   var CountRun = 27;
-  
+
   const [progress, setProgress] = useState(0);
-     setProgress(progress = CountRun);
+     setProgress(CountRun = progress);
 //I changed this to useState. Hoepfully it does something
  const App = () => {
   let animation = useRef(new Animated.Value(0));
