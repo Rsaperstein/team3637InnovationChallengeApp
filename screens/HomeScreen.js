@@ -11,21 +11,37 @@ export default class HomeScreen extends React.Component {
         return (
         <View style={{ flex: 1,}}>
             <ScrollView style={{backgroundColor: Colors.white}}>
-                <View style={styles.circleContainer}>
-                    <View style={styles.circle}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                            <Text style={{color: Colors.white}}>
-                                S
-                            </Text>
-                        </TouchableOpacity>
+                <View style={styles.container}>
+                    <View style={styles.logoContainer}>      
+                        <Image 
+                            source={require('../assets/flLogoTransparent.png')}
+                            style={styles.logo} />
                     </View>
-                    <View style={styles.circle}>
+
+                    <View style={styles.circleContainer}>
+                        <View style={styles.circle}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                            <Text style={{color: Colors.white}}>
-                                P
-                            </Text>
-                        </TouchableOpacity>
+                                <Text style={{color: Colors.white}}>
+                                    S
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.circle}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                <Text style={{color: Colors.white}}>
+                                    P
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
+                </View>
+
+                <View>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                    <Text>
+                        Button to Progress Bar
+                    </Text>
+                </TouchableOpacity> 
                 </View>
 
                 <View style={styles.bannerContainer}>
@@ -84,65 +100,41 @@ export default class HomeScreen extends React.Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-
-                <View style={{marginTop: 100}}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-                    <Text>
-                        Button to Progress Bar
-                    </Text>
-                </TouchableOpacity> 
-                </View>
-
             </ScrollView>
 
-                <View style={styles.horizontalRule} />
+            <View style={styles.horizontalRule} />
 
-                <View style={styles.bottomTabContainer}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+            <View style={styles.bottomTabContainer}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                    <View style={[styles.bottomTabButton]}>
+                        <Image source={require('../assets/house.png')} style={styles.image} />
+                    </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/house.png')} style={styles.image} />
-                            <Text  style={[styles.bottomTabText]}>
-                                Home
-                            </Text>
+                            <Image source={require('../assets/bullseye.png')} style={styles.image} />
                         </View>
-                        </TouchableOpacity>
+                    </TouchableOpacity>
 
-                        <TouchableOpacity>
-                            <View style={[styles.bottomTabButton]}>
-                                <Image source={require('../assets/bullseye.png')} style={styles.image} />
-                                <Text style={[styles.bottomTabText]}>
-                                    Botttom Nav 2
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/plus.png')} style={styles.image} />
+                        </View>
+                    </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
-                            <View style={[styles.bottomTabButton]}>
-                                <Image source={require('../assets/plus.png')} style={styles.image} />
-                                <Text style={[styles.bottomTabText]}>
-                                    Input Exercise
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
+                    <TouchableOpacity>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/notificationBell.png')} style={styles.image} />
+                        </View>
+                    </TouchableOpacity>
 
-                        <TouchableOpacity>
-                            <View style={[styles.bottomTabButton]}>
-                                <Image source={require('../assets/notificationBell.png')} style={styles.image} />
-                                <Text style={[styles.bottomTabText]}>
-                                    Notifications
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-                            <View style={[styles.bottomTabButton]}>
-                                <Image source={require('../assets/group.png')} style={styles.image} />
-                                <Text style={[styles.bottomTabText]}>
-                                    Communities
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
-                </View>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                        <View style={[styles.bottomTabButton]}>
+                            <Image source={require('../assets/group.png')} style={styles.image} />
+                        </View>
+                    </TouchableOpacity>
+            </View>
         </View>        
         );
     }
@@ -153,10 +145,11 @@ const styles = StyleSheet.create({
   bottomTabContainer: {
     position: 'absolute',
     bottom: (windowWidth / 1000),
+    alignItems: 'flex-start',
     flexDirection: 'row',
-    alignItems: 'flex-end',
     display: 'flex',
     backgroundColor: Colors.white,
+    justifyContent: 'center',
     width: windowWidth,
   },
 
@@ -171,16 +164,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
 
-  bottomTabText: {
-    position: 'absolute',
-    bottom: 0,
-    fontSize: windowWidth / 50,
-  },
-
   image: {
     resizeMode: 'contain',
     borderRadius: 10,
-    paddingBottom: 10
   },
 
   horizontalRule: {
@@ -191,13 +177,34 @@ const styles = StyleSheet.create({
       width: windowWidth,
   },
 
-  circleContainer: {
+  container: {
+    flex: 1,
     flexDirection: 'row',
-    alignItems: 'flex-end',
-    display: 'flex',
+  },
+
+  logo: {
+    width: 75,
+    height: 75,
+  },
+
+  logoContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    backgroundColor: Colors.white,
+    width: windowWidth / 2,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+
+  circleContainer: {
+    flex: 1,
+    flexDirection: 'row',
     justifyContent: 'flex-end',
     backgroundColor: Colors.white,
-    width: windowWidth,
+    width: windowWidth / 2,
+    marginRight: 10,
+    marginTop: 10,
   },
 
   circle: {
@@ -233,7 +240,7 @@ const styles = StyleSheet.create({
 
   exerciseButtonsContainer: {
     width: windowWidth,
-    height: (windowHeight / 7),
+    height: (9 * windowHeight / 40),
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: (windowHeight / 40),
@@ -243,7 +250,7 @@ const styles = StyleSheet.create({
   mentalExercisesButton: {
     backgroundColor: Colors.lightBlue,
     width: windowWidth / 1.2,
-    height: windowHeight / 20,
+    height: windowHeight / 10,
     borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
@@ -252,7 +259,7 @@ const styles = StyleSheet.create({
   physicalExercisesButton: {
     backgroundColor: Colors.lightGreen,
     width: windowWidth / 1.2,
-    height: windowHeight / 20,
+    height: windowHeight / 10,
     borderRadius: windowWidth / 50,
     alignItems: 'center',
     justifyContent: 'center',
