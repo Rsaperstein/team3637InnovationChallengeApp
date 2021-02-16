@@ -2,85 +2,86 @@ import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
+export default class UpperBodyExercises extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-
-    
-      <Text style={styles.heading}>
-        Upper Body Exercises 
-      </Text>
-
-    <View style={styles.topContainer}>
-
-    <TouchableOpacity style={styles.backgroundImage}>
-      <TouchableOpacity style={styles.pushUpExerciseButton}>
-        <Text style={styles.exerciseText}>
-          Push-ups
+      
+        <Text style={styles.heading}>
+          Upper Body Exercises 
         </Text>
-      </TouchableOpacity>
-    </TouchableOpacity>
 
+      <View style={styles.topContainer}>
 
-    <TouchableOpacity style={styles.backgroundImage}>
-      <TouchableOpacity style={styles.burpeesExerciseButton}>
-        <Text style={styles.exerciseText}>
-          Burpees
-        </Text>
-      </TouchableOpacity>
-    </TouchableOpacity>
-
-    </View>
-
-    <View style={styles.middleContainer}>
-
-    <TouchableOpacity style={styles.backgroundImage}>
-      <TouchableOpacity style={styles.dipExerciseButton}>
-        <Text style={styles.exerciseText}>
-          Dips
-        </Text>
-      </TouchableOpacity>
-    </TouchableOpacity>
-
-    <TouchableOpacity style={styles.backgroundImage}> 
-      <TouchableOpacity style={styles.chestExerciseButton}>
-        <Text style={styles.exerciseText}>
-          Chest Press
-        </Text>
-      </TouchableOpacity>
-    </TouchableOpacity>
-
-    </View>
-
-    <View style={styles.bottomContainer}>
-      <TouchableOpacity style={styles.backgroundImage}> 
-        <TouchableOpacity style={styles.inclineExerciseButton}>
+      <TouchableOpacity style={styles.backgroundImage}>
+        <TouchableOpacity style={styles.pushUpExerciseButton}>
           <Text style={styles.exerciseText}>
-            Incline Push-ups
+            Push-ups
           </Text>
         </TouchableOpacity>
       </TouchableOpacity>
-    
 
-      <TouchableOpacity style={styles.backgroundImage}> 
-        <TouchableOpacity style={styles.declineExerciseButton}>
+
+      <TouchableOpacity style={styles.backgroundImage}>
+        <TouchableOpacity style={styles.burpeesExerciseButton}>
           <Text style={styles.exerciseText}>
-            Decline Push-ups
+            Burpees
           </Text>
         </TouchableOpacity>
       </TouchableOpacity>
-    </View>
-    
 
-      <TouchableOpacity style={styles.backButton}>
-        <Text style={styles.backText}>
-          Back
-        </Text>
+      </View>
+
+      <View style={styles.middleContainer}>
+
+      <TouchableOpacity style={styles.backgroundImage}>
+        <TouchableOpacity style={styles.dipExerciseButton}>
+          <Text style={styles.exerciseText}>
+            Dips
+          </Text>
+        </TouchableOpacity>
       </TouchableOpacity>
-  
-    </View>
-  );
+
+      <TouchableOpacity style={styles.backgroundImage}> 
+        <TouchableOpacity style={styles.chestExerciseButton}>
+          <Text style={styles.exerciseText}>
+            Chest Press
+          </Text>
+        </TouchableOpacity>
+      </TouchableOpacity>
+
+      </View>
+
+      <View style={styles.bottomContainer}>
+        <TouchableOpacity style={styles.backgroundImage}> 
+          <TouchableOpacity style={styles.inclineExerciseButton}>
+            <Text style={styles.exerciseText}>
+              Incline Push-ups
+            </Text>
+          </TouchableOpacity>
+        </TouchableOpacity>
+      
+
+        <TouchableOpacity style={styles.backgroundImage}> 
+          <TouchableOpacity style={styles.declineExerciseButton}>
+            <Text style={styles.exerciseText}>
+              Decline Push-ups
+            </Text>
+          </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
+      
+
+        <TouchableOpacity style={styles.backButton}>
+          <Text style={styles.backText}>
+            Back
+          </Text>
+        </TouchableOpacity>
+    
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
