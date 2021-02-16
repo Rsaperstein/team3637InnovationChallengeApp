@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     display: 'flex',
     justifyContent: 'flex-end',
-    backgroundColor: Colors.darkGreen,
+    backgroundColor: Colors.white,
     width: windowWidth,
   },
 

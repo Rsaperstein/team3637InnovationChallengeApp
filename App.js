@@ -10,25 +10,13 @@ import Image from 'react-native';
 
 const Stack = createStackNavigator();
 
-function LogoTitle() {
-  return (
-    <Image
-      style={{ width: 50, height: 50 }}
-      source={require('./assets/flLogo.png')}
-    />
-  );
-}
+// UNLESS A HEADER HEIGHT IS SPECIFIED FOR ALL SCREENS, REMOVE IT FROM THE HOME SCREEN STACK BEFORE DEPLOYMENT
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home"
-        screenOptions={{headerLeft: () => props => <LogoTitle/>}}>
-      <Stack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{title: 'Fitness-Link'}}
-      />
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{title: 'Fitness-Link', headerStyle: {height: 80}}} />
         <Stack.Screen name="Community" component={CommunityScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="ProgressBar" component={ProgressBar} options={{title: 'Fitness-Link'}} />
