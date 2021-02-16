@@ -15,11 +15,14 @@ function useIntervalOne(callback, delay) {
 
   const [progress, setProgress] = useState(0);
      setProgress(progress = CountRun);
+ const App = () => {
+    let animation = useState(new Animated.Value(0));
   }
- width = animation.current.interpolate({
+const width = animation.current.interpolate({
   inputRange: CountRun,
   outputRange: CountRun,
 })
+}
 
 export default class ProgressBar extends React.Component {
 
