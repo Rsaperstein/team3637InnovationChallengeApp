@@ -74,6 +74,12 @@ export default function App() {
         </Text> 
     </TouchableOpacity>
 
+    <TouchableOpacity style={styles.bottomButtons}>
+        <Text style={styles.buttonText}>
+          Tracker
+        </Text> 
+    </TouchableOpacity>
+
 
     </View>
 
@@ -92,7 +98,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     marginTop: 24,
-    marginBottom: 18,
+    marginBottom: 12,
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -106,11 +112,6 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: '#7CA6E5',
     marginLeft: 5,
-    shadowColor: 'rgba(0, 0, 0, 0.15)',
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
   },
   fullBodyButtons: {
     borderColor: 'black',
@@ -121,11 +122,6 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: '#BBE0B7',
     marginLeft: 5,
-    shadowColor: 'rgba(0, 0, 0, 0.15)',
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
   },
   upperBodyButtons: {
     borderColor: 'black',
@@ -136,11 +132,6 @@ const styles = StyleSheet.create({
     width: 100,
     backgroundColor: '#52796F',
     marginLeft: 5,
-    shadowColor: 'rgba(0, 0, 0, 0.15)',
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
   },
   workoutContainer: {
     flexDirection: 'row',
@@ -159,11 +150,6 @@ const styles = StyleSheet.create({
     width: 250,
     marginTop: 15,
     backgroundColor: '#172A3A',
-    shadowColor: 'rgba(0, 0, 0, 0.15)',
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
   },
   buttonText: {
     fontSize: 20,
