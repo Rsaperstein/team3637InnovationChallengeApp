@@ -6,6 +6,7 @@ import CommunityScreen from './screens/CommunityScreen';
 import ProgressBar from './screens/ProgressBar'
 import ProfileScreen from './screens/ProfileScreen';
 import InputScreen from './screens/InputScreen';
+import ExerciseInputScreen from './screens/ExerciseInputScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name="Profile" component={ProfileScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="ProgressBar" component={ProgressBar} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Input" component={InputScreen} options={{title: 'Fitness-Link'}} />
+        <Stack.Screen name="ExerciseInput" component={ExerciseInputScreen} options={{title: 'Fitness-Link'}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
