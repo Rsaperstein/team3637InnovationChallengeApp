@@ -26,31 +26,52 @@ const width = animation.current.interpolate({
 
 export default class ProgressBar extends React.Component {
 
- render() { 
-   return (
-  <View style={styles.container}>
-  <Text>
-    Loading.....
-  </Text>
-  <View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<Text>27%</Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<Text>27</Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<Text>27</Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<Text>27%</Text>
-</View>
- );
-}
+  render() { 
+    return (
+      <View style={styles.container}>
+        <Text>
+          Loading.....
+        </Text>
+
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentU}>
+            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
+
+        <Text>27%</Text>
+
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentD}>
+            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
+
+        <Text>27</Text>
+
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentT}>
+            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
+
+        <Text>27</Text>
+
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentC}>
+            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
+
+        <Text>27%</Text>
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -69,5 +90,39 @@ const styles = StyleSheet.create({
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
+},
+PercentU: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentD: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentT: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentC: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
 }
 });
+
+ 

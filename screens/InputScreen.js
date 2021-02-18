@@ -11,7 +11,65 @@ export default class InputScreen extends React.Component {
         return (
             <View style={{ flex: 1,}}>
                 <ScrollView style={{backgroundColor: Colors.white}}>
-                    
+                    <View style={styles.container}>
+                        <View style={styles.logoContainer}>      
+                            <Image 
+                                source={require('../assets/flLogoTransparent.png')}
+                                style={styles.logo} />
+                        </View>
+
+                        <View style={styles.circleContainer}>
+                            <View style={styles.circle}>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                    <Text style={{color: Colors.white}}>
+                                        S
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.circle}>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                    <Text style={{color: Colors.white}}>
+                                        P
+                                    </Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+
+                    <View style={styles.questionContainer}>
+                        <Text style={styles.questionText}>
+                            What would you like to input?
+                        </Text>
+                    </View>
+
+                    <View style={styles.inputButtonContainer}>
+                        <TouchableOpacity>
+                            <View style={styles.exerciseButton}>
+                                <Text style={[styles.inputButtonText]}>
+                                    Exercise
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={styles.sleepButton}>
+                                <Text style={[styles.inputButtonText]}>
+                                    Sleep
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity>
+                            <View style={styles.waterButton}>
+                                <Text style={[styles.inputButtonText]}>
+                                    Water
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+
+
+
                 </ScrollView>       
 
                 <View style={styles.horizontalRule} />
