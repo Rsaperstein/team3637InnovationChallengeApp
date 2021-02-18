@@ -34,21 +34,30 @@ export default class ProgressBar extends React.Component {
   </Text>
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentU}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
 </View>
-<View style={styles.Percent}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
 <Text>27%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentD}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
 </View>
 <Text>27</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentT}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
 </View>
 <Text>27</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentC}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+  </View>
 </View>
 <Text>27%</Text>
 </View>
@@ -72,19 +81,32 @@ const styles = StyleSheet.create({
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
-}
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#86c0fo',
-    padding: 8,
-  },
-Percent: {
+},
+PercentU: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentD: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentT: {
+  height: 20,
+  width: 164,
+  backgroundColor: 'white',
+  borderColor: '#000',
+  borderWidth: 2,
+  borderRadius: 5,
+},
+PercentC: {
   height: 20,
   width: 164,
   backgroundColor: 'white',
@@ -93,3 +115,5 @@ Percent: {
   borderRadius: 5,
 }
 });
+
+ 
