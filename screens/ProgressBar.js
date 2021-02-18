@@ -34,10 +34,11 @@ export default class ProgressBar extends React.Component {
   </Text>
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-</View>
-<View style={styles.Percent}>
+  <View style={styles.Percent}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
 </View>
+</View>
+
 <Text>27%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
@@ -72,18 +73,8 @@ const styles = StyleSheet.create({
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
-}
-});
+},
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#86c0fo',
-    padding: 8,
-  },
 Percent: {
   height: 20,
   width: 164,
