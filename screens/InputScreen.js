@@ -20,45 +20,30 @@ export default class InputScreen extends React.Component {
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/house.png')} style={styles.image} />
-                            <Text  style={[styles.bottomTabText]}>
-                                Home
-                            </Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/bullseye.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Botttom Nav 2
-                            </Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/plus.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Input Exercise
-                            </Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/notificationBell.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Notifications
-                            </Text>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
                         <View style={[styles.bottomTabButton]}>
                             <Image source={require('../assets/group.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Communities
-                            </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
