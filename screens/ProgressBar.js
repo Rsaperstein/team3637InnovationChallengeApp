@@ -34,6 +34,7 @@ export default class ProgressBar extends React.Component {
   </Text>
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <Animated.View style={[StyleSheet.fill(50)], {backgroundColor: "#FFFFFF"}}/>
 </View>
 <Text>27%</Text>
 <View style={styles.ProgressBar}>
