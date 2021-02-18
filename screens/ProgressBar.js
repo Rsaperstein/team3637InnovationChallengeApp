@@ -26,52 +26,46 @@ const width = animation.current.interpolate({
 
 export default class ProgressBar extends React.Component {
 
-  render() { 
-    return (
-      <View style={styles.container}>
-        <Text>
-          Loading.....
-        </Text>
+ render() { 
+   return (
+  <View style={styles.container}>
+  <Text>
+    Loading.....
+  </Text>
+  <View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentU}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
+</View>
 
-        <View style={styles.ProgressBar}>
-          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-          <View style={styles.PercentU}>
-            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-          </View>
-        </View>
+<Text>27%</Text>
+<View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentD}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
+</View>
 
-        <Text>27%</Text>
+<Text>27</Text>
+<View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentT}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
+</View>
 
-        <View style={styles.ProgressBar}>
-          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-          <View style={styles.PercentD}>
-            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-          </View>
-        </View>
-
-        <Text>27</Text>
-
-        <View style={styles.ProgressBar}>
-          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-          <View style={styles.PercentT}>
-            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-          </View>
-        </View>
-
-        <Text>27</Text>
-
-        <View style={styles.ProgressBar}>
-          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-          <View style={styles.PercentC}>
-            <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-          </View>
-        </View>
-
-        <Text>27%</Text>
-
-      </View>
-    );
-  }
+<Text>27</Text>
+<View style={styles.ProgressBar}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+  <View style={styles.PercentC}>
+  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+</View>
+</View>                    
+<Text>27%</Text>
+</View>
+ );
+}
 }
 
 const styles = StyleSheet.create({
@@ -81,7 +75,7 @@ const styles = StyleSheet.create({
    alignItems: 'flex-start',
    paddingTop: Constants.statusBarHeight,
    backgroundColor: '#ecf0f1',
-   padding: 8,
+   padding: 20,
  },
  ProgressBar: {
   height: 20,
@@ -94,7 +88,7 @@ const styles = StyleSheet.create({
 PercentU: {
   height: 20,
   width: 164,
-  backgroundColor: 'white',
+  backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -102,7 +96,7 @@ PercentU: {
 PercentD: {
   height: 20,
   width: 164,
-  backgroundColor: 'white',
+  backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -110,7 +104,7 @@ PercentD: {
 PercentT: {
   height: 20,
   width: 164,
-  backgroundColor: 'white',
+  backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -118,7 +112,7 @@ PercentT: {
 PercentC: {
   height: 20,
   width: 164,
-  backgroundColor: 'white',
+  backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
