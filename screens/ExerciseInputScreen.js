@@ -12,7 +12,12 @@ export default class ExerciseInputScreen extends React.Component {
         return (
             <View style={{ flex: 1,}}>
                 <ScrollView style={{backgroundColor: Colors.white}}>
-                    
+                    <View style={styles.inputExerciseContainer}>
+                        <Text style={styles.inputText}>
+                            Input Exercise
+                        </Text>
+                    </View>
+                
                 </ScrollView>       
 
                 <View style={tabBarStyles.horizontalRule} />
@@ -60,58 +65,28 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
       },
-    
-      logo: {
-        width: 75,
-        height: 75,
-      },
-    
-      logoContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        backgroundColor: Colors.white,
-        width: windowWidth / 2,
-        marginLeft: 10,
-        marginTop: 10,
-      },
-    
-      circleContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        backgroundColor: Colors.white,
-        width: windowWidth / 2,
-        marginRight: 10,
-        marginTop: 10,
-      },
-    
-      circle: {
-        width: (windowWidth / 16),
-        height: (windowWidth / 16),
-        borderRadius: (windowWidth / 32),
-        backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: (windowWidth / 90),
-        marginTop: (windowHeight / 200),
-      },
-
-    questionContainer: {
+        
+    inputExerciseContainer: {
         width: windowWidth,
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20,
     },
 
-    questionText: {
-        fontSize: 22,
+    inputText: {
+        fontSize: 30,
         marginBottom: 20,
+        fontWeight: 'bold',
     },
 
-    inputButtonContainer: {
+    questionContainer: {
         alignItems: 'center',
         justifyContent: 'center',
+    },
+
+    questionText: {
+        fontSize: 20,
+        marginBottom: 20,
     },
 
     exerciseButton: {
