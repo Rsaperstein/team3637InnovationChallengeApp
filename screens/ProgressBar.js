@@ -39,7 +39,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27%</Text>
+<Text>65%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentD}>
@@ -47,7 +47,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27</Text>
+<Text>52%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentT}>
@@ -55,7 +55,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27</Text>
+<Text>83%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentC}>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 PercentU: {
   height: 20,
   width: 248,
-  backgroundColor: 'cyan',
+  backgroundColor: '#172A3A',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -96,7 +96,7 @@ PercentU: {
 PercentD: {
   height: 20,
   width: 197,
-  backgroundColor: 'cyan',
+  backgroundColor: '#172A3A',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -104,7 +104,7 @@ PercentD: {
 PercentT: {
   height: 20,
   width: 97,
-  backgroundColor: 'cyan',
+  backgroundColor: '#172A3A',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -112,7 +112,7 @@ PercentT: {
 PercentC: {
   height: 20,
   width: 314,
-  backgroundColor: 'cyan',
+  backgroundColor: '#172A3A',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
