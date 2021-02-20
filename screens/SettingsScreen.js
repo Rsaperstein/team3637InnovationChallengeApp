@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: (windowWidth/1.2),
     fontSize: 32,
+    marginTop: 10,
   },
   privacyButton: {
     color: 'black',
