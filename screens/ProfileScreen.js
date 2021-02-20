@@ -13,15 +13,15 @@ export default class Profile extends React.Component{
       <Text style={styles.Username}>Username            _______</Text>
       <Text style={styles.email}>Email                   _______</Text>
       <Text style={styles.dateJoined}>Joined on            _______</Text>
-      <View style={styles.setting}></View>
       <TouchableOpacity 
         style={styles.editsurvey}
         onPress={()=>
         this.props.navigation.navigate('Survey Screen')}
       >
-        <Text style={{alignSelf:'center',fontSize:20}}>Edit Survey Answers</Text>
+        <Text style={{alignSelf:'center',fontSize:25}}>Edit Survey Answers</Text>
       </TouchableOpacity>
-      <View style={styles.setting}></View>
+      <View style={styles.setting}>
+      </View>
       <TouchableOpacity 
         style={styles.setting}
         onPress={()=>
@@ -36,7 +36,7 @@ export default class Profile extends React.Component{
         onPress={()=>
         this.props.navigation.navigate('customize')}
       >
-        <Text style={{textAlign:'center',fontSize:19}}>Change Accessories</Text>
+        <Text style={{textAlign:'center',fontSize:25}}>Change Accessories</Text>
       </TouchableOpacity>
       </View>
       </View>
@@ -50,12 +50,10 @@ const styles = StyleSheet.create({
     flex:1, 
   },
   line:{
-    top: H/5.5,
+    top: H/7,
     height:H/120,
     width:W,
     backgroundColor:'black',
-  },
-  circleContainer:{
   },
   Profile:{
     fontSize:27,
@@ -83,8 +81,8 @@ const styles = StyleSheet.create({
   },
   circle:{
   top:H/20,
-  width: H/6,
-  height: H/6,
+  width: H/7,
+  height: H/7,
   backgroundColor: 'gray',
   alignSelf:'center',
   borderTopColor:'black',
@@ -94,7 +92,7 @@ const styles = StyleSheet.create({
   setting:{
     position:"absolute",
     textAlign: 'center',
-    top:H/5,
+    top:H/6,
     right: W/100,
     borderTopColor:'black',
     borderColor:'black',
@@ -102,6 +100,7 @@ const styles = StyleSheet.create({
     width:W/6,
     height: W/6,
     borderRadius: W/6,
+    backgroundColor:''
   },
   editsurvey:{
   width: W/1.75,
@@ -109,6 +108,7 @@ const styles = StyleSheet.create({
   borderRadius: W/10,
   backgroundColor: 'lime',
   alignSelf: 'center',
+  alignItems: 'center',
   },
   boxcontainer:{
     flex: 1,
@@ -118,11 +118,11 @@ const styles = StyleSheet.create({
     width: W,
   },
   cat:{
-  width:W/2,
+  width:W/1.55,
   height:H/3,
   borderRadius:W/10,
   backgroundColor:'black',
-  marginRight:10,
+  marginRight:5,
   },
   changeaccesories:{
     width:W/3,
