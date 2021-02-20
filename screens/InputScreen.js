@@ -35,25 +35,25 @@ export default class InputScreen extends React.Component {
                 <View style={{ flex: 1,}}>
                     <ScrollView style={{backgroundColor: Colors.white}}>
                         <View style={styles.container}>
-                            <View style={styles.logoContainer}>      
+                            <View style={universalStyles.logoContainer}>      
                                 <Image
                                     source={require('../assets/flLogoTransparent.png')}
-                                    style={styles.logo} />
+                                    style={universalStyles.logo} />
                             </View>
 
-                            <View style={styles.circleContainer}>
-                                <View style={styles.circle}>
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                                        <Text style={{color: Colors.white}}>
-                                            S
-                                        </Text>
+                            <View style={universalStyles.circleContainer}>
+                                <View style={universalStyles.circle}>
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                        <Image 
+                                            source={require('../assets/shop.png')}
+                                            style={universalStyles.circleLogos} />
                                     </TouchableOpacity>
                                 </View>
-                                <View style={styles.circle}>
+                                <View style={universalStyles.circle}>
                                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                                        <Text style={{color: Colors.white}}>
-                                            P
-                                        </Text>
+                                        <Image 
+                                        source={require('../assets/profile.png')}
+                                        style={universalStyles.circleLogos} />
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -141,43 +141,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
       },
-    
-      logo: {
-        width: 75,
-        height: 75,
-      },
-    
-      logoContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        backgroundColor: Colors.white,
-        width: windowWidth / 2,
-        marginLeft: 10,
-        marginTop: 10,
-      },
-    
-      circleContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        backgroundColor: Colors.white,
-        width: windowWidth / 2,
-        marginRight: 10,
-        marginTop: 10,
-      },
-    
-      circle: {
-        width: (windowWidth / 16),
-        height: (windowWidth / 16),
-        borderRadius: (windowWidth / 32),
-        backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: (windowWidth / 90),
-        marginTop: (windowHeight / 200),
-      },
-
+        
     questionContainer: {
         width: windowWidth,
         justifyContent: 'center',

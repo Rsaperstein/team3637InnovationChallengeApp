@@ -37,10 +37,10 @@ export default class HomeScreen extends React.Component {
           <View style={{ flex: 1}}>
               <ScrollView style={{backgroundColor: Colors.white, flex: .8}}>
                   <View style={styles.container}>
-                      <View style={styles.logoContainer}>      
+                      <View style={universalStyles.logoContainer}>      
                           <Image 
                               source={require('../assets/flLogoTransparent.png')}
-                              style={styles.logo} />
+                              style={universalStyles.logo} />
                       </View>
 
                       <View style={universalStyles.circleContainer}>
@@ -169,21 +169,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-  },
-
-  logo: {
-    width: windowWidth / 6,
-    height: windowWidth / 6,
-  },
-
-  logoContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    backgroundColor: Colors.white,
-    width: windowWidth / 2,
-    marginLeft: 10,
-    marginTop: 10,
   },
 
   bannerContainer: {

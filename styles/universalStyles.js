@@ -77,5 +77,20 @@ export default StyleSheet.create({
     circleLogos: {
       resizeMode: 'contain',
       transform: [{ scale: 0.3 }]
-    }
+    },
+
+    logo: {
+      width: windowWidth / 6,
+      height: windowWidth / 6,
+    },
+  
+    logoContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      backgroundColor: Colors.white,
+      width: windowWidth / 2,
+      marginLeft: 10,
+      marginTop: 10,
+    },
 });
