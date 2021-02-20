@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
 },
 PercentU: {
   height: 20,
-  width: 164,
+  width: 248,
   backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
@@ -95,7 +95,7 @@ PercentU: {
 },
 PercentD: {
   height: 20,
-  width: 164,
+  width: 197,
   backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
@@ -103,7 +103,7 @@ PercentD: {
 },
 PercentT: {
   height: 20,
-  width: 164,
+  width: 97,
   backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
@@ -111,7 +111,7 @@ PercentT: {
 },
 PercentC: {
   height: 20,
-  width: 164,
+  width: 314,
   backgroundColor: 'blue',
   borderColor: '#000',
   borderWidth: 2,
