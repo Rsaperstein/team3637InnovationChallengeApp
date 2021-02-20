@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 PercentU: {
   height: 20,
   width: 248,
-  backgroundColor: '#172A3A',
+  backgroundColor: '#7ca6e5',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -96,7 +96,7 @@ PercentU: {
 PercentD: {
   height: 20,
   width: 197,
-  backgroundColor: '#172A3A',
+  backgroundColor: '#7ca6e5',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -104,7 +104,7 @@ PercentD: {
 PercentT: {
   height: 20,
   width: 97,
-  backgroundColor: '#172A3A',
+  backgroundColor: '#7ca6e5',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
@@ -112,7 +112,7 @@ PercentT: {
 PercentC: {
   height: 20,
   width: 314,
-  backgroundColor: '#172A3A',
+  backgroundColor: '#7ca6e5',
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
