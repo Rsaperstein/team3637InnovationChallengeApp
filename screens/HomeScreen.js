@@ -37,6 +37,14 @@ export default class HomeScreen extends React.Component {
                     </View>
                 </View>
 
+                <View>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
+                    <Text>
+                      Link to settings
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
                 <View style={styles.bannerContainer}>
                     <Text style={styles.bannerTitleText}>
                         Walk Across the Country Event
