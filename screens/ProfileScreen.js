@@ -1,46 +1,57 @@
 import React from 'react';
-import { Platform, StyleSheet, View, Text, TouchableOpacity, Dimensions} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Dimensions, Image } from 'react-native';
+import universalStyles from '../styles/universalStyles';
+import Colors from '../constants/Colors';
+
 const W = Dimensions.get('window').width;
 const H = Dimensions.get('window').height;
 export default class Profile extends React.Component{
   render() {
     return (      
       <View style={styles.container}>
-      <View style={styles.line}></View>
-      <View style={styles.circle}></View>
-      <Text style={styles.Profile}>Profile</Text>
-      <Text style={styles.Name}>Name                   _______</Text>
-      <Text style={styles.Username}>Username            _______</Text>
-      <Text style={styles.email}>Email                   _______</Text>
-      <Text style={styles.dateJoined}>Joined on            _______</Text>
-      <TouchableOpacity 
-        style={styles.editsurvey}
-        onPress={()=>
-        this.props.navigation.navigate('SurveyScreen.js')}
-      >
-        <Text style={{alignSelf:'center',fontSize:25}}>Edit Survey Answers</Text>
-      </TouchableOpacity>
-      <View style={styles.setting}>
-      </View>
-      <TouchableOpacity 
-        style={styles.setting}
-        onPress={()=>
-        this.props.navigation.navigate('SettingsScreen.js')}
-      >
-        <Text></Text>
-      </TouchableOpacity>
-      <View style={styles.boxcontainer}>
-      <View style={styles.cat}></View>
-      <TouchableOpacity 
-        style={styles.changeaccesories}
-        onPress={()=>
-        this.props.navigation.navigate('customize')}
-      >
-        <Text style={{textAlign:'center',fontSize:25}}>Change Accessories</Text>
-      </TouchableOpacity>
-      </View>
-      </View>
-              
+        <View style={styles.line} />
+        <View style={styles.circle} />
+        <Text style={styles.Profile}>
+          Profile
+        </Text>
+        <Text style={styles.Name}>
+          Name                   _______
+        </Text>
+        <Text style={styles.Username}>
+          Username            _______</Text>
+        <Text style={styles.email}>
+          Email                   _______
+        </Text>
+        <Text style={styles.dateJoined}>
+          Joined on            _______
+        </Text>
+      
+        <TouchableOpacity 
+          style={styles.editsurvey}
+          onPress={()=> this.props.navigation.navigate('SurveyScreen.js')}>
+          <Text style={{alignSelf:'center',fontSize:25}}>
+            Edit Survey Answers
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.setting} />
+
+        <TouchableOpacity 
+          style={styles.setting}
+          onPress={()=> this.props.navigation.navigate('Settings')}>
+          <Image 
+            source={require('../assets/settingsWheel.png')}
+            style={universalStyles.circleLogos} />
+        </TouchableOpacity>
+        
+        <View style={styles.boxcontainer}>
+          <View style={styles.cat} />
+          <TouchableOpacity 
+            style={styles.changeaccesories}
+            onPress={()=> this.props.navigation.navigate('customize')}>
+            <Text style={{textAlign:'center',fontSize:25}}>Change Accessories</Text>
+          </TouchableOpacity>
+        </View>
+      </View>        
     );
   }
 }
@@ -100,6 +111,7 @@ const styles = StyleSheet.create({
     width:W/6,
     height: W/6,
     borderRadius: W/6,
+    backgroundColor: 'black',
   },
   editsurvey:{
   width: W/1.75,

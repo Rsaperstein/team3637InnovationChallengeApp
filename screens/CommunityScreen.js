@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, TextInput, TouchableHighlight} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import tabBarStyles from '../styles/TabBarStyles';
+import universalStyles from '../styles/universalStyles';
 import Colors from '../constants/Colors';
 
 
@@ -25,15 +25,15 @@ export default class Community extends React.Component {
         return (
             <View style={{ flex: 1,}}>
               <View style={styles.container}>           
-                <View style={tabBarStyles.fullScreenCircleContainer}>
-                  <View style={tabBarStyles.circle}>
+                <View style={universalStyles.fullScreenCircleContainer}>
+                  <View style={universalStyles.circle}>
                   <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
                           <Text style={{color: Colors.white}}>
                               S
                           </Text>
                       </TouchableOpacity>
                   </View>
-                  <View style={tabBarStyles.circle}>
+                  <View style={universalStyles.circle}>
                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
                           <Text style={{color: Colors.white}}>
                               P
@@ -109,36 +109,36 @@ export default class Community extends React.Component {
                     </ScrollView>
                     
 
-              <View style={tabBarStyles.horizontalRule} />
+              <View style={universalStyles.horizontalRule} />
 
-              <View style={tabBarStyles.bottomTabContainer}>
+              <View style={universalStyles.bottomTabContainer}>
                   <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-                      <View style={[tabBarStyles.bottomTabButton]}>
-                          <Image source={require('../assets/house.png')} style={tabBarStyles.icon} />
+                      <View style={[universalStyles.bottomTabButton]}>
+                          <Image source={require('../assets/house.png')} style={universalStyles.icon} />
                       </View>
                       </TouchableOpacity>
 
                       <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-                          <View style={[tabBarStyles.bottomTabButton]}>
-                              <Image source={require('../assets/bullseye.png')} style={tabBarStyles.icon} />
+                          <View style={[universalStyles.bottomTabButton]}>
+                              <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
                           </View>
                       </TouchableOpacity>
 
                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
-                          <View style={[tabBarStyles.bottomTabButton]}>
-                              <Image source={require('../assets/plus.png')} style={tabBarStyles.icon} />
+                          <View style={[universalStyles.bottomTabButton]}>
+                              <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
                           </View>
                       </TouchableOpacity>
 
                       <TouchableOpacity>
-                          <View style={[tabBarStyles.bottomTabButton]}>
-                              <Image source={require('../assets/notificationBell.png')} style={tabBarStyles.icon} />
+                          <View style={[universalStyles.bottomTabButton]}>
+                              <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
                           </View>
                       </TouchableOpacity>
 
                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-                          <View style={[tabBarStyles.bottomTabButton]}>
-                              <Image source={require('../assets/group.png')} style={tabBarStyles.icon} />
+                          <View style={[universalStyles.bottomTabButton]}>
+                              <Image source={require('../assets/group.png')} style={universalStyles.icon} />
                           </View>
                       </TouchableOpacity>
               </View>

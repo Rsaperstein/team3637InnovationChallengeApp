@@ -44,7 +44,9 @@ export default class ExerciseScreen extends React.Component {
   
 
     <View style={styles.workoutContainer}>
-      <TouchableOpacity style={styles.upperBodyButtons}>
+      <TouchableOpacity 
+        style={styles.upperBodyButtons}
+        onPress={() => this.props.navigation.navigate('UpperBodyExercises')}>
         <Text style={styles.exerciseButtonText}>
           Upper Body
         </Text> 

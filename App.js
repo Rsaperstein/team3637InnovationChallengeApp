@@ -10,6 +10,7 @@ import ExerciseInputScreen from './screens/ExerciseInputScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ExerciseScreen from './screens/ExerciseScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
+import UpperBodyExercies from './screens/UpperBodyExercises';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ export default function App() {
         <Stack.Screen name="ExerciseInput" component={ExerciseInputScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Settings" component={SettingsScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Exercise" component={ExerciseScreen} options={{title: 'Fitness-Link'}} />
+        <Stack.Screen name="UpperBodyExercises" component={UpperBodyExercies} options={{title: 'Fitness-Link'}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

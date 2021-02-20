@@ -73,4 +73,9 @@ export default StyleSheet.create({
       marginLeft: (windowWidth / 90),
       marginTop: (windowHeight / 200),
     },
+
+    circleLogos: {
+      resizeMode: 'contain',
+      transform: [{ scale: 0.3 }]
+    }
 });

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
-import Constants from 'expo-constants';
-import tabBarStyles from '../styles/TabBarStyles';
+import universalStyles from '../styles/universalStyles';
 import Colors from '../constants/Colors';
 
 const windowWidth = Dimensions.get("window").width;
@@ -12,15 +11,15 @@ export default class SettingsScreen extends React.Component {
   return (
     <View style={styles.container}>
 
-      <View style={tabBarStyles.fullScreenCircleContainer}>
-        <View style={tabBarStyles.circle}>
+      <View style={universalStyles.fullScreenCircleContainer}>
+        <View style={universalStyles.circle}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
             <Text style={{color: Colors.white}}>
               S
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={tabBarStyles.circle}>
+        <View style={universalStyles.circle}>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
             <Text style={{color: Colors.white}}>
               P
