@@ -5,6 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, TextInput, TouchableHighlight} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import tabBarStyles from '../styles/TabBarStyles';
+import Colors from '../constants/Colors';
+
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -20,22 +23,24 @@ export default class Community extends React.Component {
   
     render() {
         return (
-            <ScrollView style={styles.ScrollView}>
-             <View style={styles.container}>
-                  <Text style={styles.appHeader}>Fitness-Link</Text>
-                
-
-              <TouchableOpacity>
-                <View style={styles.dollarCircle}>
-                  <Text style={styles.iconText}>$</Text>
-                </View>
-              </TouchableOpacity>
-                
-              <TouchableOpacity>
-                <View style={styles.profileCircle}>
-                  <Text style={styles.iconText}>P</Text>
-                </View>
-              </TouchableOpacity>
+            <View style={{ flex: 1,}}>
+              <View style={styles.container}>           
+                <View style={tabBarStyles.fullScreenCircleContainer}>
+                  <View style={tabBarStyles.circle}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                          <Text style={{color: Colors.white}}>
+                              S
+                          </Text>
+                      </TouchableOpacity>
+                  </View>
+                  <View style={tabBarStyles.circle}>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                          <Text style={{color: Colors.white}}>
+                              P
+                          </Text>
+                      </TouchableOpacity>
+                  </View>
+              </View>
 
                 <StatusBar style="auto" />
 
@@ -104,57 +109,41 @@ export default class Community extends React.Component {
                     </ScrollView>
                     
 
-                      <View style={styles.horizontalRule} />
-                          
-            <View style={styles.bottomTabContainer}>
-                  <TouchableOpacity>
-                      <View style={[styles.bottomTabButton]}>
-                        <Image source={require('../assets/house.png')} style={styles.image} />
-                          <Text  style={[styles.bottomTabText]}>
-                              Home
-                          </Text>
+              <View style={tabBarStyles.horizontalRule} />
+
+              <View style={tabBarStyles.bottomTabContainer}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                      <View style={[tabBarStyles.bottomTabButton]}>
+                          <Image source={require('../assets/house.png')} style={tabBarStyles.icon} />
                       </View>
-                    </TouchableOpacity>
+                      </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/flag.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Botttom Nav 2
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/bullseye.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/plus.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Input Exercise
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/plus.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
 
-                    <TouchableOpacity>
-                        <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/notificationBell.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Notifications
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                      <TouchableOpacity>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/notificationBell.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-                        <View style={[styles.bottomTabButton]}>
-                            <Image source={require('../assets/group.png')} style={styles.image} />
-                            <Text style={[styles.bottomTabText]}>
-                                Communities
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/group.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
               </View>
-
-              </View>
-            </ScrollView>
+          </View>
+            </View>
 
         );
     }  
@@ -182,53 +171,18 @@ iconText: {
   fontSize: 20, 
   color: 'white'
 },
-bottomTabContainer: {
-  position: 'relative',
-  bottom: 15,
-  flexDirection: 'row',
-  alignItems: 'flex-end',
-  display: 'flex',
-},
-bottomTabButton: {
-  width: (windowWidth / 6),
-  height: (windowHeight / 16),
-  margin: 4,
-  textAlign: "center",
-  alignContent: 'center',
-  justifyContent: "center",
-  alignItems: 'center',
-  borderRadius: 8,
-},
-bottomTabText: {
-  position: 'absolute',
-  bottom: 0,
-  fontSize: windowWidth / 50,
-},
-image: {
-  resizeMode: 'contain',
-  borderRadius: 10,
-  paddingBottom: 10
-},
-horizontalRule: {
-    position: 'absolute',
-    bottom: ((windowHeight / 16) + 15),
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    width: windowWidth,
-},
+
 appHeader: {
   position: 'absolute',
   top: 0,
   fontSize: 30,
   marginLeft: 20,
   color: 'rgb(30, 30, 36)',
-  fontFamily: 'Times New Roman',
   width: 200,
 }, 
 communityHeader: {
   fontSize: 30,
   color: 'rgb(30, 30, 36)',
-  fontFamily: 'Times New Roman', 
   alignSelf: 'flex-end',
   marginTop: 50,
   marginRight: 30,
@@ -282,7 +236,7 @@ buttonJoinContainer: {
   position: 'absolute',
   right: windowWidth / 12.5,
   top: windowHeight / 11,
-  marginTop: 20,
+  marginTop: 30,
 },
 recommendText: {
   fontSize: 20,
@@ -349,7 +303,7 @@ createButton: {
   position: 'absolute',
   right: windowWidth / 2.9,
   top: windowHeight / 11,
-  marginTop: 20,
+  marginTop: 30,
 },
 communityContainer1: {
   alignItems: 'center', 
