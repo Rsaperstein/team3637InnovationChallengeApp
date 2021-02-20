@@ -37,14 +37,6 @@ export default class HomeScreen extends React.Component {
                     </View>
                 </View>
 
-                <View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-                    <Text>
-                        Button to Progress Bar
-                    </Text>
-                </TouchableOpacity> 
-                </View>
-
                 <View style={styles.bannerContainer}>
                     <Text style={styles.bannerTitleText}>
                         Walk Across the Country Event
@@ -112,7 +104,7 @@ export default class HomeScreen extends React.Component {
                     </View>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
                         <View style={[tabBarStyles.bottomTabButton]}>
                             <Image source={require('../assets/bullseye.png')} style={tabBarStyles.icon} />
                         </View>
