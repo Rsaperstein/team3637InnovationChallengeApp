@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Text, View, StyleSheet, Animated } from 'react-native';
+import { Text, View, StyleSheet, Animated, TouchableOpacity, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
 
 //Progress Bar 1 (To get more, Copy and Paste from here)
 function useIntervalOne(callback, delay) {
@@ -29,8 +32,8 @@ export default class ProgressBar extends React.Component {
  render() { 
    return (
   <View style={styles.container}>
-  <Text>
-    Loading.....
+  <Text style={styles.heading}>
+    Track Your Progress
   </Text>
   <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
@@ -39,7 +42,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>65%</Text>
+<Text style={styles.goalText}>Goal: </Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentD}>
@@ -47,7 +50,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>52%</Text>
+<Text style={styles.goalText}>Goal: </Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentT}>
@@ -55,14 +58,18 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>83%</Text>
+<Text style={styles.goalText}>Goal: </Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentC}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
 </View>
 </View>                    
-<Text>27%</Text>
+<Text style={styles.goalText}>Goal: </Text>
+
+<TouchableOpacity style={styles.goalButton}>
+  <Text style={styles.goalButtonText}>Set New Goal</Text>
+</TouchableOpacity>
 </View>
  );
 }
@@ -74,7 +81,7 @@ const styles = StyleSheet.create({
    justifyContent: 'center',
    alignItems: 'flex-start',
    paddingTop: Constants.statusBarHeight,
-   backgroundColor: '#ecf0f1',
+   backgroundColor: 'white',
    padding: 20,
  },
  ProgressBar: {
@@ -84,6 +91,7 @@ const styles = StyleSheet.create({
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
+  marginTop: 30
 },
 PercentU: {
   height: 20,
@@ -116,6 +124,29 @@ PercentC: {
   borderColor: '#000',
   borderWidth: 2,
   borderRadius: 5,
+},
+goalText: {
+  marginTop: 10,
+  fontSize: 22,
+  fontWeight: '600'
+},
+heading: {
+  textAlign: 'center',
+  fontSize: 32, 
+  fontWeight: 'bold'
+},
+goalButton: {
+  backgroundColor: '#172A3A',
+  justifyContent: 'center',
+  borderRadius: 15, 
+  width: windowWidth / 2, 
+  height: windowHeight / 12, 
+  marginTop: 25, 
+},
+goalButtonText: {
+  color: 'white',
+  fontSize: 32,
+  textAlign: 'center'
 }
 });
 
