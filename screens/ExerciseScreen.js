@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
+    backgroundColor: 'white',
     padding: 8,
     alignItems: 'center'
   },
@@ -138,7 +138,9 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   workoutContainer: {
-    flexDirection: 'row',
+    position: 'absolute',
+    top: 0,
+    backgroundColor: 'black'
   },
   stretchContainer: {
     flexDirection: 'row',
