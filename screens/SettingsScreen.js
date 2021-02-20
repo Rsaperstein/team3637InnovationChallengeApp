@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Constants from 'expo-constants';
+import tabBarStyles from '../styles/TabBarStyles';
+import Colors from '../constants/Colors';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -10,18 +12,22 @@ export default class SettingsScreen extends React.Component {
   return (
     <View style={styles.container}>
 
-
-    <View style={styles.dollarCircle}>
-      <TouchableOpacity>
-        <Text style={styles.dollarText}>$</Text>
-      </TouchableOpacity>
-    </View>
-
-    <View style={styles.personCircle}>
-      <TouchableOpacity>
-        <Text style={styles.personText}>P</Text>
-      </TouchableOpacity>
-    </View>
+      <View style={tabBarStyles.fullScreenCircleContainer}>
+        <View style={tabBarStyles.circle}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+            <Text style={{color: Colors.white}}>
+              S
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={tabBarStyles.circle}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+            <Text style={{color: Colors.white}}>
+              P
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
 
       <View style={styles.settingsContainer}>
         <TouchableOpacity>
@@ -62,9 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
+    backgroundColor: Colors.white,
   },
   disclaimerParagraph: {
     textAlign: 'center',
