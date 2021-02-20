@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 10,
     borderRadius: 15,
-    width: (windowWidth/1.0005),
+    width: (windowWidth/1.2),
     fontSize: 32,
   },
   privacyButton: {
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 10,
     borderRadius: 15,
-    width: (windowWidth/1.0005),
+    width: (windowWidth/1.2),
     fontSize: 30
   },
   dollarCircle: {
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     top: 5,
     right: 20,
     backgroundColor: 'navy',
-    width: 30,
+    width: (windowWidth/8),
     height: (windowWidth/8),
     borderRadius: 15,
     alignItems: 'center',
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     right: 60,
     backgroundColor: 'navy',
     width: (windowWidth/8),
-    height: 30,
+    height: (windowWidth/8),
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
