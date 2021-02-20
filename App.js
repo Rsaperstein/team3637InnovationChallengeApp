@@ -15,10 +15,6 @@ import UpperBodyExercies from './screens/UpperBodyExercises';
 
 const Stack = createStackNavigator();
 
-let customFonts = {
-  'Oswald-Medium': require('./assets/fonts/Oswald-Medium.ttf'),
-};
-
 // UNLESS A HEADER HEIGHT IS SPECIFIED FOR ALL SCREENS, REMOVE IT FROM THE HOME SCREEN STACK BEFORE DEPLOYMENT
 
 export default function App() {
