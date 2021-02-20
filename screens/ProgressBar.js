@@ -39,7 +39,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27%</Text>
+<Text>65%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentD}>
@@ -47,7 +47,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27</Text>
+<Text>52%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentT}>
@@ -55,7 +55,7 @@ export default class ProgressBar extends React.Component {
 </View>
 </View>
 
-<Text>27</Text>
+<Text>83%</Text>
 <View style={styles.ProgressBar}>
   <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
   <View style={styles.PercentC}>
