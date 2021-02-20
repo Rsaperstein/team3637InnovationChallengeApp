@@ -39,7 +39,7 @@ export default class SettingsScreen extends React.Component {
 
     <TouchableOpacity>
       <Text style={styles.privacyButton}>
-          Privacy Agreement  
+          Privacy Center
       </Text>
     </TouchableOpacity>
 
