@@ -23,13 +23,13 @@ export default class SettingsScreen extends React.Component {
       </TouchableOpacity>
     </View>
 
-      <View style={styles.settingsContainer}>
-        <TouchableOpacity>
+      
+        <TouchableOpacity style={styles.settingsContainer}>
           <Text style={styles.settingsButton}>
             Privacy Center
           </Text>
         </TouchableOpacity>
-      </View>
+     
 
     <TouchableOpacity>
       <Text style={styles.termsButton}>
@@ -77,24 +77,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#7CA6E5',
     textAlign: 'center',
     padding: 10,
-    borderRadius: 15,
     width: 300,
     fontSize: 32,
     marginBottom: 16,
     marginTop: 4,
   },
   settingsContainer: {
+    borderRadius: 15,
     alignItems: 'center',
     position: 'absolute',
-    top: 50
+    top: 50, 
   },
   settingsButton: {
     color: 'white',
     backgroundColor: '#172A3A',
     textAlign: 'center',
     padding: 10,
-    borderRadius: 15,
-    width: (windowWidth/1.2),
+    width: windowWidth / 1.2,
     fontSize: 32,
     marginTop: 10,
   },
@@ -103,8 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#BBE0B7',
     textAlign: 'center',
     padding: 10,
-    borderRadius: 15,
-    width: (windowWidth/1.2),
+    width: windowWidth / 1.2,
     fontSize: 32,
     marginBottom: 20,
   },
