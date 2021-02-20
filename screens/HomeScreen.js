@@ -142,8 +142,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 75,
-    height: 75,
+    width: windowWidth / 6,
+    height: windowWidth / 6,
   },
 
   logoContainer: {
@@ -167,9 +167,9 @@ const styles = StyleSheet.create({
   },
 
   circle: {
-    width: (windowWidth / 16),
-    height: (windowWidth / 16),
-    borderRadius: (windowWidth / 32),
+    width: (windowWidth / 8),
+    height: (windowWidth / 8),
+    borderRadius: (windowWidth / 16),
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
