@@ -1,71 +1,75 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 import Constants from 'expo-constants';
 
-export default function App() {
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
+export default class ExerciseScreen extends React.Component {
+  render() {
   return (
     <View style={styles.container}>
     <View style={styles.stretchTitle}>
-      <Text style={styles.paragraph}>
+      <Text style={styles.heading}>
         Stretches
       </Text>
     </View>
 
       <View style={styles.stretchContainer}>
-      <TouchableOpacity style={styles.lowerBodyButtons}>
-        <Text style={styles.exercistButtonText}>
-          Lower Body
+      <TouchableOpacity style={styles.upperBodyButtons}>
+        <Text style={styles.exerciseButtonText}>
+          Upper Body
         </Text> 
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.fullBodyButtons}>
-        <Text style={styles.exercistButtonText}>
+        <Text style={styles.exerciseButtonText}>
           Full Body
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.upperBodyButtons}>
-        <Text style={styles.exercistButtonText}>
-          Upper Body
+      <TouchableOpacity style={styles.lowerBodyButtons}>
+        <Text style={styles.exerciseButtonText}>
+          Lower Body
         </Text> 
       </TouchableOpacity>
 
        </View>
 
-      <Text style={styles.paragraph}>
-        Workouts 
+      <Text style={styles.heading}>
+        Exercises 
       </Text>
   
 
     <View style={styles.workoutContainer}>
-      <TouchableOpacity style={styles.lowerBodyButtons}>
-        <Text style={styles.exercistButtonText}>
-          Lower Body
+      <TouchableOpacity style={styles.upperBodyButtons}>
+        <Text style={styles.exerciseButtonText}>
+          Upper Body
         </Text> 
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.fullBodyButtons}>
-        <Text style={styles.exercistButtonText}>
+        <Text style={styles.exerciseButtonText}>
           Full Body 
         </Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.upperBodyButtons}>
-        <Text style={styles.exercistButtonText}>
-          Upper Body
+      <TouchableOpacity style={styles.lowerBodyButtons}>
+        <Text style={styles.exerciseButtonText}>
+          Lower Body
         </Text> 
       </TouchableOpacity>
 
     </View>
 
-    <Text style={styles.paragraph}>
+    <Text style={styles.heading}>
       Routines
     </Text>
 
     <TouchableOpacity style={styles.bottomButtons}>
         <Text style={styles.buttonText}>
           Recommended
-        </Text> 
+        </Text>  
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.bottomButtons}>
@@ -80,11 +84,11 @@ export default function App() {
         </Text> 
     </TouchableOpacity>
 
-
     </View>
 
     
   );
+ }
 }
 
 const styles = StyleSheet.create({
@@ -96,20 +100,20 @@ const styles = StyleSheet.create({
     padding: 8,
     alignItems: 'center'
   },
-  paragraph: {
-    marginTop: 24,
+  heading: {
+    marginTop: 20,
     marginBottom: 12,
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  lowerBodyButtons: {
+  upperBodyButtons: {
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
     padding: 12,
-    width: 100,
+    width: windowWidth / 4,
     backgroundColor: '#7CA6E5',
     marginLeft: 5,
   },
@@ -119,17 +123,17 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     textAlign: 'center',
     padding: 12,
-    width: 100,
+    width: windowWidth / 4,
     backgroundColor: '#BBE0B7',
     marginLeft: 5,
   },
-  upperBodyButtons: {
+  lowerBodyButtons: {
     borderColor: 'black',
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
     padding: 12,
-    width: 100,
+    width: windowWidth / 4,
     backgroundColor: '#52796F',
     marginLeft: 5,
   },
@@ -139,7 +143,7 @@ const styles = StyleSheet.create({
   stretchContainer: {
     flexDirection: 'row',
     position: 'absolute',
-    top: 70,
+    top: windowHeight / 6,
   },
   bottomButtons: {
     borderColor: 'black',
@@ -147,21 +151,24 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     textAlign: 'center',
     padding: 12,
-    width: 250,
+    width: windowWidth / 1.5,
     marginTop: 15,
     backgroundColor: '#172A3A',
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 24,
     color: 'white',
-    fontFamily: 'Quicksand'
+    fontFamily: 'Quicksand', 
+    textAlign: 'center'
   },
-  exercistButtonText: {
+  exerciseButtonText: {
     color: 'black',
-    fontFamily: 'Quicksand'
+    fontFamily: 'Quicksand', 
+    textAlign: 'center',
+    fontSize: 20,
   },
   stretchTitle: {
     position: 'absolute',
-    top: 0,
+    top: windowHeight / 11,
   }
 });
