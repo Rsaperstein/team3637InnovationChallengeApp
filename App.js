@@ -9,6 +9,7 @@ import InputScreen from './screens/InputScreen';
 import ExerciseInputScreen from './screens/ExerciseInputScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ExerciseScreen from './screens/ExerciseScreen';
+import WelcomeScreen from './screens/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Home" component={HomeScreen} options={{title: 'Fitness-Link', headerStyle: {height: 80}}} />
         <Stack.Screen name="Community" component={CommunityScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{title: 'Fitness-Link'}} />

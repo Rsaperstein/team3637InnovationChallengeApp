@@ -1,49 +1,51 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      
-      <Text style={styles.heading}>
-        (App Name)
-      </Text>
-
-      <Text style={styles.welcomeHeading}>
-        Welcome!
-      </Text>
-
-      <Text style={styles.subheading}>
-        Please read the terms of service and privacy agreement 
-      </Text>
-
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Sign Up
+export default class WelcomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        
+        <Text style={styles.heading}>
+          (App Name)
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Sign In
+        <Text style={styles.welcomeHeading}>
+          Welcome!
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Terms of Service 
+        <Text style={styles.subheading}>
+          Please read the terms of service and privacy agreement 
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Privacy Agreement 
-        </Text>
-      </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Sign Up
+          </Text>
+        </TouchableOpacity>
 
-    </View>
-  );
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.welcomeButton}>
+            Sign In
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Terms of Service 
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Privacy Agreement 
+          </Text>
+        </TouchableOpacity>
+
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -60,14 +62,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    position: 'absolute',
-    top: 0
   },
   welcomeHeading: {
     fontSize: 32, 
     fontWeight: 'bold',
-    position: 'relative', 
-    top: 70,
   },
   image: {
     width: 100,
@@ -81,8 +79,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
-    position: 'relative',
-    top: 100,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
@@ -96,10 +92,8 @@ const styles = StyleSheet.create({
     margin: 24,
     fontSize: 16,
     textAlign: 'center',
-    position: 'relative',
-    top: 80,
     color: 'gray',
-    fontWeight: '425'
+    fontWeight: '400',
   },
   bannerContainer: {
     alignItems: 'center',
