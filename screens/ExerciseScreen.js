@@ -68,23 +68,26 @@ export default class ExerciseScreen extends React.Component {
       Routines
     </Text>
 
-    <TouchableOpacity style={styles.bottomButtons}>
-        <Text style={styles.buttonText}>
-          Recommended
-        </Text>  
-    </TouchableOpacity>
+    <View style={{justifyContent: 'center', alignItems: 'center'}}>
+      <TouchableOpacity style={styles.bottomButtons}>
+          <Text style={styles.buttonText}>
+            Recommended
+          </Text>  
+      </TouchableOpacity>
 
-    <TouchableOpacity style={styles.bottomButtons}>
-        <Text style={styles.buttonText}>
-          Custom Routine 
-        </Text> 
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.bottomButtons}>
+          <Text style={styles.buttonText}>
+            Custom Routine 
+          </Text> 
+      </TouchableOpacity>
 
-    <TouchableOpacity style={styles.bottomButtons}>
-        <Text style={styles.buttonText}>
-          Tracker
-        </Text> 
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.bottomButtons}>
+          <Text style={styles.buttonText}>
+            Tracker
+          </Text> 
+      </TouchableOpacity>
+
+    </View>
 
     </ScrollView>
 
@@ -100,12 +103,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     backgroundColor: 'white',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   heading: {
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: windowHeight / 200,
   },
   upperBodyButtons: {
     borderColor: 'black',
@@ -137,7 +141,6 @@ const styles = StyleSheet.create({
     width: windowWidth / 4,
     backgroundColor: '#52796F',
     marginLeft: 5,
-    marginTop: 10,
     height: windowHeight / 10,
     justifyContent: 'center',
   },
@@ -159,6 +162,8 @@ const styles = StyleSheet.create({
     width: windowWidth / 1.5,
     marginTop: 15,
     backgroundColor: '#172A3A',
+    height: windowHeight / 12,
+    justifyContent: 'center',
   },
   buttonText: {
     fontSize: 24,
