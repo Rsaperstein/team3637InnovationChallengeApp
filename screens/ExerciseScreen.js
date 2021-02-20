@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import Constants from 'expo-constants';
 
 const windowWidth = Dimensions.get("window").width;
@@ -9,6 +10,7 @@ export default class ExerciseScreen extends React.Component {
   render() {
   return (
     <View style={styles.container}>
+    <ScrollView>
     <View style={styles.stretchTitle}>
       <Text style={styles.heading}>
         Stretches
@@ -84,6 +86,8 @@ export default class ExerciseScreen extends React.Component {
         </Text> 
     </TouchableOpacity>
 
+    </ScrollView>
+
     </View>
 
     
@@ -99,8 +103,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   heading: {
-    marginTop: 20,
-    marginBottom: 12,
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -113,6 +115,8 @@ const styles = StyleSheet.create({
     width: windowWidth / 4,
     backgroundColor: '#7CA6E5',
     marginLeft: 5,
+    height: windowHeight / 10,
+    justifyContent: 'center',
   },
   fullBodyButtons: {
     borderColor: 'black',
@@ -122,6 +126,8 @@ const styles = StyleSheet.create({
     width: windowWidth / 4,
     backgroundColor: '#BBE0B7',
     marginLeft: 5,
+    justifyContent: 'center',
+    height: windowHeight / 10,
   },
   lowerBodyButtons: {
     borderColor: 'black',
@@ -131,14 +137,19 @@ const styles = StyleSheet.create({
     width: windowWidth / 4,
     backgroundColor: '#52796F',
     marginLeft: 5,
+    marginTop: 10,
+    height: windowHeight / 10,
+    justifyContent: 'center',
   },
   workoutContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: windowHeight / 30,
+    marginBottom: windowHeight / 30,
   },
   stretchContainer: {
     flexDirection: 'row',
-    position: 'absolute',
-    top: windowHeight / 6,
+    marginTop: windowHeight / 30,
+    marginBottom: windowHeight / 30,
   },
   bottomButtons: {
     borderColor: 'black',
@@ -160,7 +171,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   stretchTitle: {
-    position: 'absolute',
-    top: windowHeight / 11,
   }
 });

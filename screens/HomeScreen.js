@@ -11,7 +11,7 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
           <View style={{ flex: 1,}}>
-              <ScrollView style={{backgroundColor: Colors.white, height: (12 * windowHeight / 13)}}>
+              <ScrollView style={{backgroundColor: Colors.white}}>
                   <View style={styles.container}>
                       <View style={styles.logoContainer}>      
                           <Image 
