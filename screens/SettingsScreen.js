@@ -53,7 +53,7 @@ export default class SettingsScreen extends React.Component {
         <Text style={styles.disclaimerButton}>
           Disclaimer
           <Text style={styles.disclaimerParagraph}>
-            {'\n'}Exercise is not without its risks and this or any other exercise program many result in injury. As with any exercise program, if at any point during your workout you begin to feel faint, dizzy or have physical discomfort, you should stop immediately and consult a medical professional.
+            {'\n'}{'\n'}Exercise is not without its risks and this or any other exercise program many result in injury. As with any exercise program, if at any point during your workout you begin to feel faint, dizzy or have physical discomfort, you should stop immediately and consult a medical professional.
           </Text>
         </Text>
       </TouchableOpacity>
@@ -81,16 +81,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#7CA6E5',
     textAlign: 'center',
     padding: 10,
-    width: 300,
+    width: windowWidth / 1.2,
     fontSize: 32,
     marginBottom: 16,
     marginTop: 4,
   },
   settingsContainer: {
-    borderRadius: 15,
     alignItems: 'center',
     position: 'absolute',
-    top: 50, 
+    top: 160, 
   },
   settingsButton: {
     color: 'white',
@@ -100,6 +99,7 @@ const styles = StyleSheet.create({
     width: windowWidth / 1.2,
     fontSize: 32,
     marginTop: 10,
+    borderRadius: 10,
   },
   privacyButton: {
     color: 'black',
@@ -116,13 +116,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 10,
     borderRadius: 15,
-    width: (windowWidth/1.2),
+    width: windowWidth / 1.2,
     fontSize: 30
   },
   dollarCircle: {
     position: 'absolute',
     top: 5,
-    right: 20,
+    right: 40,
     backgroundColor: 'navy',
     width: (windowWidth/8),
     height: (windowWidth/8),

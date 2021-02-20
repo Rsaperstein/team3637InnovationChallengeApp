@@ -58,6 +58,9 @@ export default StyleSheet.create({
       width: windowWidth,
       marginRight: 10,
       marginTop: 10,
+      position: 'absolute',
+      right: 24,
+      top: 0
     },
   
     circle: {
