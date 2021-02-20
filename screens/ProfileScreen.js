@@ -102,7 +102,6 @@ const styles = StyleSheet.create({
     width:W/6,
     height: W/6,
     borderRadius: W/6,
-    backgroundColor:''
   },
   editsurvey:{
   width: W/1.75,
