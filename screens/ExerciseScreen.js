@@ -138,9 +138,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   workoutContainer: {
-    position: 'absolute',
-    top: 0,
-    backgroundColor: 'black'
+    flexDirection: 'row'
   },
   stretchContainer: {
     flexDirection: 'row',
