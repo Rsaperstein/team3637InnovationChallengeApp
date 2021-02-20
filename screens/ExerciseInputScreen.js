@@ -17,6 +17,13 @@ export default class ExerciseInputScreen extends React.Component {
                             Input Exercise
                         </Text>
                     </View>
+
+                    <View style={styles.questionContainer}>
+                        <Text style={styles.questionText}>
+                            What activity did you do?
+                        </Text>
+                    </View>
+
                 
                 </ScrollView>       
 
@@ -75,7 +82,7 @@ const styles = StyleSheet.create({
 
     inputText: {
         fontSize: 30,
-        marginBottom: 20,
+        marginBottom: 5,
         fontWeight: 'bold',
     },
 
@@ -89,60 +96,4 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
 
-    exerciseButton: {
-        width: windowWidth / 3,
-        height: windowHeight / 10,
-        backgroundColor: Colors.lightGreen,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 10,
-        marginBottom: 20,
-        borderStartColor: 'black',
-        borderTopColor: 'black',
-        borderRightColor: 'black',
-        borderBottomColor: 'black',
-        borderStartWidth: 1,
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderRightWidth: 1,
-    },
-
-    sleepButton: {
-        width: windowWidth / 3,
-        height: windowHeight / 10,
-        backgroundColor: Colors.darkGreen,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 10,
-        marginBottom: 20,
-        borderStartColor: 'black',
-        borderTopColor: 'black',
-        borderRightColor: 'black',
-        borderBottomColor: 'black',
-        borderStartWidth: 1,
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderRightWidth: 1,
-    },
-
-    waterButton: {
-        width: windowWidth / 3,
-        height: windowHeight / 10,
-        backgroundColor: Colors.lightBlue,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 10,
-        borderStartColor: 'black',
-        borderTopColor: 'black',
-        borderRightColor: 'black',
-        borderBottomColor: 'black',
-        borderStartWidth: 1,
-        borderTopWidth: 1,
-        borderBottomWidth: 1,
-        borderRightWidth: 1,
-    },
-
-    inputButtonText: {
-        fontSize: 24,
-    },
 });
