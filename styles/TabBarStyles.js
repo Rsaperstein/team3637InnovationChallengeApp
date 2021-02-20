@@ -39,4 +39,35 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
         width: windowWidth,
     },
+
+    circleContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      backgroundColor: Colors.white,
+      width: windowWidth / 2,
+      marginRight: 10,
+      marginTop: 10,
+    },
+
+    fullScreenCircleContainer: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      backgroundColor: Colors.white,
+      width: windowWidth,
+      marginRight: 10,
+      marginTop: 10,
+    },
+  
+    circle: {
+      width: (windowWidth / 8),
+      height: (windowWidth / 8),
+      borderRadius: (windowWidth / 16),
+      backgroundColor: 'black',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginLeft: (windowWidth / 90),
+      marginTop: (windowHeight / 200),
+    },
 });

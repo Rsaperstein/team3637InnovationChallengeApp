@@ -10,135 +10,135 @@ const windowHeight = Dimensions.get("window").height;
 export default class HomeScreen extends React.Component {
     render() {
         return (
-        <View style={{ flex: 1,}}>
-            <ScrollView style={{backgroundColor: Colors.white, height: (12 * windowHeight / 13)}}>
-                <View style={styles.container}>
-                    <View style={styles.logoContainer}>      
-                        <Image 
-                            source={require('../assets/flLogoTransparent.png')}
-                            style={styles.logo} />
-                    </View>
+          <View style={{ flex: 1,}}>
+              <ScrollView style={{backgroundColor: Colors.white, height: (12 * windowHeight / 13)}}>
+                  <View style={styles.container}>
+                      <View style={styles.logoContainer}>      
+                          <Image 
+                              source={require('../assets/flLogoTransparent.png')}
+                              style={styles.logo} />
+                      </View>
 
-                    <View style={styles.circleContainer}>
-                        <View style={styles.circle}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                                <Text style={{color: Colors.white}}>
-                                    S
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.circle}>
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                                <Text style={{color: Colors.white}}>
-                                    P
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
+                      <View style={tabBarStyles.circleContainer}>
+                          <View style={tabBarStyles.circle}>
+                          <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                  <Text style={{color: Colors.white}}>
+                                      S
+                                  </Text>
+                              </TouchableOpacity>
+                          </View>
+                          <View style={tabBarStyles.circle}>
+                              <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+                                  <Text style={{color: Colors.white}}>
+                                      P
+                                  </Text>
+                              </TouchableOpacity>
+                          </View>
+                      </View>
+                  </View>
 
-                <View>
-                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
-                    <Text>
-                      Link to settings
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-
-                <View style={styles.bannerContainer}>
-                    <Text style={styles.bannerTitleText}>
-                        Walk Across the Country Event
-                    </Text>
-
-                    <Text style={styles.bannerSubText}>
-                        From April 4th to April 15th, click here for more information
-                    </Text>
-                </View>
-
-                <View style={styles.exerciseButtonsContainer}>
-                    <TouchableOpacity style={styles.mentalExercisesButton}>
-                        <Text style={styles.exercisesText}>
-                            Mind-Link
-                        </Text>
+                  <View>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
+                      <Text>
+                        Link to settings
+                      </Text>
                     </TouchableOpacity>
+                  </View>
 
-                    <TouchableOpacity 
-                    style={styles.physicalExercisesButton}
-                    onPress={() => this.props.navigation.navigate('Exercise')}>
-                        <Text style={styles.exercisesText}>
-                            Fit-Link
-                        </Text>
-                    </TouchableOpacity>
-                </View>
+                  <View style={styles.bannerContainer}>
+                      <Text style={styles.bannerTitleText}>
+                          Walk Across the Country Event
+                      </Text>
 
-                <View style={styles.catQuotesFeelingsParentContainer}>
-                    <View style={styles.catNQuoteContainer}>
-                        <View style={styles.catContainer} />
-                    </View>
+                      <Text style={styles.bannerSubText}>
+                          From April 4th to April 15th, click here for more information
+                      </Text>
+                  </View>
 
-                    <View style={styles.quoteBoxFeelingsContainer}>
-                        <TouchableOpacity style={styles.quoteBox}>
-                            <Text style={styles.quoteBoxText}>
-                                How are you feeling today?
-                            </Text>
-                        </TouchableOpacity>
+                  <View style={styles.exerciseButtonsContainer}>
+                      <TouchableOpacity style={styles.mentalExercisesButton}>
+                          <Text style={styles.exercisesText}>
+                              Mind-Link
+                          </Text>
+                      </TouchableOpacity>
 
-                        <View style={styles.howYourFeelingContainer}>
-                            <TouchableOpacity style={styles.feelingButtons}>
-                                <Text>
-                                    H
-                                </Text>
-                            </TouchableOpacity>
+                      <TouchableOpacity 
+                      style={styles.physicalExercisesButton}
+                      onPress={() => this.props.navigation.navigate('Exercise')}>
+                          <Text style={styles.exercisesText}>
+                              Fit-Link
+                          </Text>
+                      </TouchableOpacity>
+                  </View>
 
-                            <TouchableOpacity style={styles.feelingButtons}>
-                                <Text>
-                                    N
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                        <TouchableOpacity style={styles.feelingBottomButton}>
-                            <Text>
-                                S
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </ScrollView>
+                  <View style={styles.catQuotesFeelingsParentContainer}>
+                      <View style={styles.catNQuoteContainer}>
+                          <View style={styles.catContainer} />
+                      </View>
 
-            <View style={tabBarStyles.horizontalRule} />
+                      <View style={styles.quoteBoxFeelingsContainer}>
+                          <TouchableOpacity style={styles.quoteBox}>
+                              <Text style={styles.quoteBoxText}>
+                                  How are you feeling today?
+                              </Text>
+                          </TouchableOpacity>
 
-            <View style={tabBarStyles.bottomTabContainer}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-                    <View style={[tabBarStyles.bottomTabButton]}>
-                        <Image source={require('../assets/house.png')} style={tabBarStyles.icon} />
-                    </View>
-                    </TouchableOpacity>
+                          <View style={styles.howYourFeelingContainer}>
+                              <TouchableOpacity style={styles.feelingButtons}>
+                                  <Text>
+                                      H
+                                  </Text>
+                              </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-                        <View style={[tabBarStyles.bottomTabButton]}>
-                            <Image source={require('../assets/bullseye.png')} style={tabBarStyles.icon} />
-                        </View>
-                    </TouchableOpacity>
+                              <TouchableOpacity style={styles.feelingButtons}>
+                                  <Text>
+                                      N
+                                  </Text>
+                              </TouchableOpacity>
+                          </View>
+                          <TouchableOpacity style={styles.feelingBottomButton}>
+                              <Text>
+                                  S
+                              </Text>
+                          </TouchableOpacity>
+                      </View>
+                  </View>
+              </ScrollView>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
-                        <View style={[tabBarStyles.bottomTabButton]}>
-                            <Image source={require('../assets/plus.png')} style={tabBarStyles.icon} />
-                        </View>
-                    </TouchableOpacity>
+              <View style={tabBarStyles.horizontalRule} />
 
-                    <TouchableOpacity>
-                        <View style={[tabBarStyles.bottomTabButton]}>
-                            <Image source={require('../assets/notificationBell.png')} style={tabBarStyles.icon} />
-                        </View>
-                    </TouchableOpacity>
+              <View style={tabBarStyles.bottomTabContainer}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                      <View style={[tabBarStyles.bottomTabButton]}>
+                          <Image source={require('../assets/house.png')} style={tabBarStyles.icon} />
+                      </View>
+                      </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-                        <View style={[tabBarStyles.bottomTabButton]}>
-                            <Image source={require('../assets/group.png')} style={tabBarStyles.icon} />
-                        </View>
-                    </TouchableOpacity>
-            </View>
-        </View>        
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/bullseye.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/plus.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/notificationBell.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                          <View style={[tabBarStyles.bottomTabButton]}>
+                              <Image source={require('../assets/group.png')} style={tabBarStyles.icon} />
+                          </View>
+                      </TouchableOpacity>
+              </View>
+          </View>        
         );
     }
 }
@@ -164,27 +164,6 @@ const styles = StyleSheet.create({
     width: windowWidth / 2,
     marginLeft: 10,
     marginTop: 10,
-  },
-
-  circleContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    backgroundColor: Colors.white,
-    width: windowWidth / 2,
-    marginRight: 10,
-    marginTop: 10,
-  },
-
-  circle: {
-    width: (windowWidth / 8),
-    height: (windowWidth / 8),
-    borderRadius: (windowWidth / 16),
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: (windowWidth / 90),
-    marginTop: (windowHeight / 200),
   },
 
   bannerContainer: {
