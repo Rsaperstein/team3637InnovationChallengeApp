@@ -1,14 +1,38 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 import Colors from '../constants/Colors';
 import universalStyles from '../styles/universalStyles';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
+
+
 export default class HomeScreen extends React.Component {
+
+  state = {
+    fontsLoaded: false,
+  };
+
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
+
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+
     render() {
+      if (this.state.fontsLoaded) {
         return (
           <View style={{ flex: 1}}>
               <ScrollView style={{backgroundColor: Colors.white, flex: .8}}>
@@ -133,6 +157,10 @@ export default class HomeScreen extends React.Component {
           </View>        
         );
     }
+    else {
+      return <AppLoading />;
+    }
+  }
 }
 
 // Set up a Cascading Style Sheet
@@ -170,12 +198,14 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 24,
     marginLeft: 13,
+    fontFamily: 'Oswald-Medium',
   },
 
   bannerSubText: {
     color: Colors.white,
     fontSize: 12,
     marginLeft: 13,
+    fontFamily: 'Oswald-Medium',
   },
 
   exerciseButtonsContainer: {
@@ -207,7 +237,8 @@ const styles = StyleSheet.create({
   },
 
   exercisesText: {
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: 'Quicksand-Medium',
   },
 
   catQuotesFeelingsParentContainer: {
@@ -244,7 +275,7 @@ const styles = StyleSheet.create({
 
   quoteBox: {
     backgroundColor: Colors.coolBlue,
-    width: windowWidth / 2,
+    width: windowWidth / 1.9,
     height: windowHeight / 20,
     borderRadius: windowWidth / 50,
     alignItems: 'center',
@@ -255,6 +286,7 @@ const styles = StyleSheet.create({
 
   quoteBoxText: {
     color: Colors.white,
+    fontFamily: 'Quicksand-Medium',
   },
 
   howYourFeelingContainer: {

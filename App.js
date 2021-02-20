@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
 import ProgressBar from './screens/ProgressBar'
@@ -13,6 +14,10 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import UpperBodyExercies from './screens/UpperBodyExercises';
 
 const Stack = createStackNavigator();
+
+let customFonts = {
+  'Oswald-Medium': require('./assets/fonts/Oswald-Medium.ttf'),
+};
 
 // UNLESS A HEADER HEIGHT IS SPECIFIED FOR ALL SCREENS, REMOVE IT FROM THE HOME SCREEN STACK BEFORE DEPLOYMENT
 
