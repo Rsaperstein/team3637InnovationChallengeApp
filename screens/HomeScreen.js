@@ -37,6 +37,14 @@ export default class HomeScreen extends React.Component {
                     </View>
                 </View>
 
+                <View>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Settings')}>
+                    <Text>
+                      Link to settings
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
                 <View style={styles.bannerContainer}>
                     <Text style={styles.bannerTitleText}>
                         Walk Across the Country Event
@@ -54,7 +62,9 @@ export default class HomeScreen extends React.Component {
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.physicalExercisesButton}>
+                    <TouchableOpacity 
+                    style={styles.physicalExercisesButton}
+                    onPress={() => this.props.navigation.navigate('Exercise')}>
                         <Text style={styles.exercisesText}>
                             Fit-Link
                         </Text>

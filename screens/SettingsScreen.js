@@ -47,7 +47,7 @@ export default class SettingsScreen extends React.Component {
         <Text style={styles.disclaimerButton}>
           Disclaimer
           <Text style={styles.disclaimerParagraph}>
-            Exercise is not without its risks and this or any other exercise program many result in injury. As with any exercise program, if at any point during your workout you begin to feel faint, dizzy or have physical discomfort, you should stop immediately and consult a medical professional.
+            {'\n'}Exercise is not without its risks and this or any other exercise program many result in injury. As with any exercise program, if at any point during your workout you begin to feel faint, dizzy or have physical discomfort, you should stop immediately and consult a medical professional.
           </Text>
         </Text>
       </TouchableOpacity>
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   },
   disclaimerParagraph: {
     textAlign: 'center',
-    display: 'block',
     fontSize: 14,
     color: '#172A3A',
     marginTop: 10,
