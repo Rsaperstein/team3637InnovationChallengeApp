@@ -95,9 +95,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: 'white',
-    padding: 8,
     alignItems: 'center'
   },
   heading: {
@@ -112,7 +110,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
-    padding: 12,
     width: windowWidth / 4,
     backgroundColor: '#7CA6E5',
     marginLeft: 5,
@@ -122,7 +119,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
-    padding: 12,
     width: windowWidth / 4,
     backgroundColor: '#BBE0B7',
     marginLeft: 5,
@@ -132,7 +128,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
-    padding: 12,
     width: windowWidth / 4,
     backgroundColor: '#52796F',
     marginLeft: 5,
@@ -150,7 +145,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     textAlign: 'center',
-    padding: 12,
     width: windowWidth / 1.5,
     marginTop: 15,
     backgroundColor: '#172A3A',
@@ -158,12 +152,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 24,
     color: 'white',
-    fontFamily: 'Quicksand', 
     textAlign: 'center'
   },
   exerciseButtonText: {
     color: 'black',
-    fontFamily: 'Quicksand', 
     textAlign: 'center',
     fontSize: 20,
   },
