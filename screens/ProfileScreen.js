@@ -16,7 +16,7 @@ export default class Profile extends React.Component{
       <TouchableOpacity 
         style={styles.editsurvey}
         onPress={()=>
-        this.props.navigation.navigate('Survey Screen')}
+        this.props.navigation.navigate('SurveyScreen.js')}
       >
         <Text style={{alignSelf:'center',fontSize:25}}>Edit Survey Answers</Text>
       </TouchableOpacity>
@@ -25,7 +25,7 @@ export default class Profile extends React.Component{
       <TouchableOpacity 
         style={styles.setting}
         onPress={()=>
-        this.props.navigation.navigate('Settings')}
+        this.props.navigation.navigate('SettingsScreen.js')}
       >
         <Text></Text>
       </TouchableOpacity>
