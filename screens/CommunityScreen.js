@@ -180,7 +180,7 @@ searchBar: {
   width: windowWidth - 50,
   backgroundColor: '#BBE0B7',
   alignItems: 'flex-end',
-  marginTop: windowWidth / 4.7,
+  marginTop: windowHeight / 8,
   marginLeft: 20, 
   borderRadius: 5, 
 },
