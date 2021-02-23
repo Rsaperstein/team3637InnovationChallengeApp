@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 80,
     color: 'gray',
-    fontWeight: '425'
+    fontWeight: '400'
   },
   bannerContainer: {
     alignItems: 'center',
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     width: windowWidth / 2,
     marginLeft: 10,
-    marginBotoom: 20,
+    marginBottom: 20,
   },
 });
 
