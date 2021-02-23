@@ -8,6 +8,9 @@ export default class Profile extends React.Component{
       <View style={styles.container}>
       <View style={styles.line}></View>
       <View style={styles.circle}>
+          <Image 
+            source= {require('../assets/dalekCat.JPG')}
+            />
       </View>
       <Text style={styles.Profile}>Profile</Text>
       <Text style={styles.Name}>Name                   _______</Text>
@@ -29,12 +32,14 @@ export default class Profile extends React.Component{
         this.props.navigation.navigate('Settings')}
       >
        <Image 
-          source= {require('../assets/settingsWheel.png')}/>
+          source= {require('../assests/settingsWheel.png')}/>
         <Text></Text>
       </TouchableOpacity>
       <View style={styles.boxcontainer}>
       <View style={styles.cat}>
-
+          <Image 
+            source= {require('../assests/sherlockCat.PNG')}
+            />
       </View>
       <TouchableOpacity 
         style={styles.changeaccesories}
@@ -88,7 +93,6 @@ const styles = StyleSheet.create({
   top:H/25,
   width: H/7,
   height: H/7,
-  backgroundColor: 'gray',
   alignSelf:'center',
   borderTopColor:'black',
   borderColor:'black',
@@ -125,7 +129,6 @@ const styles = StyleSheet.create({
   width:W/1.55,
   height:H/3,
   borderRadius:W/10,
-  backgroundColor:'black',
   marginRight:5,
   },
   changeaccesories:{
