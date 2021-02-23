@@ -23,21 +23,21 @@ export default class Community extends React.Component {
   
     render() {
         return (
-            <View style={{ flex: 1,}}>
+            <View style={{ flex: 1, backgroundColor: 'white',}}>
               <View style={styles.container}>           
                 <View style={universalStyles.fullScreenCircleContainer}>
                   <View style={universalStyles.circle}>
                   <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                          <Text style={{color: Colors.white}}>
-                              S
-                          </Text>
+                              <Image 
+                                source={require('../assets/shop.png')}
+                                style={universalStyles.circleLogos} />
                       </TouchableOpacity>
                   </View>
                   <View style={universalStyles.circle}>
                       <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                          <Text style={{color: Colors.white}}>
-                              P
-                          </Text>
+                                <Image 
+                                  source={require('../assets/profile.png')}
+                                  style={universalStyles.circleLogos} />
                       </TouchableOpacity>
                   </View>
               </View>
@@ -65,48 +65,53 @@ export default class Community extends React.Component {
                     </TouchableHighlight>
                   </View>
                 </View>
+              </View>
+            
                     
-
-                      <TouchableOpacity style={styles.createButton}>
-                          <Text style={styles.createText}>Create</Text>
-                      </TouchableOpacity>
+                  <View style={styles.buttonContainer}>
+                    <TouchableOpacity style={styles.createButton}>
+                        <Text style={styles.createText}>Create</Text>
+                    </TouchableOpacity>
 
                     <TouchableOpacity style={styles.buttonJoinContainer}>
-                          <Text style={styles.joinText}>Join</Text>
+                        <Text style={styles.joinText}>Join</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.buttonRecommendContainer}>
-                          <Text style={styles.recommendText}>Recommended</Text>
+                        <Text style={styles.recommendText}>Recommended</Text>
                     </TouchableOpacity>
+                  </View>
 
-                    <ScrollView>
-                      <View style={styles.communityContainer1}>
-                        <Text style={styles.communityHeader}>My Communities</Text>
+                    
+                    
+                      <Text style={styles.communityHeader}>My Communities</Text>
+                      <ScrollView>
+                        <View style={styles.communityContainer1}>
+                            <View style={styles.communityContainer}>
 
-                        <View style={styles.communityContainer}>
+                                <TouchableOpacity style={styles.communityCircleContainer}>
+                                    <Text style={styles.communityText}>Community 1</Text>
+                                    <View style={styles.circle}></View>
+                                </TouchableOpacity>
 
-                          <TouchableOpacity style={styles.communityCircleContainer}>
-                            <Text style={styles.communityText}>Community 1</Text>
-                            <View style={styles.circle}></View>
-                          </TouchableOpacity>
+                                <TouchableOpacity style={styles.communityCircleContainer}>
+                                    <Text style={styles.communityText}>Community 2</Text>
+                                    <View style={styles.circle}></View>
+                                </TouchableOpacity>
 
-                          <TouchableOpacity style={styles.communityCircleContainer}>
-                            <Text style={styles.communityText}>Community 2</Text>
-                            <View style={styles.circle}></View>
-                          </TouchableOpacity>
+                                <TouchableOpacity style={styles.communityCircleContainer}>
+                                    <Text style={styles.communityText}>Community 3</Text>
+                                    <View style={styles.circle}></View>
+                                </TouchableOpacity>
 
-                          <TouchableOpacity style={styles.communityCircleContainer}>
-                            <Text style={styles.communityText}>Community 3</Text>
-                            <View style={styles.circle}></View>
-                          </TouchableOpacity>
-
-                          <TouchableOpacity style={styles.communityCircleContainer}>
-                            <Text style={styles.communityText}>Community 4</Text>
-                            <View style={styles.circle}></View>
-                          </TouchableOpacity>
+                                <TouchableOpacity style={styles.communityCircleContainer}>
+                                    <Text style={styles.communityText}>Community 4</Text>
+                                    <View style={styles.circle}></View>
+                                </TouchableOpacity>
+                            </View>
                         </View>
-                      </View>
                     </ScrollView>
+                    
                     
 
               <View style={universalStyles.horizontalRule} />
@@ -143,7 +148,6 @@ export default class Community extends React.Component {
                       </TouchableOpacity>
               </View>
           </View>
-            </View>
 
         );
     }  
@@ -191,7 +195,7 @@ searchBar: {
   width: windowWidth - 50,
   backgroundColor: '#BBE0B7',
   alignItems: 'flex-end',
-  marginTop: 50,
+  marginTop: 75,
   marginLeft: 20
 },
 magnifyContainer: {
@@ -221,13 +225,12 @@ buttonRecommendContainer: {
   position: 'absolute',
   right: windowWidth / 12.5,
   top: windowHeight / 11.5,
-  marginTop: 80,
   marginBottom: 20,
 },
 buttonJoinContainer: {
   padding: 10,
-  width: windowWidth / 4.5,
-  height: windowHeight / 22,
+  width: windowWidth / 4.2,
+  height: windowHeight / 20,
   justifyContent: 'center',
   borderRadius: 15,
   backgroundColor: '#52796F',
@@ -235,8 +238,7 @@ buttonJoinContainer: {
   borderWidth: 1,
   position: 'absolute',
   right: windowWidth / 12.5,
-  top: windowHeight / 11,
-  marginTop: 30,
+  top: windowHeight / 30,
 },
 recommendText: {
   fontSize: 20,
@@ -258,8 +260,6 @@ communityContainer: {
   backgroundColor: '#BBE0B7',
   width: windowWidth / 1.2,
   height: windowHeight / 3,
-  marginTop: 10,
-  marginBottom: 75
 },
 communityText: {
   fontSize: 25,
@@ -293,22 +293,20 @@ profileCircle: {
   right: 70
 },
 createButton: {
-  width: windowWidth / 4.5,
-  height: windowHeight / 22,
+  width: windowWidth / 4.2,
+  height: windowHeight / 20,
   borderRadius: 15,
   backgroundColor: '#172A3A',
   justifyContent: 'center',
   borderColor: 'black',
   borderWidth: 1,
   position: 'absolute',
-  right: windowWidth / 2.9,
-  top: windowHeight / 11,
-  marginTop: 30,
+  right: windowWidth / 2.97,
+  top: windowHeight / 30,
 },
 communityContainer1: {
   alignItems: 'center', 
   marginBottom: 25,
-  marginTop: 100,
 },
 communityCircleContainer: {
   flexDirection: 'row',
@@ -319,4 +317,7 @@ communityCircleContainer: {
   textAlign: 'center',
   height: windowHeight / 12,
 },
+buttonContainer: {
+  marginBottom: windowHeight / 8,
+}
 });      
