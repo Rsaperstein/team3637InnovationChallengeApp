@@ -88,13 +88,6 @@ const styles = StyleSheet.create({
     width: 200,
     fontSize: 16,
   },
-  subheading: {
-    margin: 24,
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'gray',
-    fontWeight: '400',
-  },
   signIn: {
     padding: 10,
     width: 150,
@@ -112,6 +105,13 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 200,
     fontSize: 16,
+  },
+  subheading: {
+    margin: 24,
+    fontSize: 16,
+    textAlign: 'center',
+    color: 'gray',
+    fontWeight: '400',
   },
   subheading: {
     margin: 24,
