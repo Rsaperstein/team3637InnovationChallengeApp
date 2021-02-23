@@ -32,13 +32,13 @@ export default class Profile extends React.Component{
         this.props.navigation.navigate('Settings')}
       >
        <Image 
-          source= {('../assests/settingsWheel.png')}/>
+          source= {require('../assests/settingsWheel.png')}/>
         <Text></Text>
       </TouchableOpacity>
       <View style={styles.boxcontainer}>
       <View style={styles.cat}>
           <Image 
-            source= {('../assests/sherlockCat.PNG')}
+            source= {require('../assests/sherlockCat.PNG')}
             />
       </View>
       <TouchableOpacity 
