@@ -25,12 +25,6 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.signIn}>
-            Sign In
-          </Text>
-        </TouchableOpacity>
-
         <TouchableOpacity>
           <Text style={styles.welcomeButton}>
             Terms of Service 
@@ -43,6 +37,12 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.signIn}>
+            Sign In
+          </Text>
+        </TouchableOpacity>
+
       </View>
     );
   }
@@ -52,9 +52,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
-    padding: 8,
     alignItems: 'center',
   },
   heading: {
@@ -73,7 +71,6 @@ const styles = StyleSheet.create({
     zIndex: 0
   },
   welcomeButton: {
-    padding: 10,
     width: 150,
     textAlign: 'center',
     borderRadius: 20,
@@ -89,14 +86,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   signIn: {
-    padding: 10,
     width: 150,
     textAlign: 'right',
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
     position: 'absolute',
-    bottom: 7,
+    bottom: 10,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,

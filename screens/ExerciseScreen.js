@@ -1,101 +1,119 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Constants from 'expo-constants';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
+
 export default class ExerciseScreen extends React.Component {
-  render() {
-  return (
-    <View style={styles.container}>
-    <ScrollView>
-    <View style={styles.stretchTitle}>
-      <Text style={styles.heading}>
-        Stretches
-      </Text>
-    </View>
-
-      <View style={styles.stretchContainer}>
-      <TouchableOpacity style={styles.upperBodyButtons}>
-        <Text style={styles.exerciseButtonText}>
-          Upper Body
-        </Text> 
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.fullBodyButtons}>
-        <Text style={styles.exerciseButtonText}>
-          Full Body
-        </Text> 
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.lowerBodyButtons}>
-        <Text style={styles.exerciseButtonText}>
-          Lower Body
-        </Text> 
-      </TouchableOpacity>
-
-       </View>
-
-      <Text style={styles.heading}>
-        Exercises 
-      </Text>
   
+  state = {
+    fontsLoaded: false,
+  };
 
-    <View style={styles.workoutContainer}>
-      <TouchableOpacity 
-        style={styles.upperBodyButtons}
-        onPress={() => this.props.navigation.navigate('UpperBodyExercises')}>
-        <Text style={styles.exerciseButtonText}>
-          Upper Body
-        </Text> 
-      </TouchableOpacity>
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
 
-      <TouchableOpacity style={styles.fullBodyButtons}>
-        <Text style={styles.exerciseButtonText}>
-          Full Body 
-        </Text> 
-      </TouchableOpacity>
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+  
+  render() {
+    return (
+      <View style={styles.container}>
+      <ScrollView>
+      <View style={styles.stretchTitle}>
+        <Text style={styles.heading}>
+          Stretches
+        </Text>
+      </View>
 
-      <TouchableOpacity style={styles.lowerBodyButtons}>
-        <Text style={styles.exerciseButtonText}>
-          Lower Body
-        </Text> 
-      </TouchableOpacity>
-
-    </View>
-
-    <Text style={styles.heading}>
-      Routines
-    </Text>
-
-    <View style={{justifyContent: 'center', alignItems: 'center'}}>
-      <TouchableOpacity style={styles.bottomButtons}>
-          <Text style={styles.buttonText}>
-            Recommended
-          </Text>  
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.bottomButtons}>
-          <Text style={styles.buttonText}>
-            Custom Routine 
+        <View style={styles.stretchContainer}>
+        <TouchableOpacity style={styles.upperBodyButtons}>
+          <Text style={styles.exerciseButtonText}>
+            Upper Body
           </Text> 
-      </TouchableOpacity>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.bottomButtons}>
-          <Text style={styles.buttonText}>
-            Tracker
+        <TouchableOpacity style={styles.fullBodyButtons}>
+          <Text style={styles.exerciseButtonText}>
+            Full Body
           </Text> 
-      </TouchableOpacity>
+        </TouchableOpacity>
 
-    </View>
+        <TouchableOpacity style={styles.lowerBodyButtons}>
+          <Text style={styles.exerciseButtonText}>
+            Lower Body
+          </Text> 
+        </TouchableOpacity>
 
-    </ScrollView>
+        </View>
 
-    </View>
-
+        <Text style={styles.heading}>
+          Exercises 
+        </Text>
     
+
+      <View style={styles.workoutContainer}>
+        <TouchableOpacity 
+          style={styles.upperBodyButtons}
+          onPress={() => this.props.navigation.navigate('UpperBodyExercises')}>
+          <Text style={styles.exerciseButtonText}>
+            Upper Body
+          </Text> 
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.fullBodyButtons}>
+          <Text style={styles.exerciseButtonText}>
+            Full Body 
+          </Text> 
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.lowerBodyButtons}>
+          <Text style={styles.exerciseButtonText}>
+            Lower Body
+          </Text> 
+        </TouchableOpacity>
+
+      </View>
+
+      <Text style={styles.heading}>
+        Routines
+      </Text>
+
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <TouchableOpacity style={styles.bottomButtons}>
+            <Text style={styles.buttonText}>
+              Recommended
+            </Text>  
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.bottomButtons}>
+            <Text style={styles.buttonText}>
+              Custom Routine 
+            </Text> 
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.bottomButtons}>
+            <Text style={styles.buttonText}>
+              Tracker
+            </Text> 
+        </TouchableOpacity>
+
+      </View>
+
+      </ScrollView>
+
+      </View>    
   );
  }
 }
