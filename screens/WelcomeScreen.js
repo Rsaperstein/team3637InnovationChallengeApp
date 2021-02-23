@@ -1,59 +1,51 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
-import Colors from '../constants/Colors';
 
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      
-      <Text style={styles.heading}>
-        Fit-Link
-      </Text>
-
-      <Text style={styles.welcomeHeading}>
-        Welcome!
-      </Text>
-
-      <Text style={styles.subheading}>
-        Please read the terms of service and privacy agreement 
-      </Text>
-
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Sign Up
+export default class WelcomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        
+        <Text style={styles.heading}>
+          (App Name)
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Sign In
+        <Text style={styles.welcomeHeading}>
+          Welcome!
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Terms of Service 
+        <Text style={styles.subheading}>
+          Please read the terms of service and privacy agreement 
         </Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity>
-        <Text style={styles.welcomeButton}>
-          Privacy Agreement 
-        </Text>
-      </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Sign Up
+          </Text>
+        </TouchableOpacity>
 
-      <View style={styles.logoContainer}>      
-        <Image 
-          source={require('../assets/flLogoTransparent.png')}
-          style={styles.logo} />
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.welcomeButton}>
+            Sign In
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Terms of Service 
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton}>
+            Privacy Agreement 
+          </Text>
+        </TouchableOpacity>
+
       </View>
-
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -70,14 +62,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    position: 'absolute',
-    top: 0
   },
   welcomeHeading: {
     fontSize: 32, 
     fontWeight: 'bold',
-    position: 'relative', 
-    top: 70,
   },
   image: {
     width: 100,
@@ -87,12 +75,10 @@ const styles = StyleSheet.create({
   welcomeButton: {
     padding: 10,
     width: 150,
-    textAlign: 'right',
+    textAlign: 'center',
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
-    position: 'relative',
-    bottom: 15,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
@@ -106,10 +92,8 @@ const styles = StyleSheet.create({
     margin: 24,
     fontSize: 16,
     textAlign: 'center',
-    position: 'relative',
-    top: 80,
     color: 'gray',
-    fontWeight: '400'
+    fontWeight: '400',
   },
   bannerContainer: {
     alignItems: 'center',
@@ -122,27 +106,4 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderRadius: 8
   },
-  logo: {
-    width: windowWidth / 5,
-    height: windowWidth / 5,
-  },
-
-  logoContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    backgroundColor: Colors.white,
-    width: windowWidth / 2,
-    marginLeft: 10,
-    marginBottom: 20,
-  },
 });
-
-/*
-<View style={styles.bannerContainer}>
-              <Image
-                source={require('../assets/awesomeUndraw.svg')}
-                style={styles.bannerImage}
-              />
-</View>
-*/
