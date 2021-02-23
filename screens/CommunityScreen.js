@@ -156,7 +156,6 @@ export default class Community extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50,
     backgroundColor: 'white',
   },
   ScrollView: {
@@ -170,33 +169,20 @@ createText: {
 textContainer: {
   marginRight: 10,
 },
-iconText: {
-  textAlign: 'center',
-  fontSize: 20, 
-  color: 'white'
-},
-
-appHeader: {
-  position: 'absolute',
-  top: 0,
-  fontSize: 30,
-  marginLeft: 20,
-  color: 'rgb(30, 30, 36)',
-  width: 200,
-}, 
 communityHeader: {
   fontSize: 30,
   color: 'rgb(30, 30, 36)',
   alignSelf: 'flex-end',
-  marginTop: 50,
+  marginTop: 40,
   marginRight: 30,
 },
 searchBar: {
   width: windowWidth - 50,
   backgroundColor: '#BBE0B7',
   alignItems: 'flex-end',
-  marginTop: 75,
-  marginLeft: 20
+  marginTop: windowHeight / 8,
+  marginLeft: 20, 
+  borderRadius: 5, 
 },
 magnifyContainer: {
   position: 'relative',
@@ -214,6 +200,7 @@ searchBox: {
   padding: 8, 
   borderColor: 'rgb(30, 30, 36)', 
   borderWidth: 1,
+  borderRadius: 5, 
 }, 
 buttonRecommendContainer: {
   padding: 10,
@@ -275,22 +262,6 @@ circle: {
   position : 'absolute',
   left: 20,
   top: 15
-},
-dollarCircle: {
-  width: 30,
-  height: 30,
-  borderRadius: 30 / 2,
-  backgroundColor: '#172A3A',
-  position: 'absolute',
-  right: 30
-}, 
-profileCircle: {
-  width: 30,
-  height: 30,
-  borderRadius: 30 / 2,
-  backgroundColor: '#172A3A',
-  position: 'absolute',
-  right: 70
 },
 createButton: {
   width: windowWidth / 4.2,

@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Text, View, StyleSheet, Animated, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, Animated, TouchableOpacity, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
+
+import Colors from '../constants/Colors';
+import universalStyles from '../styles/universalStyles';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -31,48 +34,109 @@ export default class ProgressBar extends React.Component {
 
  render() { 
    return (
-  <View style={styles.container}>
-  <Text style={styles.heading}>
-    Track Your Progress
-  </Text>
-  <View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-  <View style={styles.PercentU}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-</View>
-</View>
+      <View style={styles.container}>
+        <View style={universalStyles.fullScreenCircleContainer}>
+          <View style={universalStyles.circle}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+              <Image 
+                source={require('../assets/shop.png')}
+                style={universalStyles.circleLogos} />
+              </TouchableOpacity>
+          </View>
+          <View style={universalStyles.circle}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
+              <Image 
+                source={require('../assets/profile.png')}
+                style={universalStyles.circleLogos} />
+            </TouchableOpacity>
+          </View>
+        </View>
+  
+        <Text style={styles.heading}>
+          Track Your Progress
+        </Text>
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentU}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
 
-<Text style={styles.goalText}>Goal: </Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-  <View style={styles.PercentD}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-</View>
-</View>
+        <Text style={styles.goalText}>
+          Goal: 
+        </Text>
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentD}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
 
-<Text style={styles.goalText}>Goal: </Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-  <View style={styles.PercentT}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-</View>
-</View>
+        <Text style={styles.goalText}>
+          Goal:
+        </Text>
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentT}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>
 
-<Text style={styles.goalText}>Goal: </Text>
-<View style={styles.ProgressBar}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
-  <View style={styles.PercentC}>
-  <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
-</View>
-</View>                    
-<Text style={styles.goalText}>Goal: </Text>
+        <Text style={styles.goalText}>
+          Goal: 
+        </Text>
+        <View style={styles.ProgressBar}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#8BED4F"}}/>
+          <View style={styles.PercentC}>
+          <Animated.View style={[StyleSheet.absoluteFill], {backgroundColor: "#86c0cf"}}/>
+          </View>
+        </View>                    
 
-<TouchableOpacity style={styles.goalButton}>
-  <Text style={styles.goalButtonText}>Set New Goal</Text>
-</TouchableOpacity>
-</View>
- );
-}
+        <Text style={styles.goalText}>
+          Goal: 
+        </Text>
+        <TouchableOpacity style={styles.goalButton}>
+          <Text style={styles.goalButtonText}>
+            Set New Goal
+          </Text>
+        </TouchableOpacity>
+
+        <View style={universalStyles.horizontalRule} />
+
+          <View style={universalStyles.bottomTabContainer}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+          </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
