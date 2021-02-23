@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   signIn: {
     width: 150,
-    textAlign: 'left',
+    textAlign: 'right',
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
