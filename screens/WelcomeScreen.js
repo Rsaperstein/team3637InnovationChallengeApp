@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
+    position: 'absolute',
     bottom: 7,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
