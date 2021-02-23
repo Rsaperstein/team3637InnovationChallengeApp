@@ -8,7 +8,7 @@ export default class WelcomeScreen extends React.Component {
       <View style={styles.container}>
         
         <Text style={styles.heading}>
-          (App Name)
+          Fitness-Link
         </Text>
 
         <Text style={styles.welcomeHeading}>
@@ -26,7 +26,7 @@ export default class WelcomeScreen extends React.Component {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.welcomeButton}>
+          <Text style={styles.signIn}>
             Sign In
           </Text>
         </TouchableOpacity>
@@ -79,6 +79,30 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+    margin: 5,
+    width: 200,
+    fontSize: 16,
+  },
+  subheading: {
+    margin: 24,
+    fontSize: 16,
+    textAlign: 'center',
+    color: 'gray',
+    fontWeight: '400',
+  },
+  signIn: {
+    padding: 10,
+    width: 150,
+    textAlign: 'right',
+    borderRadius: 20,
+    backgroundColor: 'rgb(124, 166, 229)',
+    color: 'white',
+    bottom: 7,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
