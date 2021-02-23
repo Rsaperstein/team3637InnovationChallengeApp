@@ -130,6 +130,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginTop: windowHeight / 200,
+    fontFamily: 'Oswald-Medium',
   },
   upperBodyButtons: {
     borderColor: 'black',
@@ -188,12 +189,14 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 24,
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Quicksand-Medium',
   },
   exerciseButtonText: {
     color: 'black',
     textAlign: 'center',
     fontSize: 20,
+    fontFamily: 'Quicksand-Medium',
   },
   stretchTitle: {
   }

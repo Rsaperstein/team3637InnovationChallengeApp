@@ -9,7 +9,7 @@ export default class Profile extends React.Component{
       <View style={styles.line}></View>
       <View style={styles.circle}>
           <Image 
-            source= {('../assests/dalekCat.JPG')}
+            source= {('../assets/dalekCat.JPG')}
             />
       </View>
       <Text style={styles.Profile}>Profile</Text>
