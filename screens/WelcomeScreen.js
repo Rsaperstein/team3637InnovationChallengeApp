@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
     position: 'relative',
-    bottom: 10,
+    bottom: 100,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
