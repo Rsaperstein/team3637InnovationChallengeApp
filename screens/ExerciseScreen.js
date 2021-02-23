@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Dimensions} from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions, Image} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+
+import universalStyles from '../styles/universalStyles';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -28,7 +30,9 @@ export default class ExerciseScreen extends React.Component {
   }
   
   render() {
+    if (this.state.fontsLoaded) {
     return (
+      
       <View style={styles.container}>
       <ScrollView>
       <View style={styles.stretchTitle}>
@@ -113,8 +117,46 @@ export default class ExerciseScreen extends React.Component {
 
       </ScrollView>
 
+      <View style={universalStyles.horizontalRule} />
+
+<View style={universalStyles.bottomTabContainer}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+        <View style={[universalStyles.bottomTabButton]}>
+            <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+        </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+            <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+            <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+            <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+            </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+            <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+            </View>
+        </TouchableOpacity>
+      </View>
+
       </View>    
   );
+  }
+  else {
+    return <AppLoading />;
+  }
  }
 }
 
@@ -127,7 +169,6 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 30,
-    fontWeight: 'bold',
     textAlign: 'center',
     marginTop: windowHeight / 200,
     fontFamily: 'Oswald-Medium',
