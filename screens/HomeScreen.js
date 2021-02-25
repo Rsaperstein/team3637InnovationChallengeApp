@@ -79,10 +79,16 @@ export default class HomeScreen extends React.Component {
                       </TouchableOpacity>
 
                       <TouchableOpacity 
-                      style={styles.physicalExercisesButton}
-                      onPress={() => this.props.navigation.navigate('Exercise')}>
+                        style={styles.physicalExercisesButton}
+                        onPress={() => this.props.navigation.navigate('Exercise')}>
                           <Text style={styles.exercisesText}>
                               Fit-Link
+                          </Text>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity style={styles.linkTopiaButton}>
+                          <Text style={styles.exercisesText}>
+                              Link-Topia
                           </Text>
                       </TouchableOpacity>
                   </View>
@@ -105,21 +111,21 @@ export default class HomeScreen extends React.Component {
 
                           <View style={styles.howYourFeelingContainer}>
                               <TouchableOpacity style={styles.feelingButtons}>
-                                  <Text>
-                                      H
-                                  </Text>
+                                <Image 
+                                  source={require('../assets/happyFace.png')}
+                                  style={styles.feelingsImage} />
                               </TouchableOpacity>
 
                               <TouchableOpacity style={styles.feelingButtons}>
-                                  <Text>
-                                      N
-                                  </Text>
+                                <Image 
+                                  source={require('../assets/neutralFace.png')}
+                                  style={styles.feelingsImage} />
                               </TouchableOpacity>
                           </View>
                           <TouchableOpacity style={styles.feelingBottomButton}>
-                              <Text>
-                                  S
-                              </Text>
+                            <Image 
+                              source={require('../assets/sadFace.png')}
+                              style={styles.feelingsImage} />
                           </TouchableOpacity>
                       </View>
                   </View>
@@ -199,7 +205,7 @@ const styles = StyleSheet.create({
 
   exerciseButtonsContainer: {
     width: windowWidth,
-    height: (9 * windowHeight / 40),
+    height: (9 * windowHeight / 20),
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: (windowHeight / 40),
@@ -217,6 +223,16 @@ const styles = StyleSheet.create({
 
   physicalExercisesButton: {
     backgroundColor: Colors.lightGreen,
+    width: windowWidth / 1.2,
+    height: windowHeight / 10,
+    borderRadius: windowWidth / 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: windowHeight / 40,
+  },
+
+  linkTopiaButton: {
+    backgroundColor: Colors.darkGreen,
     width: windowWidth / 1.2,
     height: windowHeight / 10,
     borderRadius: windowWidth / 50,
@@ -254,7 +270,7 @@ const styles = StyleSheet.create({
   },
   
   catImage: {
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
 
   quoteBoxFeelingsContainer: {
@@ -298,6 +314,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 10,
+  },
+
+  feelingsImage: {
+    resizeMode: 'contain'
   },
 
   feelingBottomButton: {
