@@ -89,7 +89,11 @@ export default class HomeScreen extends React.Component {
 
                   <View style={styles.catQuotesFeelingsParentContainer}>
                       <View style={styles.catNQuoteContainer}>
-                          <View style={styles.catContainer} />
+                          <View style={styles.catContainer}>
+                            <Image 
+                              source={require('../assets/genericCat.png')}
+                              style={styles.catImage} />
+                          </View>
                       </View>
 
                       <View style={styles.quoteBoxFeelingsContainer}>
@@ -240,14 +244,17 @@ const styles = StyleSheet.create({
   },
 
   catContainer: {
-    width: (windowWidth / 6),
-    height: (windowWidth / 3),
+    width: (windowWidth / 5),
+    height: (windowHeight / 5),
     borderRadius: (windowWidth / 16),
-    backgroundColor: 'grey',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
     marginLeft: 20,
+  },
+  
+  catImage: {
+    resizeMode: 'contain'
   },
 
   quoteBoxFeelingsContainer: {

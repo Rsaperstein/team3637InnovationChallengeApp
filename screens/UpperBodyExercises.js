@@ -1,86 +1,151 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
+import Colors from '../constants/Colors';
+import universalStyles from '../styles/universalStyles';
+
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
 
 export default class UpperBodyExercises extends React.Component {
+  
+  state = {
+    fontsLoaded: false,
+  };
+
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
+
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+  
   render() {
-    return (
-      <View style={styles.container}>
+    if (this.state.fontsLoaded) {
+      return (
+        <View style={styles.container}>
 
-      
-        <Text style={styles.heading}>
-          Upper Body Exercises 
-        </Text>
-
-      <View style={styles.topContainer}>
-
-      <TouchableOpacity style={styles.backgroundImage}>
-        <TouchableOpacity style={styles.pushUpExerciseButton}>
-          <Text style={styles.exerciseText}>
-            Push-ups
+          <Text style={styles.heading}>
+            Upper Body Exercises 
           </Text>
-        </TouchableOpacity>
-      </TouchableOpacity>
 
+        <View style={styles.topContainer}>
 
-      <TouchableOpacity style={styles.backgroundImage}>
-        <TouchableOpacity style={styles.burpeesExerciseButton}>
-          <Text style={styles.exerciseText}>
-            Burpees
-          </Text>
-        </TouchableOpacity>
-      </TouchableOpacity>
-
-      </View>
-
-      <View style={styles.middleContainer}>
-
-      <TouchableOpacity style={styles.backgroundImage}>
-        <TouchableOpacity style={styles.dipExerciseButton}>
-          <Text style={styles.exerciseText}>
-            Dips
-          </Text>
-        </TouchableOpacity>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.backgroundImage}> 
-        <TouchableOpacity style={styles.chestExerciseButton}>
-          <Text style={styles.exerciseText}>
-            Chest Press
-          </Text>
-        </TouchableOpacity>
-      </TouchableOpacity>
-
-      </View>
-
-      <View style={styles.bottomContainer}>
-        <TouchableOpacity style={styles.backgroundImage}> 
-          <TouchableOpacity style={styles.inclineExerciseButton}>
+        <TouchableOpacity style={styles.backgroundImage}>
+          <TouchableOpacity style={styles.pushUpExerciseButton}>
             <Text style={styles.exerciseText}>
-              Incline Push-ups
+              Push-ups
             </Text>
           </TouchableOpacity>
         </TouchableOpacity>
-      
 
-        <TouchableOpacity style={styles.backgroundImage}> 
-          <TouchableOpacity style={styles.declineExerciseButton}>
+
+        <TouchableOpacity style={styles.backgroundImage}>
+          <TouchableOpacity style={styles.burpeesExerciseButton}>
             <Text style={styles.exerciseText}>
-              Decline Push-ups
+              Burpees
             </Text>
           </TouchableOpacity>
         </TouchableOpacity>
-      </View>
-      
 
-        <TouchableOpacity style={styles.backButton}>
-          <Text style={styles.backText}>
-            Back
-          </Text>
+        </View>
+
+        <View style={styles.middleContainer}>
+
+        <TouchableOpacity style={styles.backgroundImage}>
+          <TouchableOpacity style={styles.dipExerciseButton}>
+            <Text style={styles.exerciseText}>
+              Dips
+            </Text>
+          </TouchableOpacity>
         </TouchableOpacity>
-    
-      </View>
-    );
+
+        <TouchableOpacity style={styles.backgroundImage}> 
+          <TouchableOpacity style={styles.chestExerciseButton}>
+            <Text style={styles.exerciseText}>
+              Chest Press
+            </Text>
+          </TouchableOpacity>
+        </TouchableOpacity>
+
+        </View>
+
+        <View style={styles.bottomContainer}>
+          <TouchableOpacity style={styles.backgroundImage}> 
+            <TouchableOpacity style={styles.inclineExerciseButton}>
+              <Text style={styles.exerciseText}>
+                Incline Push-ups
+              </Text>
+            </TouchableOpacity>
+          </TouchableOpacity>
+        
+
+          <TouchableOpacity style={styles.backgroundImage}> 
+            <TouchableOpacity style={styles.declineExerciseButton}>
+              <Text style={styles.exerciseText}>
+                Decline Push-ups
+              </Text>
+            </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
+        
+
+          <TouchableOpacity style={styles.backButton}>
+            <Text style={styles.backText}>
+              Back
+            </Text>
+          </TouchableOpacity>
+
+          <View style={universalStyles.horizontalRule} />
+
+          <View style={universalStyles.bottomTabContainer}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                  <View style={[universalStyles.bottomTabButton]}>
+                      <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+                  </View>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                      <View style={[universalStyles.bottomTabButton]}>
+                          <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+                      </View>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+                      <View style={[universalStyles.bottomTabButton]}>
+                          <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+                      </View>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity>
+                      <View style={[universalStyles.bottomTabButton]}>
+                          <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+                      </View>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                      <View style={[universalStyles.bottomTabButton]}>
+                          <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+                      </View>
+                  </TouchableOpacity>
+          </View>
+      
+        </View>
+      );
+    }
+    else {
+      return <AppLoading />;
+    }
   }
 }
 
@@ -98,7 +163,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 16,
     fontSize: 16,
-    fontFamily: 'Serif',
+    fontFamily: 'Quicksand-Medium',
   },
   inclineExerciseButton: {
     backgroundColor: '#172A3A',
@@ -144,22 +209,25 @@ const styles = StyleSheet.create({
      textAlign: 'center',
      marginTop: 10, 
      position: 'absolute',
-     bottom: 70
+     bottom: 70,
+     justifyContent: 'center',
+     alignItems: 'center',
   },
   backText: {
-    fontSize: 14
+    fontSize: 16,
+    fontFamily: 'Quicksand-Medium',
   },
   heading: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize: 25,
     marginBottom: 5,
     position: 'absolute',
-    top: 22
+    top: 22,
+    fontFamily: 'Oswald-Medium',
   },
   backgroundImage: {
     backgroundColor: '#7CA6E5',
-    height: 120,
-    width: 150, 
+    height: windowHeight / 7,
+    width: windowWidth / 2.4, 
     borderRadius: 15,
     marginTop: 40,
     marginRight: 5,

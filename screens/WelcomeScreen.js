@@ -101,12 +101,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
     position: 'relative',
-<<<<<<< HEAD
     top: 190,
     left: 130,
-=======
-    //top: 200,
->>>>>>> 16b2546c51144a42df09e6d2b39fa43240a95dd0
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
