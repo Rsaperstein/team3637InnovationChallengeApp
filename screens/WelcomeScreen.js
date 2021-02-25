@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
 import Constants from 'expo-constants';
 
+import universalStyles from '../styles/universalStyles';
+
 export default class WelcomeScreen extends React.Component {
   render() {
     return (
@@ -43,6 +45,12 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
+        <View style={universalStyles.logoContainer}>      
+          <Image 
+            source={require('../assets/flLogoTransparent.png')}
+            style={universalStyles.catPic} />
+          </View>
+
       </View>
     );
   }
@@ -69,6 +77,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     zIndex: 0
+    //please just let me pull take pity
   },
   welcomeButton: {
     width: 150,
@@ -92,7 +101,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(124, 166, 229)',
     color: 'white',
     position: 'relative',
-    top: 200,
+    top: 190,
+    left: 130,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
@@ -101,6 +111,7 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 50,
     fontSize: 16,
+    //pull
   },
   subheading: {
     margin: 24,
@@ -126,5 +137,22 @@ const styles = StyleSheet.create({
     height: 100,
     resizeMode: 'contain',
     borderRadius: 8
+  },
+  catPic: {
+    width: 1,
+    textAlign: 'left',
+    borderRadius: 1,
+    backgroundColor: 'rgb(124, 166, 229)',
+    color: '#000000',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    top: 124,
+    left: 2,
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+    margin: 5,
+    width: 5,
+    fontSize: 0,
   },
 });

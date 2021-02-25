@@ -95,11 +95,13 @@ export default class ProgressBar extends React.Component {
         <Text style={styles.goalText}>
           Goal: 
         </Text>
-        <TouchableOpacity style={styles.goalButton}>
-          <Text style={styles.goalButtonText}>
-            Set New Goal
-          </Text>
-        </TouchableOpacity>
+        <View style={{alignItems: 'flex-end', width: windowWidth}}>
+          <TouchableOpacity style={styles.goalButton}>
+            <Text style={styles.goalButtonText}>
+              Set New Goal
+            </Text>
+          </TouchableOpacity>
+        </View>
 
         <View style={universalStyles.horizontalRule} />
 
@@ -204,8 +206,9 @@ goalButton: {
   justifyContent: 'center',
   borderRadius: 15, 
   width: windowWidth / 2, 
-  height: windowHeight / 12, 
+  height: windowHeight / 10, 
   marginTop: 25, 
+  marginRight: 30,
 },
 goalButtonText: {
   color: 'white',

@@ -212,7 +212,7 @@ buttonRecommendContainer: {
   position: 'absolute',
   right: windowWidth / 12.5,
   top: windowHeight / 11.5,
-  marginBottom: 20,
+  marginTop: windowHeight / 60,
 },
 buttonJoinContainer: {
   padding: 10,
@@ -243,7 +243,7 @@ communityContainer: {
   alignItems: 'center',
   justifyContent: 'center',
   padding: 5,
-  marginTop: 5,
+  marginTop: 5, 
   backgroundColor: '#BBE0B7',
   width: windowWidth / 1.2,
   height: windowHeight / 3,
@@ -276,8 +276,7 @@ createButton: {
   top: windowHeight / 30,
 },
 communityContainer1: {
-  alignItems: 'center', 
-  marginBottom: 25,
+  alignItems: 'center',
 },
 communityCircleContainer: {
   flexDirection: 'row',
