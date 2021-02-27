@@ -6,7 +6,7 @@ import AppLoading from 'expo-app-loading';
 
 import Colors from '../constants/Colors';
 import universalStyles from '../styles/universalStyles';
-//p
+
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
@@ -234,6 +234,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderRadius: 8
   },
+
   logo: {
     resizeMode: 'contain',
     transform: [{scale: 0.5}],
