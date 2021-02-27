@@ -1,82 +1,110 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image, Style } from 'react-native';
 import Constants from 'expo-constants';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
+import Colors from '../constants/Colors';
 import universalStyles from '../styles/universalStyles';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
+
 export default class WelcomeScreen extends React.Component {
+  state = {
+    fontsLoaded: false,
+  };
+
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
+
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        
-        <Text style={styles.heading}>
-          Fitness-Link
-        </Text>
-
-        <View style={universalStyles.logo}>      
-          <Image
-            source={require('../assets/flLogoTransparent.png')}
-            style={styles.logo}/>
-          </View>
-
-        <Text style={styles.welcomeHeading}>
-          Welcome!
-        </Text>
-
-        <Text style={styles.subheading}>
-          Please read the terms of service and privacy agreement 
-        </Text>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.Space}>
+    if (this.state.fontsLoaded) {
+      return (
+        <View style={styles.container}>
+          
+          <Text style={styles.heading}>
+            Fitness-Link
           </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.welcomeButton}>
-            Terms of Service 
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.Space}>
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={styles.welcomeButton} style={styles.Privacy}>
-            Privacy Agreement 
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.Space}>
-          </Text>
-        </TouchableOpacity>
-        
-        <TouchableOpacity>
-          <Text style={styles.welcomeButton} style={styles.signUp}>
-            Sign Up
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-          <Text style={styles.signIn}>
-            Log In
-          </Text>
-        </TouchableOpacity>
 
           <View style={universalStyles.logo}>      
-          <Image
-            source={require('../assets/group.png')}
-            style={styles.catPic}/>
+            <Image
+              source={require('../assets/flLogoTransparent.png')}
+              style={styles.logo}/>
           </View>
 
-      </View>
-    );
+          <Text style={styles.welcomeHeading}>
+            Welcome!
+          </Text>
+
+          <Text style={styles.subheading}>
+            Please read the terms of service and privacy agreement 
+          </Text>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+            <Text style={styles.Space}>
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            onPress={() => this.props.navigation.navigate('Home')}
+            style={styles.tosContainer}>
+            <Text style={styles.tosText}>
+              Terms of Service 
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+            <Text style={styles.Space}>
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.privacyContainer}>
+            <Text style={styles.privacyText}>
+              Privacy Agreement 
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+            <Text style={styles.Space}>
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.signUpContainer}>
+            <Text style={styles.signUpText}>
+              Sign Up
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+            <Text style={styles.signIn}>
+              Log In
+            </Text>
+          </TouchableOpacity>
+
+            <View style={universalStyles.logo}>      
+            <Image
+              source={require('../assets/group.png')}
+              style={styles.catPic}/>
+            </View>
+
+        </View>
+      );
+    }
+    else {
+      return <AppLoading />;
+    }
   }
 }
 
@@ -98,20 +126,24 @@ const styles = StyleSheet.create({
     fontSize: 32, 
     fontWeight: 'bold',
   },
-  welcomeButton: {
-    textAlign: 'center',
-    borderRadius: 20,
-    backgroundColor: 'rgb(124, 166, 229)',
-    color: 'white',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
-    margin: 2,
-    width: 200,
-    fontSize: 16,
+  tosText: {
+    color: 'black',
+    fontSize: 24,
+    fontFamily: 'Oswald-Medium',
   },
+
+  privacyText: {
+    color: 'black',
+    fontSize: 24,
+    fontFamily: 'Oswald-Medium',
+  },
+
+  signUpText: {
+    color: 'white',
+    fontSize: 24,
+    fontFamily: 'Oswald-Medium',
+  },
+
   Privacy: {
     backgroundColor: '#bbe0b7',
     width: 200,
@@ -121,6 +153,52 @@ const styles = StyleSheet.create({
     margin: 4,
     color: 'white',
   },
+
+  tosContainer: {
+    backgroundColor: Colors.lightBlue,
+    height: windowHeight / 15,
+    width: windowWidth / 1.2,
+    borderRadius: windowWidth / 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+    textAlign: 'center',
+  },
+
+  privacyContainer: {
+    backgroundColor: Colors.lightGreen,
+    height: windowHeight / 15,
+    width: windowWidth / 1.2,
+    borderRadius: windowWidth / 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+    textAlign: 'center',
+  },
+
+  signUpContainer: {
+    backgroundColor: Colors.darkGreen,
+    height: windowHeight / 15,
+    width: windowWidth / 1.2,
+    borderRadius: windowWidth / 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
+    textAlign: 'center',
+  },
+
   signUp: {
     backgroundColor: '#52796f',
     width: 200,
