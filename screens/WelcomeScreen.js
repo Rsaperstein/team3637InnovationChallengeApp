@@ -6,7 +6,7 @@ import AppLoading from 'expo-app-loading';
 
 import Colors from '../constants/Colors';
 import universalStyles from '../styles/universalStyles';
-//p
+
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
@@ -210,9 +210,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: windowWidth / 30,
     backgroundColor: Colors.coolBlue,
-    position: 'relative',
-    top: 190,
-    left: 130,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
@@ -251,6 +248,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderRadius: 8
   },
+
   logo: {
     resizeMode: 'contain',
     transform: [{scale: 0.5}],
@@ -279,4 +277,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1 ,
     shadowOffset : { width: 1, height: 13},
   },
+  welcomeCatImageContainer: {
+    justifyContent: 'flex-start',
+  }
 });
