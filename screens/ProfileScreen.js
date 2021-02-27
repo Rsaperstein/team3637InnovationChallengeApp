@@ -1,97 +1,124 @@
 import React from 'react';
 import { Platform, StyleSheet, View, Text, TouchableOpacity, Dimensions,Image} from 'react-native';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 import universalStyles from '../styles/universalStyles';
+
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+  'OpenSansCondensed-Light': require('../assets/fonts/OpenSansCondensed-Light.ttf'),
+};
 
 const W = Dimensions.get('window').width;
 const H = Dimensions.get('window').height;
-export default class Profile extends React.Component{
+export default class Profile extends React.Component {
+
+  state = {
+    fontsLoaded: false,
+  };
+
+  async _loadFontsAsync() {
+    await Font.loadAsync(customFonts);
+    this.setState({ fontsLoaded: true });
+  }
+
+  componentDidMount() {
+    this._loadFontsAsync();
+  }
+
   render() {
-    return (      
-      <View style={styles.container}>
+    if (this.state.fontsLoaded) {
+      return (      
+        <View style={styles.container}>
 
-        <View style={styles.line}></View>
-        <View style={styles.circle}>
-            <Image 
-                  source= {require('../assets/dalekCat.png')}
-                  style={styles.dalekCatImage}/>
-        </View>
-
-        <View style={styles.settingContainer}>
-          <TouchableOpacity 
-            style={styles.setting}
-            onPress={()=>
-            this.props.navigation.navigate('Settings')}
-          >
-          <Image 
-              source= {require('../assets/settingsWheel.png')}
-              style={styles.settingsImage}/>
-          </TouchableOpacity>
-        </View>
-
-        <Text style={styles.Profile}>Profile</Text>
-        <Text style={styles.Name}>Name: Dalek Cat</Text>
-        <Text style={styles.Username}>Username: catlover1</Text>
-        <Text style={styles.email}>Email: ***********@cats.com</Text>
-        <Text style={styles.password}>Password: **********</Text>
-        <Text style={styles.dateJoined}>Joined: XX-XX-XXXX</Text>
-          
-        <TouchableOpacity 
-          style={styles.editsurvey}
-        >
-          <Text style={styles.surveyButton}>Edit Survey Answers</Text>
-        </TouchableOpacity>
-
-    
-
-        <View style={styles.boxcontainer}>
-          <View style={styles.sherlockCat}>
-                <Image 
-                  source= {require('../assets/sherlockCat.png')}
-                  style={styles.sherlockCatImage}/>
+          <View style={styles.line}></View>
+          <View style={styles.circle}>
+              <Image 
+                    source= {require('../assets/dalekCat.png')}
+                    style={styles.dalekCatImage}/>
           </View>
+
+          <View style={styles.settingContainer}>
             <TouchableOpacity 
-              style={styles.changeaccesories}
+              style={styles.setting}
+              onPress={()=>
+              this.props.navigation.navigate('Settings')}
             >
-              <Text style={styles.accessoryButton}>Change Accessories</Text>
+            <Image 
+                source= {require('../assets/settingsWheel.png')}
+                style={styles.settingsImage}/>
             </TouchableOpacity>
           </View>
 
-          <View style={universalStyles.horizontalRule} />
+          <Text style={styles.Profile}>Profile</Text>
+          <Text style={styles.Name}>Name: Dalek Cat</Text>
+          <Text style={styles.Username}>Username: catlover1</Text>
+          <Text style={styles.email}>Email: ***********@cats.com</Text>
+          <Text style={styles.password}>Password: **********</Text>
+          <Text style={styles.dateJoined}>Joined: XX-XX-XXXX</Text>
+            
+          <TouchableOpacity 
+            style={styles.editsurvey}
+          >
+            <Text style={styles.surveyButton}>Edit Survey Answers</Text>
+          </TouchableOpacity>
 
-          <View style={universalStyles.bottomTabContainer}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-              <View style={[universalStyles.bottomTabButton]}>
-                <Image source={require('../assets/house.png')} style={universalStyles.icon} />
-              </View>
-            </TouchableOpacity>
+      
 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
-              <View style={[universalStyles.bottomTabButton]}>
-                <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
-              </View>
-            </TouchableOpacity>
+          <View style={styles.boxcontainer}>
+            <View style={styles.sherlockCat}>
+                  <Image 
+                    source= {require('../assets/sherlockCat.png')}
+                    style={styles.sherlockCatImage}/>
+            </View>
+              <TouchableOpacity 
+                style={styles.changeaccesories}
+              >
+                <Text style={styles.accessoryButton}>Change Accessories</Text>
+              </TouchableOpacity>
+            </View>
 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
-              <View style={[universalStyles.bottomTabButton]}>
-                <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
-              </View>
-            </TouchableOpacity>
+            <View style={universalStyles.horizontalRule} />
 
-            <TouchableOpacity>
-              <View style={[universalStyles.bottomTabButton]}>
-                <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
-              </View>
-            </TouchableOpacity>
+            <View style={universalStyles.bottomTabContainer}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+                <View style={[universalStyles.bottomTabButton]}>
+                  <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+                </View>
+              </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
-              <View style={[universalStyles.bottomTabButton]}>
-                <Image source={require('../assets/group.png')} style={universalStyles.icon} />
-              </View>
-            </TouchableOpacity>
-          </View>
-      </View>
-              
-    );
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+                <View style={[universalStyles.bottomTabButton]}>
+                  <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+                <View style={[universalStyles.bottomTabButton]}>
+                  <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity>
+                <View style={[universalStyles.bottomTabButton]}>
+                  <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+                </View>
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+                <View style={[universalStyles.bottomTabButton]}>
+                  <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+                </View>
+              </TouchableOpacity>
+            </View>
+        </View>       
+      );
+    }
+    else {
+      return <AppLoading />;
+    }
   }
 }
 
@@ -107,33 +134,38 @@ const styles = StyleSheet.create({
   },
   Profile: {
     fontSize: 27,
-    fontWeight: 'bold',
     marginLeft: 5, 
     marginTop: 5, 
+    fontFamily: 'Oswald-Medium'
   },
   Name: {
     fontSize: 18,
     textAlign: 'center',
-    margin: H / 75
+    margin: H / 75,
+    fontFamily: 'Quicksand-Medium'
   },
   Username: {
     fontSize: 18,
     textAlign: 'center',
-    margin: H / 75
+    margin: H / 75,
+    fontFamily: 'Quicksand-Medium',
   },
   email: {
     fontSize: 18,
     textAlign: 'center',
     margin: H / 75,
+    fontFamily: 'Quicksand-Medium',
   },
   password: {
     fontSize: 18,
     textAlign: 'center',
+    fontFamily: 'Quicksand-Medium',
   },
   dateJoined: {
     fontSize: 18,
     textAlign: 'center',
-    margin: H / 65
+    margin: H / 65,
+    fontFamily: 'Quicksand-Medium',
   },
   circle: {
     top:H / 25,
@@ -199,7 +231,8 @@ const styles = StyleSheet.create({
     alignSelf:'center', 
     fontSize: 25, 
     alignContent: 'center', 
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: 'OpenSansCondensed-Light',
   }, 
   settingsImage: {
     resizeMode: 'contain',
@@ -209,5 +242,6 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontSize: 25,
     alignContent: 'center',
+    fontFamily: 'OpenSansCondensed-Light',
   },
 });
