@@ -52,27 +52,27 @@ export default class SettingsScreen extends React.Component {
             </View>
           </View>
 
-            <TouchableOpacity style={styles.settingsContainer}>
-              <Text style={styles.settingsButton}>
+            <TouchableOpacity style={styles.privacyCenterContainer}>
+              <Text style={styles.privacyCenterText}>
                 Privacy Center
               </Text>
             </TouchableOpacity>
         
 
-        <TouchableOpacity>
-          <Text style={styles.termsButton}>
+        <TouchableOpacity style={styles.termsContainer}>
+          <Text style={styles.termsText}>
               Terms of Service  
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity>
-          <Text style={styles.privacyButton}>
+        <TouchableOpacity style={styles.privacyContainer}>
+          <Text style={styles.privacyText}>
               Privacy Agreement
           </Text>
         </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style={styles.disclaimerButton}>
+          <TouchableOpacity style={styles.disclaimerContainer}>
+            <Text style={styles.disclaimerText}>
               Disclaimer
               <Text style={styles.disclaimerParagraph}>
                 {'\n'}{'\n'}Exercise is not without its risks and this or any other exercise program many result in injury. As with any exercise program, if at any point during your workout you begin to feel faint, dizzy or have physical discomfort, you should stop immediately and consult a medical professional.
@@ -138,50 +138,63 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand-Medium',
     justifyContent: 'center',
   },
-  termsButton: {
-    color: 'black',
-    backgroundColor: '#7CA6E5',
-    textAlign: 'center',
+  
+  termsContainer: {
+    backgroundColor: Colors.lightBlue,
     width: windowWidth / 1.2,
-    fontSize: 32,
-    fontFamily: 'Oswald-Medium',
-    borderRadius: 15,
+    borderRadius: windowWidth / 30,
     justifyContent: 'center',
   },
-  settingsContainer: {
+
+  termsText: {
+    color: 'black',
+    textAlign: 'center',
+    fontSize: 32,
+    fontFamily: 'Oswald-Medium',
+  },
+
+  privacyCenterContainer: {
     alignItems: 'center',
     marginTop: windowWidth / 8,
     justifyContent: 'center',
+    backgroundColor: Colors.coolBlue,
+    borderRadius: windowWidth / 30,
+    width: windowWidth / 1.2,
   },
-  settingsButton: {
+  privacyCenterText: {
     color: 'white',
-    backgroundColor: '#172A3A',
     textAlign: 'center',
-    width: windowWidth / 1.2,
     fontSize: 32,
     fontFamily: 'Oswald-Medium',
-    borderRadius: 20,
-    borderRadius: 15
   },
-  privacyButton: {
-    color: 'black',
-    backgroundColor: '#BBE0B7',
-    textAlign: 'center',
+  
+  privacyContainer: {
+    backgroundColor: Colors.lightGreen,
     width: windowWidth / 1.2,
-    fontSize: 32,
-    fontFamily: 'Oswald-Medium',
-    borderRadius: 15,
+    borderRadius: windowWidth / 30,
     justifyContent: 'center',
   },
-  disclaimerButton: {
-    color: 'white',
-    backgroundColor: '#52796F',
+  
+  privacyText: {
+    color: 'black',
     textAlign: 'center',
-    borderRadius: 15,
+    fontSize: 32,
+    fontFamily: 'Oswald-Medium',
+  },
+  
+  disclaimerContainer: {
+    backgroundColor: '#52796F',
+    borderRadius: windowWidth / 30,
     width: windowWidth / 1.2,
     fontSize: 30,
-    fontFamily: 'Oswald-Medium',
     justifyContent: 'center',
+  },
+
+  disclaimerText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 30,
+    fontFamily: 'Oswald-Medium',
   },
 
 });
