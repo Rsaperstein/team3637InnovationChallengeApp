@@ -87,6 +87,12 @@ export default class WelcomeScreen extends React.Component {
             </Text>
           </TouchableOpacity>
 
+          <View style={styles.welcomeCatImageContainer}>      
+          <Image
+            source={require('../assets/genericCat.png')}
+            style={styles.catImage}/>
+          </View>
+          
           <TouchableOpacity 
             onPress={() => this.props.navigation.navigate('Home')}
             style={styles.signInContainer}>
@@ -94,11 +100,6 @@ export default class WelcomeScreen extends React.Component {
               Log In
             </Text>
           </TouchableOpacity>
-          <View style={styles.welcomeCatImageContainer}>      
-          <Image
-            source={require('../assets/genericCat.png')}
-            style={styles.catImage}/>
-          </View>
         </View>
       );
     }
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
     width: windowWidth / 3,
-    height: windowHeight / 15
+    height: windowHeight / 15,
   },
 
   signInText: {
