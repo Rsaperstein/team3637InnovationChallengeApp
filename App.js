@@ -21,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{title: 'Fitness-Link'}} />
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{title: ''}} />
         <Stack.Screen name="Home" component={HomeScreen} options={{title: 'Fitness-Link', headerStyle: {height: 80}}} />
         <Stack.Screen name="Community" component={CommunityScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{title: 'Fitness-Link'}} />
