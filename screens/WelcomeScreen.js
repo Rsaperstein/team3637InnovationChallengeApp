@@ -10,8 +10,6 @@ const windowHeight = Dimensions.get("window").height;
 export default class WelcomeScreen extends React.Component {
   render() {
     return (
-
-      
       <View style={styles.container}>
         
         <Text style={styles.heading}>
@@ -90,7 +88,6 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     zIndex: 0
-    //please just let me pull take pity
   },
   welcomeButton: {
     textAlign: 'center',
@@ -133,7 +130,6 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 45,
     fontSize: 16,
-    //pull
   },
   subheading: {
     margin: 24,
