@@ -46,9 +46,9 @@ export default class WelcomeScreen extends React.Component {
         </TouchableOpacity>
 
         <View style={universalStyles.logoContainer}>      
-          <Image 
+          <Image
             source={require('../assets/flLogoTransparent.png')}
-            style={universalStyles.catPic} />
+            style={universalStyles} />
           </View>
 
       </View>
@@ -139,20 +139,7 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   catPic: {
-    width: 1,
-    textAlign: 'left',
-    borderRadius: 1,
-    backgroundColor: 'rgb(124, 166, 229)',
-    color: '#000000',
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    top: 124,
-    left: 2,
-    shadowOpacity: 0.8,
-    elevation: 6,
-    shadowRadius: 15 ,
-    shadowOffset : { width: 1, height: 13},
-    margin: 5,
-    width: 5,
-    fontSize: 0,
+
+
   },
 });
