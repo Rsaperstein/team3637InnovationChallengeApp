@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   heading: {
     margin: 24,
     fontSize: 24,
+    bottom: 150,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
     width: windowWidth / 3,
     height: windowWidth / 3,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
-    bottom: 450,
+    bottom: 375,
     right: 36,
    shadowOpacity: 0.4,
     elevation: 6,
