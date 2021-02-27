@@ -133,10 +133,8 @@ const styles = StyleSheet.create({
   disclaimerParagraph: {
     textAlign: 'center',
     fontSize: 14,
-    color: '#172A3A',
-    marginTop: 10,
+    color: Colors.coolBlue,
     fontFamily: 'Quicksand-Medium',
-    justifyContent: 'center',
   },
   
   termsContainer: {
