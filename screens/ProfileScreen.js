@@ -55,8 +55,20 @@ export default class Profile extends React.Component {
           <Text style={styles.Profile}>Profile</Text>
           <Text style={styles.Name}>Name: Dalek Cat</Text>
           <Text style={styles.Username}>Username: catlover1</Text>
-          <Text style={styles.email}>Email: ***********@cats.com</Text>
-          <Text style={styles.password}>Password: **********</Text>
+          
+          <Text style={styles.email}>
+            Email: ***********@cats.com
+            <TouchableOpacity style={styles.changeButtonContainer}>
+              <Text style={styles.changeButton}>Change...</Text>
+            </TouchableOpacity>
+          </Text>
+
+          <Text style={styles.password}>
+            Password: **********
+            <TouchableOpacity style={styles.changeButtonContainer}>
+              <Text style={styles.changeButton}>Change...</Text>
+            </TouchableOpacity>
+          </Text>
           <Text style={styles.dateJoined}>Joined: XX-XX-XXXX</Text>
             
           <TouchableOpacity 
@@ -125,7 +137,7 @@ export default class Profile extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   line: {
     top: H / 7,
@@ -168,12 +180,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand-Medium',
   },
   circle: {
-    top:H / 25,
+    top: H / 25,
     width: H / 7,
     height: H / 7,
-    alignSelf:'center',
-    borderTopColor:'black',
-    borderColor:'black',
+    alignSelf: 'center',
+    borderTopColor: 'black',
+    borderColor: 'black',
     borderWidth: 4,
     alignItems: 'center',
     justifyContent: 'center'
@@ -195,12 +207,12 @@ const styles = StyleSheet.create({
     shadowColor: 'rgba(0, 0, 0, 0.3)',
     shadowOpacity: 0.8,
     elevation: 6,
-    shadowRadius: 15 ,
+    shadowRadius: 15,
     shadowOffset : { width: 1, height: 13},
   },
   boxcontainer: {
     flex: 1,
-    justifyContent:'center',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   sherlockCatImage: {
@@ -216,10 +228,10 @@ const styles = StyleSheet.create({
     width: W / 2.4,
     height: H / 7,
     borderRadius: 15,
-    backgroundColor:'#7CA6E5',
+    backgroundColor: '#7CA6E5',
     justifyContent: 'center',
     position: 'absolute',
-    top: H / 8,
+    top: H / 10,
     right: W / 8.5, 
     shadowColor: 'rgba(0, 0, 0, 0.3)',
     shadowOpacity: 0.8,
@@ -228,7 +240,7 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
   },
   surveyButton: {
-    alignSelf:'center', 
+    alignSelf: 'center', 
     fontSize: 25, 
     alignContent: 'center', 
     justifyContent: 'center',
@@ -244,4 +256,20 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     fontFamily: 'OpenSansCondensed-Light',
   },
+  changeButtonContainer: {
+    backgroundColor: 'lightgrey',
+    borderRadius: 10,
+    height: H / 32,
+    width: W / 5.2, 
+    shadowColor: 'rgba(0, 0, 0, 0.3)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset: { width: 1, height: 13},
+    justifyContent: 'center',
+    fontFamily: 'Oswald-Medium',
+  },
+  changeButton: {
+    textAlign: 'center',
+  }
 });
