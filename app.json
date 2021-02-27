@@ -4,9 +4,9 @@
     "slug": "team3637InnovationChallengeApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
+    "icon": "./assets/flLogoTransparent.png",
     "splash": {
-      "image": "",
+      "image": "./assets/flLogoTransparent.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

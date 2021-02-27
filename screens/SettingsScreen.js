@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Dimensions, Image } from 'react-native';
 import universalStyles from '../styles/universalStyles';
 import Colors from '../constants/Colors';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
@@ -33,19 +34,20 @@ export default class SettingsScreen extends React.Component {
       return (
         <View style={styles.container}>
 
+          
           <View style={universalStyles.fullScreenCircleContainer}>
             <View style={universalStyles.circle}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                <Text style={{color: Colors.white}}>
-                  S
-                </Text>
-              </TouchableOpacity>
+                <Image 
+                  source={require('../assets/shop.png')}
+                  style={universalStyles.circleLogos} />
+                </TouchableOpacity>
             </View>
             <View style={universalStyles.circle}>
               <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-                <Text style={{color: Colors.white}}>
-                  P
-                </Text>
+                <Image 
+                  source={require('../assets/profile.png')}
+                  style={universalStyles.circleLogos} />
               </TouchableOpacity>
             </View>
           </View>
@@ -77,7 +79,42 @@ export default class SettingsScreen extends React.Component {
               </Text>
             </Text>
           </TouchableOpacity>
+
+          <View style={universalStyles.horizontalRule} />
+
+          <View style={universalStyles.bottomTabContainer}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
           </View>
+
+        </View>
       );
     }
     else {
