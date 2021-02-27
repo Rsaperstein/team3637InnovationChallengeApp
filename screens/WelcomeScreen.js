@@ -27,8 +27,18 @@ export default class WelcomeScreen extends React.Component {
         </Text>
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.Space}>
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.welcomeButton}>
             Terms of Service 
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.Space}>
           </Text>
         </TouchableOpacity>
 
@@ -38,6 +48,11 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+          <Text style={styles.Space}>
+          </Text>
+        </TouchableOpacity>
+        
         <TouchableOpacity>
           <Text style={styles.welcomeButton} style={styles.signUp}>
             Sign Up
@@ -71,14 +86,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#ecf0f1',
     alignItems: 'center',
   },
   heading: {
     margin: 24,
     fontSize: 24,
-    position: 'absolute',
-    top: 0,
+    bottom: 150,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -102,7 +116,7 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
-    margin: 5,
+    margin: 2,
     width: 200,
     fontSize: 16,
   },
@@ -110,6 +124,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#bbe0b7',
     width: 200,
     textAlign: 'center',
+  },
+  Space: {
+    margin: 4,
+    color: 'white',
   },
   signUp: {
     backgroundColor: '#52796f',
@@ -164,7 +182,7 @@ const styles = StyleSheet.create({
     width: windowWidth / 3,
     height: windowWidth / 3,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
-    bottom: 375,
+    bottom: 424,
     right: 36,
    shadowOpacity: 0.4,
     elevation: 6,
