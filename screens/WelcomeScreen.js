@@ -26,7 +26,7 @@ export default class WelcomeScreen extends React.Component {
           Please read the terms of service and privacy agreement 
         </Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.welcomeButton}>
             Terms of Service 
           </Text>

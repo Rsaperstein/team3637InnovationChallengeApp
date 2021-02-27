@@ -9,56 +9,52 @@ export default class Profile extends React.Component{
     return (      
       <View style={styles.container}>
 
-      <View style={universalStyles.fullScreenCircleContainer1}>
-        <View style={universalStyles.circle}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Profile')}>
-              <Image 
-                source={require('../assets/shop.png')}
-                style={universalStyles.circleLogos} />
-            </TouchableOpacity>
+        <View style={styles.line}></View>
+        <View style={styles.circle}>
+            <Image 
+                  source= {require('../assets/dalekCat.png')}
+                  style={styles.dalekCatImage}/>
         </View>
-      </View>
-      
-      <View style={styles.line}></View>
-      <View style={styles.circle}></View>
 
-      <Text style={styles.Profile}>Profile</Text>
-      <Text style={styles.Name}>Name: Dalek Cat</Text>
-      <Text style={styles.Username}>Username: catlover1</Text>
-      <Text style={styles.email}>Email: ***********@cats.com</Text>
-      <Text style={styles.password}>Password: **********</Text>
-      <Text style={styles.dateJoined}>Joined: XX-XX-XXXX</Text>
-      <TouchableOpacity 
-        style={styles.editsurvey}
-        onPress={()=>
-        this.props.navigation.navigate('Survey Screen')}
-      >
-        <Text style={styles.surveyButton}>Edit Survey Answers</Text>
-      </TouchableOpacity>
+        <View style={styles.settingContainer}>
+          <TouchableOpacity 
+            style={styles.setting}
+            onPress={()=>
+            this.props.navigation.navigate('Settings')}
+          >
+          <Image 
+              source= {require('../assets/settingsWheel.png')}
+              style={styles.settingsImage}/>
+          </TouchableOpacity>
+        </View>
 
-      <View style={styles.setting}>
+        <Text style={styles.Profile}>Profile</Text>
+        <Text style={styles.Name}>Name: Dalek Cat</Text>
+        <Text style={styles.Username}>Username: catlover1</Text>
+        <Text style={styles.email}>Email: ***********@cats.com</Text>
+        <Text style={styles.password}>Password: **********</Text>
+        <Text style={styles.dateJoined}>Joined: XX-XX-XXXX</Text>
+          
         <TouchableOpacity 
-          style={styles.setting}
-          onPress={()=>
-          this.props.navigation.navigate('Settings')}
+          style={styles.editsurvey}
         >
-        <Image 
-            source= {require('../assets/settingsWheel.png')}
-            style={styles.settingsImage}/>
+          <Text style={styles.surveyButton}>Edit Survey Answers</Text>
         </TouchableOpacity>
-      </View>
 
-      <View style={styles.boxcontainer}>
-      <View style={styles.cat}>
-      </View>
-      <TouchableOpacity 
-        style={styles.changeaccesories}
-        onPress={()=>
-        this.props.navigation.navigate('customize')}
-      >
-        <Text style={styles.accessoryButton}>Change Accessories</Text>
-      </TouchableOpacity>
-      </View>
+    
+
+        <View style={styles.boxcontainer}>
+          <View style={styles.sherlockCat}>
+                <Image 
+                  source= {require('../assets/sherlockCat.png')}
+                  style={styles.sherlockCatImage}/>
+          </View>
+            <TouchableOpacity 
+              style={styles.changeaccesories}
+            >
+              <Text style={styles.accessoryButton}>Change Accessories</Text>
+            </TouchableOpacity>
+          </View>
       </View>
               
     );
@@ -70,28 +66,28 @@ const styles = StyleSheet.create({
     flex: 1, 
     backgroundColor: 'white'
   },
-  line:{
+  line: {
     top: H / 7,
     height: H / 120,
     backgroundColor: 'black',
   },
-  Profile:{
+  Profile: {
     fontSize: 27,
     fontWeight: 'bold',
     marginLeft: 5, 
     marginTop: 5, 
   },
-  Name:{
+  Name: {
     fontSize: 18,
     textAlign: 'center',
     margin: H / 75
   },
-  Username:{
+  Username: {
     fontSize: 18,
     textAlign: 'center',
     margin: H / 75
   },
-  email:{
+  email: {
     fontSize: 18,
     textAlign: 'center',
     margin: H / 75,
@@ -100,12 +96,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
   },
-  dateJoined:{
+  dateJoined: {
     fontSize: 18,
     textAlign: 'center',
     margin: H / 65
   },
-  circle:{
+  circle: {
     top:H / 25,
     width: H / 7,
     height: H / 7,
@@ -113,41 +109,57 @@ const styles = StyleSheet.create({
     borderTopColor:'black',
     borderColor:'black',
     borderWidth: 4,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  setting: {
-    position: "absolute",
-    top: H / 14,
-    left: W / 3.4,
+  settingContainer: {
+    position: 'absolute',
+    left: W / 1.8, 
+    top: H / 20,
   },
   editsurvey: {
     width: W / 1.2,
     height: H / 15,
-    borderRadius: W/10,
+    borderRadius: W / 10,
     backgroundColor: '#BBE0B7',
     alignSelf: 'center',
     justifyContent: 'center',                 
     alignContent: 'center',
     marginTop: H / 32,
+    shadowColor: 'rgba(0, 0, 0, 0.3)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
   },
-  boxcontainer:{
+  boxcontainer: {
     flex: 1,
     justifyContent:'center',
     alignItems: 'center',
   },
-  cat:{
-    width:W/1.55,
-    height:H/3,
-    borderRadius:W/10,
-    marginRight:5,
+  sherlockCatImage: {
+    resizeMode: 'contain',
+    transform: [{scale: 0.5}],
+    marginRight: W / 2.2, 
   },
-  changeaccesories:{
-    width: W / 2.7,
-    height: H / 8,
+  dalekCatImage: {
+    resizeMode: 'contain',
+    transform: [{scale: 1.72}],
+  },
+  changeaccesories: {
+    width: W / 2.4,
+    height: H / 7,
     borderRadius: 15,
     backgroundColor:'#7CA6E5',
     justifyContent: 'center',
     position: 'absolute',
-    top: H / 16,
+    top: H / 8,
+    right: W / 8.5, 
+    shadowColor: 'rgba(0, 0, 0, 0.3)',
+    shadowOpacity: 0.8,
+    elevation: 6,
+    shadowRadius: 15 ,
+    shadowOffset : { width: 1, height: 13},
   },
   surveyButton: {
     alignSelf:'center', 
@@ -157,16 +169,11 @@ const styles = StyleSheet.create({
   }, 
   settingsImage: {
     resizeMode: 'contain',
-    transform: [{scale: 0.3}],
+    transform: [{scale: 0.2}],
   },
   accessoryButton: {
     textAlign:'center',
     fontSize: 25,
     alignContent: 'center',
-  },
-  fullScreenCircleContainer1: {
-      position: 'absolute',
-      right: 24,
-      top: 0
   },
 });
