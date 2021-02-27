@@ -87,8 +87,10 @@ export default class WelcomeScreen extends React.Component {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-            <Text style={styles.signIn}>
+          <TouchableOpacity 
+            onPress={() => this.props.navigation.navigate('Home')}
+            style={styles.signInContainer}>
+            <Text style={styles.signInText}>
               Log In
             </Text>
           </TouchableOpacity>
@@ -97,13 +99,6 @@ export default class WelcomeScreen extends React.Component {
             source={require('../assets/genericCat.png')}
             style={styles.catImage}/>
           </View>
-
-            <View style={universalStyles.logo}>      
-            <Image
-              source={require('../assets/group.png')}
-              style={styles.catPic}/>
-            </View>
-
         </View>
       );
     }
@@ -208,12 +203,11 @@ const styles = StyleSheet.create({
     width: 200,
     textAlign: 'center',
   },
-  signIn: {
-    width: 150,
-    textAlign: 'right',
-    borderRadius: 20,
-    backgroundColor: 'rgb(124, 166, 229)',
-    color: 'white',
+  
+  signInContainer: {
+    textAlign: 'center',
+    borderRadius: windowWidth / 30,
+    backgroundColor: Colors.coolBlue,
     position: 'relative',
     top: 190,
     left: 130,
@@ -222,9 +216,13 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
-    margin: 5,
-    width: 45,
-    fontSize: 16,
+    width: windowWidth / 3,
+    height: windowHeight / 15
+  },
+
+  signInText: {
+    color: 'white',
+    fontSize: 24,
   },
   subheading: {
     margin: 24,
