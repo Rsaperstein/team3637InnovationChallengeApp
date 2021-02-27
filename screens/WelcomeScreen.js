@@ -7,6 +7,11 @@ import universalStyles from '../styles/universalStyles';
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
+
 export default class WelcomeScreen extends React.Component {
   render() {
     return (
@@ -95,8 +100,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   welcomeHeading: {
-    fontSize: 32, 
+    fontSize: 40, 
     fontWeight: 'bold',
+    color: '#52796f',
+    fontFamily: 'Oswald-Medium',
   },
   welcomeButton: {
     textAlign: 'center',
