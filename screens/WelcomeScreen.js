@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
   },
   Space: {
     margin: 4,
-    color: 'white',
   },
   signUp: {
     backgroundColor: '#52796f',
