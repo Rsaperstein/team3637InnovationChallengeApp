@@ -28,31 +28,37 @@ export default class WelcomeScreen extends React.Component {
 
         <TouchableOpacity>
           <Text style={styles.welcomeButton}>
-            Sign Up
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={styles.welcomeButton}>
             Terms of Service 
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity>
-          <Text style={styles.welcomeButton}>
+          <Text style={styles.welcomeButton} style={styles.Privacy}>
             Privacy Agreement 
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <Text style={styles.welcomeButton} style={styles.signUp}>
+            Sign Up
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.signIn}>
-            Sign In
+            Log In
           </Text>
         </TouchableOpacity>
 
         <View style={universalStyles.logo}>      
           <Image
             source={require('../assets/flLogoTransparent.png')}
+            style={styles.logo}/>
+          </View>
+
+          <View style={universalStyles.logo}>      
+          <Image
+            source={require('../assets/group.png')}
             style={styles.catPic}/>
           </View>
 
@@ -85,7 +91,6 @@ const styles = StyleSheet.create({
     //please just let me pull take pity
   },
   welcomeButton: {
-    width: 150,
     textAlign: 'center',
     borderRadius: 20,
     backgroundColor: 'rgb(124, 166, 229)',
@@ -98,6 +103,16 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 200,
     fontSize: 16,
+  },
+  Privacy: {
+    backgroundColor: '#bbe0b7',
+    width: 200,
+    textAlign: 'center',
+  },
+  signUp: {
+    backgroundColor: '#52796f',
+    width: 200,
+    textAlign: 'center',
   },
   signIn: {
     width: 150,
@@ -114,7 +129,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
     margin: 5,
-    width: 50,
+    width: 45,
     fontSize: 16,
     //pull
   },
@@ -143,10 +158,21 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     borderRadius: 8
   },
-  catPic: {
+  logo: {
     width: windowWidth / 3,
     height: windowWidth / 3,
-    color: '#000000',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    bottom: 450,
+    right: 36,
+   shadowOpacity: 0.4,
+    elevation: 6,
+    shadowRadius: 1 ,
+    shadowOffset : { width: 1, height: 13},
+    margin: 1,
+  },
+  catPic: {
+    width: windowWidth / 4,
+    height: windowWidth / 4,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     top: 17,
     right: 140,
