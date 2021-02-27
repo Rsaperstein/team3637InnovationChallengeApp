@@ -6,7 +6,7 @@ import AppLoading from 'expo-app-loading';
 
 import Colors from '../constants/Colors';
 import universalStyles from '../styles/universalStyles';
-
+//p
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
