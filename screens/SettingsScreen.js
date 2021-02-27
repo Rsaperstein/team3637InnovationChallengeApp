@@ -186,8 +186,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#52796F',
     borderRadius: windowWidth / 30,
     width: windowWidth / 1.2,
-    fontSize: 30,
+    height: windowHeight / 3.4,
     justifyContent: 'center',
+    marginBottom: 20,
+
   },
 
   disclaimerText: {
