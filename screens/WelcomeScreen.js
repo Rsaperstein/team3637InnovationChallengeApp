@@ -71,13 +71,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
+    backgroundColor: 'white',
     alignItems: 'center',
   },
   heading: {
     margin: 24,
     fontSize: 24,
-    bottom: 150,
+    position: 'absolute',
+    top: 0,
     fontWeight: 'bold',
     textAlign: 'center',
   },
