@@ -38,7 +38,7 @@ export default class WelcomeScreen extends React.Component {
             Fitness-Link
           </Text>
 
-          <View style={universalStyles.logo}>      
+          <View style={styles.logoContainer}>      
             <Image
               source={require('../assets/flLogoTransparent.png')}
               style={styles.logo}/>
@@ -251,16 +251,15 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   logo: {
-    width: windowWidth / 3,
-    height: windowWidth / 3,
+    resizeMode: 'contain',
+    transform: [{scale: 0.5}],
+    width: windowWidth / 1,
+    height: windowHeight / 3,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
-    bottom: 424,
-    right: 36,
-   shadowOpacity: 0.4,
+    shadowOpacity: 0.4,
     elevation: 6,
     shadowRadius: 1 ,
     shadowOffset : { width: 1, height: 13},
-    margin: 1,
   },
   catImage: {
     width: windowWidth / 2.9,
