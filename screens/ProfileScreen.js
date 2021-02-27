@@ -55,6 +55,40 @@ export default class Profile extends React.Component{
               <Text style={styles.accessoryButton}>Change Accessories</Text>
             </TouchableOpacity>
           </View>
+
+          <View style={universalStyles.horizontalRule} />
+
+          <View style={universalStyles.bottomTabContainer}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/house.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('ProgressBar')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/bullseye.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Input')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/plus.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/notificationBell.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Community')}>
+              <View style={[universalStyles.bottomTabButton]}>
+                <Image source={require('../assets/group.png')} style={universalStyles.icon} />
+              </View>
+            </TouchableOpacity>
+          </View>
       </View>
               
     );

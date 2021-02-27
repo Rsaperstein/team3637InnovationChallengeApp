@@ -18,6 +18,12 @@ export default class WelcomeScreen extends React.Component {
           Fitness-Link
         </Text>
 
+        <View style={universalStyles.logo}>      
+          <Image
+            source={require('../assets/flLogoTransparent.png')}
+            style={styles.logo}/>
+          </View>
+
         <Text style={styles.welcomeHeading}>
           Welcome!
         </Text>
@@ -50,12 +56,6 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
-        <View style={universalStyles.logo}>      
-          <Image
-            source={require('../assets/flLogoTransparent.png')}
-            style={styles.logo}/>
-          </View>
-
           <View style={universalStyles.logo}>      
           <Image
             source={require('../assets/group.png')}
@@ -86,12 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 32, 
     fontWeight: 'bold',
   },
-  image: {
-    width: 100,
-    height: 100,
-    zIndex: 0
-    //please just let me pull take pity
-  },
+
   welcomeButton: {
     textAlign: 'center',
     borderRadius: 20,
@@ -133,7 +128,6 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 45,
     fontSize: 16,
-    //pull
   },
   subheading: {
     margin: 24,
