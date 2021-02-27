@@ -218,6 +218,8 @@ const styles = StyleSheet.create({
   signInText: {
     color: 'white',
     fontSize: 24,
+    textAlign: 'center',
+    justifyContent: 'center'
   },
   subheading: {
     fontSize: 16,
@@ -259,8 +261,9 @@ const styles = StyleSheet.create({
     height: windowHeight / 4,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.4,
-    elevation: 6,
     shadowRadius: 1 ,
     shadowOffset : { width: 1, height: 13},
+    resizeMode: 'contain',
+    transform: [{scale: 0.9}],
   },
 });
