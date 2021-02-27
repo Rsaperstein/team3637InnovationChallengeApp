@@ -1,12 +1,17 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image, Style } from 'react-native';
 import Constants from 'expo-constants';
 
 import universalStyles from '../styles/universalStyles';
 
+const windowWidth = Dimensions.get("window").width;
+const windowHeight = Dimensions.get("window").height;
+
 export default class WelcomeScreen extends React.Component {
   render() {
     return (
+
+      
       <View style={styles.container}>
         
         <Text style={styles.heading}>
@@ -21,19 +26,19 @@ export default class WelcomeScreen extends React.Component {
           Please read the terms of service and privacy agreement 
         </Text>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+        <TouchableOpacity>
           <Text style={styles.welcomeButton}>
             Sign Up
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+        <TouchableOpacity>
           <Text style={styles.welcomeButton}>
             Terms of Service 
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
+        <TouchableOpacity>
           <Text style={styles.welcomeButton}>
             Privacy Agreement 
           </Text>
@@ -45,10 +50,10 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
-        <View style={universalStyles.logoContainer}>      
+        <View style={universalStyles.logo}>      
           <Image
             source={require('../assets/flLogoTransparent.png')}
-            style={universalStyles} />
+            style={styles.catPic}/>
           </View>
 
       </View>
@@ -139,7 +144,16 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   catPic: {
-
-
+    width: windowWidth / 3,
+    height: windowWidth / 3,
+    color: '#000000',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
+    top: 17,
+    right: 140,
+    shadowOpacity: 0.4,
+    elevation: 6,
+    shadowRadius: 1 ,
+    shadowOffset : { width: 1, height: 13},
+    margin: 1,
   },
 });
