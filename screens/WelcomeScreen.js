@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
   heading: {
     margin: 24,
     fontSize: 24,
-    bottom: 150,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -211,8 +210,6 @@ const styles = StyleSheet.create({
     borderRadius: windowWidth / 30,
     backgroundColor: Colors.coolBlue,
     position: 'relative',
-    top: 190,
-    left: 130,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOpacity: 0.8,
     elevation: 6,
