@@ -92,6 +92,11 @@ export default class WelcomeScreen extends React.Component {
               Log In
             </Text>
           </TouchableOpacity>
+          <View style={styles.welcomeCatImageContainer}>      
+          <Image
+            source={require('../assets/genericCat.png')}
+            style={styles.catImage}/>
+          </View>
 
             <View style={universalStyles.logo}>      
             <Image
@@ -112,7 +117,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
+    backgroundColor: 'white',
     alignItems: 'center',
   },
   heading: {
@@ -151,7 +156,6 @@ const styles = StyleSheet.create({
   },
   Space: {
     margin: 4,
-    color: 'white',
   },
 
   tosContainer: {
@@ -259,16 +263,13 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
     margin: 1,
   },
-  catPic: {
-    width: windowWidth / 4,
-    height: windowWidth / 4,
+  catImage: {
+    width: windowWidth / 2.9,
+    height: windowHeight / 4,
     shadowColor: 'rgba(0, 0, 0, 0.1)',
-    top: 17,
-    right: 140,
     shadowOpacity: 0.4,
     elevation: 6,
     shadowRadius: 1 ,
     shadowOffset : { width: 1, height: 13},
-    margin: 1,
   },
 });
