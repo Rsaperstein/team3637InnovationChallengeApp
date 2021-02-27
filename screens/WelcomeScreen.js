@@ -116,7 +116,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
-    margin: 24,
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -149,9 +148,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#bbe0b7',
     width: 200,
     textAlign: 'center',
-  },
-  Space: {
-    margin: 4,
   },
 
   tosContainer: {
@@ -224,14 +220,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   subheading: {
-    margin: 24,
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'gray',
-    fontWeight: '400',
-  },
-  subheading: {
-    margin: 24,
     fontSize: 16,
     textAlign: 'center',
     color: 'gray',
@@ -239,8 +227,6 @@ const styles = StyleSheet.create({
   },
   bannerContainer: {
     alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
   },
   bannerImage: {
     width: 300,
