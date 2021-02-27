@@ -88,18 +88,17 @@ export default class WelcomeScreen extends React.Component {
           </TouchableOpacity>
 
           <View style={styles.welcomeCatImageContainer}>      
-          <Image
-            source={require('../assets/genericCat.png')}
-            style={styles.catImage}/>
+            <Image
+              source={require('../assets/genericCat.png')}
+              style={styles.catImage}/>
+            <TouchableOpacity 
+              onPress={() => this.props.navigation.navigate('Home')}
+              style={styles.signInContainer}>
+              <Text style={styles.signInText}>
+                Log In
+              </Text>
+            </TouchableOpacity>
           </View>
-          
-          <TouchableOpacity 
-            onPress={() => this.props.navigation.navigate('Home')}
-            style={styles.signInContainer}>
-            <Text style={styles.signInText}>
-              Log In
-            </Text>
-          </TouchableOpacity>
         </View>
       );
     }
@@ -262,6 +261,14 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
     margin: 1,
   },
+
+  welcomeCatImageContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    backgroundColor: Colors.white,
+  },
+
   catImage: {
     width: windowWidth / 2.9,
     height: windowHeight / 4,
