@@ -10,13 +10,17 @@ const windowHeight = Dimensions.get("window").height;
 export default class WelcomeScreen extends React.Component {
   render() {
     return (
-
-      
       <View style={styles.container}>
         
         <Text style={styles.heading}>
           Fitness-Link
         </Text>
+
+        <View style={universalStyles.logo}>      
+          <Image
+            source={require('../assets/flLogoTransparent.png')}
+            style={styles.logo}/>
+          </View>
 
         <Text style={styles.welcomeHeading}>
           Welcome!
@@ -65,12 +69,6 @@ export default class WelcomeScreen extends React.Component {
           </Text>
         </TouchableOpacity>
 
-        <View style={universalStyles.logo}>      
-          <Image
-            source={require('../assets/flLogoTransparent.png')}
-            style={styles.logo}/>
-          </View>
-
           <View style={universalStyles.logo}>      
           <Image
             source={require('../assets/group.png')}
@@ -99,12 +97,6 @@ const styles = StyleSheet.create({
   welcomeHeading: {
     fontSize: 32, 
     fontWeight: 'bold',
-  },
-  image: {
-    width: 100,
-    height: 100,
-    zIndex: 0
-    //please just let me pull take pity
   },
   welcomeButton: {
     textAlign: 'center',
@@ -151,7 +143,6 @@ const styles = StyleSheet.create({
     margin: 5,
     width: 45,
     fontSize: 16,
-    //pull
   },
   subheading: {
     margin: 24,
