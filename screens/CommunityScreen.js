@@ -5,6 +5,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View, Image, Dimensions, TouchableOpacity, TextInput, TouchableHighlight} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 import universalStyles from '../styles/universalStyles';
 import Colors from '../constants/Colors';
 
@@ -12,14 +15,32 @@ import Colors from '../constants/Colors';
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+let customFonts = {
+  'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
+  'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+};
+
 export default class Community extends React.Component {
-    state = {
+    searchState = {
         searchText: '',
     };
 
     _handleTextChange = searchText => {
         this.setState({ searchText });
     };
+
+    fontState = {
+      fontsLoaded: false,
+    };
+  
+    async _loadFontsAsync() {
+      await Font.loadAsync(customFonts);
+      this.setState({ fontsLoaded: true });
+    }
+  
+    componentDidMount() {
+      this._loadFontsAsync();
+    }
   
     render() {
         return (
@@ -47,14 +68,14 @@ export default class Community extends React.Component {
                 <View style={styles.searchBar}>
                   <View style={styles.searchContainer}>
                     <TextInput
-                        value={this.state.searchText}
+                        value={this.searchState.searchText}
                         onChangeText={this._handleTextChange}
                         style={styles.searchBox}
                     />
 
                     <TouchableHighlight style={styles.magnifyContainer}
                             onPress={() => {
-                                alert('Searching for: ' + this.state.searchText)
+                                alert('Searching for: ' + this.searchState.searchText)
                             }}        
                     >
                         <Image
@@ -90,22 +111,22 @@ export default class Community extends React.Component {
                             <View style={styles.communityContainer}>
 
                                 <TouchableOpacity style={styles.communityCircleContainer}>
-                                    <Text style={styles.communityText}>Community 1</Text>
+                                    <Text style={styles.communityText}>FIRST</Text>
                                     <View style={styles.circle}></View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={styles.communityCircleContainer}>
-                                    <Text style={styles.communityText}>Community 2</Text>
+                                    <Text style={styles.communityText}>Marching Band</Text>
                                     <View style={styles.circle}></View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={styles.communityCircleContainer}>
-                                    <Text style={styles.communityText}>Community 3</Text>
+                                    <Text style={styles.communityText}>Theater</Text>
                                     <View style={styles.circle}></View>
                                 </TouchableOpacity>
 
                                 <TouchableOpacity style={styles.communityCircleContainer}>
-                                    <Text style={styles.communityText}>Community 4</Text>
+                                    <Text style={styles.communityText}>Cheerleading</Text>
                                     <View style={styles.circle}></View>
                                 </TouchableOpacity>
                             </View>
@@ -164,7 +185,8 @@ const styles = StyleSheet.create({
 createText: {
   textAlign: 'center', 
   fontSize: 20,
-  color: 'white'
+  color: 'white',
+  fontFamily: 'Quicksand-Medium',
 }, 
 textContainer: {
   marginRight: 10,
@@ -175,6 +197,7 @@ communityHeader: {
   alignSelf: 'flex-end',
   marginTop: 40,
   marginRight: 30,
+  fontFamily: 'Oswald-Medium',
 },
 searchBar: {
   width: windowWidth - 50,
@@ -232,12 +255,14 @@ recommendText: {
   alignItems: 'center', 
   color: 'rgb(241, 250, 238)',
   textAlign: 'center', 
-  color: 'black'
+  color: 'black',
+  fontFamily: 'Quicksand-Medium',
 }, 
 joinText: {
   fontSize: 20,
   color: 'white',
-  textAlign: 'center', 
+  textAlign: 'center',
+  fontFamily: 'Quicksand-Medium', 
 },
 communityContainer: {
   alignItems: 'center',
@@ -253,6 +278,7 @@ communityText: {
   position: 'absolute',
   left: windowWidth / 4,
   top: windowHeight / 44,
+  fontFamily: 'Quicksand-Medium',
 }, 
 circle: {  
   width: 40,
