@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image, Style } from 'react-native';
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions, Image, Style, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -33,13 +33,14 @@ export default class WelcomeScreen extends React.Component {
   render() {
     if (this.state.fontsLoaded) {
       return (
-        <View style={styles.container}>
-          
+        <View style={styles.container}>          
+          <View style={{height: windowHeight / 50}}>
           <Text style={styles.heading}>
             Fitness-Link
           </Text>
+        </View>
 
-          <View style={styles.logoContainer}>      
+          <View style={styles.imageContainer}>      
             <Image
               source={require('../assets/flLogoTransparent.png')}
               style={styles.logo}/>
@@ -53,21 +54,11 @@ export default class WelcomeScreen extends React.Component {
             Please read the terms of service and privacy agreement 
           </Text>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-            <Text style={styles.Space}>
-            </Text>
-          </TouchableOpacity>
-
           <TouchableOpacity 
             onPress={() => this.props.navigation.navigate('Home')}
             style={styles.tosContainer}>
             <Text style={styles.tosText}>
               Terms of Service 
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-            <Text style={styles.Space}>
             </Text>
           </TouchableOpacity>
 
@@ -77,11 +68,6 @@ export default class WelcomeScreen extends React.Component {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}>
-            <Text style={styles.Space}>
-            </Text>
-          </TouchableOpacity>
-          
           <TouchableOpacity style={styles.signUpContainer}>
             <Text style={styles.signUpText}>
               Sign Up
@@ -117,18 +103,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 40,
     textAlign: 'center',
     marginTop: 10,
     fontFamily: 'Sansita-Regular',
   },
   welcomeHeading: {
-    fontSize: 40, 
-    fontWeight: 'bold',
+    fontSize: 50, 
     color: '#52796f',
     fontFamily: 'Oswald-Medium',
   },
+  imageContainer: {
+    height: windowHeight / 4.2,
+  },
+
   tosText: {
     color: 'black',
     fontSize: 24,
@@ -147,12 +135,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Oswald-Medium',
   },
 
-  Privacy: {
-    backgroundColor: '#bbe0b7',
-    width: 200,
-    textAlign: 'center',
-  },
-
   tosContainer: {
     backgroundColor: Colors.lightBlue,
     height: windowHeight / 15,
@@ -166,6 +148,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
     textAlign: 'center',
+    marginTop: 20,
   },
 
   privacyContainer: {
@@ -181,6 +164,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
     textAlign: 'center',
+    marginTop: 20,
   },
 
   signUpContainer: {
@@ -196,12 +180,7 @@ const styles = StyleSheet.create({
     shadowRadius: 15 ,
     shadowOffset : { width: 1, height: 13},
     textAlign: 'center',
-  },
-
-  signUp: {
-    backgroundColor: '#52796f',
-    width: 200,
-    textAlign: 'center',
+    marginTop: 20,
   },
   
   signInContainer: {
@@ -216,27 +195,26 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
     width: windowWidth / 3,
     height: windowHeight / 15,
-    marginTop: 10,
+    marginTop: 20,
   },
 
   signInText: {
     color: 'white',
     fontSize: 24,
     textAlign: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    fontFamily: 'Oswald-Medium',
   },
   subheading: {
     fontSize: 16,
     textAlign: 'center',
     color: 'gray',
-    fontWeight: '400',
+    fontFamily: 'Quicksand-Medium',
   },
   bannerContainer: {
     alignItems: 'center',
   },
   bannerImage: {
-    width: 300,
-    height: 100,
     resizeMode: 'contain',
     borderRadius: 8
   },
