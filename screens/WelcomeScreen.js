@@ -13,6 +13,7 @@ const windowHeight = Dimensions.get("window").height;
 let customFonts = {
   'Oswald-Medium': require('../assets/fonts/Oswald-Medium.ttf'),
   'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
+  'Sansita-Regular': require('../assets/fonts/Sansita-Regular.ttf'),
 };
 
 export default class WelcomeScreen extends React.Component {
@@ -119,6 +120,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: 10,
+    fontFamily: 'Sansita-Regular',
   },
   welcomeHeading: {
     fontSize: 40, 
@@ -213,6 +216,7 @@ const styles = StyleSheet.create({
     shadowOffset : { width: 1, height: 13},
     width: windowWidth / 3,
     height: windowHeight / 15,
+    marginTop: 10,
   },
 
   signInText: {
@@ -240,13 +244,6 @@ const styles = StyleSheet.create({
   logo: {
     resizeMode: 'contain',
     transform: [{scale: 0.5}],
-    width: windowWidth / 1,
-    height: windowHeight / 3,
-    shadowColor: 'rgba(0, 0, 0, 0.1)',
-    shadowOpacity: 0.4,
-    elevation: 6,
-    shadowRadius: 1 ,
-    shadowOffset : { width: 1, height: 13},
   },
 
   welcomeCatImageContainer: {
