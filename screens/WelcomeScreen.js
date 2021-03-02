@@ -34,17 +34,16 @@ export default class WelcomeScreen extends React.Component {
     if (this.state.fontsLoaded) {
       return (
         <View style={styles.container}>          
-          <View style={{height: windowHeight / 50}}>
-          <Text style={styles.heading}>
-            Fitness-Link
-          </Text>
+          <View style={{flex: 1, justifyContent: 'space-around'}}>
+            <Text style={styles.heading}>
+              Fitness-Link
+            </Text>
+            <View style={styles.imageContainer}>      
+              <Image
+                source={require('../assets/flLogoTransparent.png')}
+                style={styles.logo}/>
+            </View>
         </View>
-
-          <View style={styles.imageContainer}>      
-            <Image
-              source={require('../assets/flLogoTransparent.png')}
-              style={styles.logo}/>
-          </View>
 
           <Text style={styles.welcomeHeading}>
             Welcome!
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: 40,
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 25,
     fontFamily: 'Sansita-Regular',
   },
   welcomeHeading: {
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Oswald-Medium',
   },
   imageContainer: {
-    height: windowHeight / 4.2,
+    height: windowHeight / 3.8,
   },
 
   tosText: {
