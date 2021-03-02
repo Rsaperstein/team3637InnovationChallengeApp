@@ -86,7 +86,9 @@ export default class HomeScreen extends React.Component {
                           </Text>
                       </TouchableOpacity>
 
-                      <TouchableOpacity style={styles.linkTopiaButton}>
+                      <TouchableOpacity 
+                        onPress={() => this.props.navigation.navigate('LinkTopia')}
+                        style={styles.linkTopiaButton}>
                           <Text style={styles.exercisesText}>
                               Link-Topia
                           </Text>
