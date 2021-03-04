@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   declineExerciseButton: {
     backgroundColor: '#172A3A',
@@ -183,25 +183,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   dipExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   burpeesExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   pushUpExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   backButton: {
      backgroundColor: '#7CA6E5',
