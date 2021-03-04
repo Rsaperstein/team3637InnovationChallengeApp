@@ -174,31 +174,31 @@ const styles = StyleSheet.create({
   declineExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   chestExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   dipExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   burpeesExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   pushUpExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   backButton: {
