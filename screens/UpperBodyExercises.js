@@ -100,7 +100,9 @@ export default class UpperBodyExercises extends React.Component {
         </View>
         
 
-          <TouchableOpacity style={styles.backButton}>
+          <TouchableOpacity 
+            style={styles.backButton}
+            onPress={() => this.props.navigation.navigate('Exercise')}>
             <Text style={styles.backText}>
               Back
             </Text>
@@ -168,14 +170,14 @@ const styles = StyleSheet.create({
   inclineExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
-    width: 150,
+    width: windowWidth / 2.4,
     marginTop: 70,
   },
   declineExerciseButton: {
     backgroundColor: '#172A3A',
     borderRadius: 15,
     width: windowWidth / 2.4,
-    marginTop: 70,
+    marginTop: 80,
   },
   chestExerciseButton: {
     backgroundColor: '#172A3A',
