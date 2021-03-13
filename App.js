@@ -13,6 +13,7 @@ import ExerciseScreen from './screens/ExerciseScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import UpperBodyExercies from './screens/UpperBodyExercises';
 import LinkTopia from './screens/LinkTopiaScreen';
+import ChestPresses from './screens/ChestPresses';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Settings" component={SettingsScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="Exercise" component={ExerciseScreen} options={{title: 'Fitness-Link'}} />
         <Stack.Screen name="UpperBodyExercises" component={UpperBodyExercies} options={{title: 'Fitness-Link'}} />
+        <Stack.Screen name="ChestPresses" component={ChestPresses} options={{title: 'Fitness-Link'}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

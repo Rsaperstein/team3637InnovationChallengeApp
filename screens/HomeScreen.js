@@ -15,7 +15,6 @@ let customFonts = {
   'Quicksand-Medium': require('../assets/fonts/Quicksand-Medium.ttf'),
 };
 
-
 export default class HomeScreen extends React.Component {
 
   state = {

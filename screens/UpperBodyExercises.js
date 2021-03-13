@@ -37,7 +37,7 @@ export default class UpperBodyExercises extends React.Component {
 
           <Text style={styles.heading}>
             Upper Body Exercises 
-          </Text>
+          </Text>         
 
         <View style={styles.topContainer}>
 
@@ -70,7 +70,9 @@ export default class UpperBodyExercises extends React.Component {
           </TouchableOpacity>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.backgroundImage}> 
+        <TouchableOpacity 
+          style={styles.backgroundImage}
+          onPress={() => this.props.navigation.navigate('ChestPresses')}> 
           <TouchableOpacity style={styles.chestExerciseButton}>
             <Text style={styles.exerciseText}>
               Chest Press
@@ -98,7 +100,6 @@ export default class UpperBodyExercises extends React.Component {
             </TouchableOpacity>
           </TouchableOpacity>
         </View>
-        
 
           <TouchableOpacity 
             style={styles.backButton}
